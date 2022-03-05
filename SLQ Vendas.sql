@@ -1,4 +1,4 @@
-
+-- testes
 CREATE TABLE TB_USUARIOS(
 		 Id_Usuario						INT IDENTITY (1,1) PRIMARY KEY
 		,Nm_Usuario 					VARCHAR(200)
