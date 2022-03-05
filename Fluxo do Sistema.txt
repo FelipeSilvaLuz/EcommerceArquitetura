@@ -72,3 +72,10 @@ Status Processamento:
 	* Consultar
 	* Remover
 	* Editar
+
+Serviços Monitoramento:
+	* Vericar status do pedido e enviar atualizações por e-mail e SMS
+	* Verificar Status da compra e enviar o comprovante por SMS
+	* Verificar a nota fiscal e enviar por E-mail
+	* Novas ofertas, enviar por e-mail
+	* Serviço de 
