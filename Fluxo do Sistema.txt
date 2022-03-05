@@ -1,0 +1,74 @@
+Usuarios:
+	* Cadastrar
+	* Listar
+	* Consultar
+	* Remover
+	* Editar
+	* Enviar e-mail para verificação de e-mail no cadastro
+	* Recuperação de senha por e-mail
+	* Serviço caso queira receber ofertas
+
+Categorias:
+	* Cadastrar
+	* Listar
+	* Consultar
+	* Remover
+	* Editar
+
+Caracterisiticas:
+	* Cadastrar
+	* Listar
+	* Remover
+	* Editar
+
+Produtos:
+	* Cadastrar
+	* Listar
+	* Consultar
+	* Remover (Apagar caracterisiticas associadas ao produto)
+	* Caso remover, processo para remover de todos os carrinhos
+	* Editar
+
+Fotos:
+	* Cadastrar
+	* Listar
+	* Consultar
+	* Remover
+	* Editar
+	* Implementar um editor de fotos
+
+Carrinhos:
+	* Cadastrar
+	* Listar
+	* Consultar
+	* Remover
+	* Editar
+	* Serviço de envio de e-mail, quando o produto esta no carrinho a X tempo
+	* Serviço de envio de e-mail, quando o produto abaixar o preço
+
+Vendas:
+	* Cadastrar
+	* Listar
+	* Consultar
+	* Remover
+	* Editar
+	* Envio de e-mail para confirmação de compra
+	* Implementar o processo de pagamento com cartão
+	* Implementar a geração de boleto
+	* Implementar o pagamento em PIX
+	* Serviço de verificação se pagamento foi realizado
+	* Serviço para monitorar o status da venda
+
+Enderecos:
+	* Cadastrar
+	* Listar
+	* Consultar
+	* Remover
+	* Editar
+
+Status Processamento:
+	* Cadastrar
+	* Listar
+	* Consultar
+	* Remover
+	* Editar

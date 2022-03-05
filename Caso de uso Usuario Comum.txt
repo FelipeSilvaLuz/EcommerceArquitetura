@@ -1,0 +1,41 @@
+Usuario Comum:
+
+* Tela de login:
+	- Acessar com usuário e senha
+	- Funcionalidade de esqueci a senha
+	- Criar novo usuário
+	- Integrar login com o e-mail (Abrir pelo gmail...)
+	- Validar os campos de usuario e senha
+
+
+* Tela de Carrinho:
+	- Lista de produtos no carrinho 
+	- Opção de Remover o produto
+	- Opção de Adicionar mais unidades ao produto
+	- Opção de Retirar uma unidade do produto
+	- Opção de comprar um dos produtos do carrinho
+	- Opção de comprar todos os produtos do carrinho
+	- Opção de ver os detalhes do produto
+	- Opção para adicionar um cupom de desconto (VER COMO DEVE FICAR ISSO DENTRO DO BANCO DE DADOS)
+
+
+* Tela Principal
+	- Opção acima para acessar o carrinho
+	- Opção acima para acessibilidade
+	- Listar todas as categorias disponiveis 
+	- Um campo para pesquisa de qualquer coisa 
+	- Listagem dos produtos por categoria ou por texto pesquisado
+	- Filtros de preço, frete, desconto, alfabetica...
+	- No card do produto os detalhes relevantes dele
+
+
+* Tela de Detalhes do produto
+	- Imagens do produto 
+	- Caracteristicas 
+	- Formas de pagamento 
+	- Adicionar ao carrinho
+	- Comprar agora 
+	- Dúvidas sobre o produto
+	- Mostrar listagem pequena com produtos similares
+	- Calculo de frete por CEP
+	- Informações gerais do produto
