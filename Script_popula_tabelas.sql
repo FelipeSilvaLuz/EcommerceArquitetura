@@ -1,4 +1,5 @@
 
+
 /* Tabela de status */
 
 insert into dbo.tb_status values ('ativo','ativo teste', getdate(), null, null, null)
