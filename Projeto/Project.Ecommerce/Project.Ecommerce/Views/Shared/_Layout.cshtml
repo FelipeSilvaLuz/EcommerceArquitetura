@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Project.Ecommerce</title>
+
+    <link href="~/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap/jquery-ui.css" rel="stylesheet" />
+    <link href="~/css/bootstrap/select2.css" rel="stylesheet" />
+    <link href="~/css/bootstrap/slick.css" rel="stylesheet" />
+    <link href="~/css/bootstrap/slick-theme.css" rel="stylesheet" />
+    <link href="~/css/layout/header.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <script src="~/js/bootstrap/jquery-1.12.2.min.js"></script>
+    <script src="~/js/bootstrap/bootstrap.min.js"></script>
+    <script src="~/js/bootstrap/datatables.min.js"></script>
+    <script src="~/js/bootstrap/jquery.blockUI.js"></script>
+    <script src="~/js/bootstrap/jquery.dataTables.min.js"></script>
+    <script src="~/js/bootstrap/jquery.mask.min.js"></script>
+    <script src="~/js/bootstrap/jquery.scrollbar.min.js"></script>
+    <script src="~/js/bootstrap/jquery-ui.min.js"></script>
+    <script src="~/js/bootstrap/select2.js"></script>
+    <script src="~/js/bootstrap/slick.min.js"></script>
+    <script src="~/js/layout/header.js"></script>
+</head>
+<body>
+    <header style="background-color: darkgray; height: 4em;">
+        <div class="row alinhamento">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><a href="#" class="hiperlink"> <b>E-COMMERCE </b>PROJETO </a></div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="margin-top: 7px;">
+                <i class="fas fa-search search"></i>
+                <input type="text" style="width: 100%" id="input" name="searchBox" placeholder="O que você deseja?">
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <div id="faleConosco"><a href="#" class="hiperlink"> Fale Conosco </a></div>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <a href="#" class="hiperlink" style="margin-right: 10%;"> <i class="fas fa-shopping-cart"></i> </a>
+                <a href="#" class="hiperlink"> <i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
