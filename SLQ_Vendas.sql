@@ -1,3 +1,4 @@
+
 -- create database dbo
 /*
 	drop table dbo.tb_usuarios
@@ -58,11 +59,10 @@ ALTER TABLE dbo.tb_categorias ADD CONSTRAINT FK_tb_categorias_x_tb_usuarios_id_u
 ALTER TABLE dbo.tb_categorias ADD CONSTRAINT FK_tb_categorias_x_tb_status_id_status FOREIGN KEY (id_status) REFERENCES dbo.tb_status (id_status)
 
 
-create table dbo.tb_caracteristicas(
-		 id_caracteristica				int identity (1,1) primary key 
-		,nm_caracteristica				varchar(200)
+create table dbo.tb_variacoes(
+		 id_variacao					int identity (1,1) primary key 
+		,nm_variacao					varchar(200)
 		,nm_descricao					varchar(300)
-		,nr_ordem						int
 		,id_status						int
 		,dt_criacao						datetime
 		,id_usuario_criacao				int
@@ -70,17 +70,10 @@ create table dbo.tb_caracteristicas(
 		,id_usuario_alteracao			int
 )
 
-ALTER TABLE dbo.tb_caracteristicas ADD CONSTRAINT FK_tb_caracteristicas_x_tb_usuarios_id_usuario_criacao FOREIGN KEY (id_usuario_criacao) REFERENCES dbo.tb_usuarios (id_usuario)
-
-ALTER TABLE dbo.tb_caracteristicas ADD CONSTRAINT FK_tb_caracteristicas_x_tb_usuarios_id_usuario_alteracao FOREIGN KEY (id_usuario_alteracao) REFERENCES dbo.tb_usuarios (id_usuario)
-
-ALTER TABLE dbo.tb_caracteristicas ADD CONSTRAINT FK_tb_caracteristicas_x_tb_status_id_status FOREIGN KEY (id_status) REFERENCES dbo.tb_status (id_status)
-
-
 create table dbo.tb_produtos(
 		 id_produto						int identity (1,1) primary key 
 		,id_categoria					int
-		,id_caracteristica				int
+		,id_variacao					int
 		,nm_produto 					varchar(200)
 		,nm_descricao					varchar(500)
 		,nr_quantidade					int
@@ -100,8 +93,28 @@ ALTER TABLE dbo.tb_produtos ADD CONSTRAINT FK_tb_produtos_x_tb_status_id_status 
 
 ALTER TABLE dbo.tb_produtos ADD CONSTRAINT FK_tb_produtos_x_tb_categorias_id_categoria FOREIGN KEY (id_categoria) REFERENCES dbo.tb_categorias (id_categoria)
 
-ALTER TABLE dbo.tb_produtos ADD CONSTRAINT FK_tb_produtos_x_tb_caracteristicas_id_caracteristica FOREIGN KEY (id_caracteristica) REFERENCES dbo.tb_caracteristica (id_caracteristica)
+ALTER TABLE dbo.tb_produtos ADD CONSTRAINT FK_tb_produtos_x_tb_variacoes_id_variacao FOREIGN KEY (id_variacao) REFERENCES dbo.tb_variacoes (id_variacao)
 
+
+create table dbo.tb_caracteristicas(
+		 id_caracteristica				int identity (1,1) primary key 
+		,nm_caracteristica				varchar(200)
+		,nm_descricao					varchar(300)
+		,nr_ordem						int
+		,id_categoria					int
+		,id_produto						int
+		,id_status						int
+		,dt_criacao						datetime
+		,id_usuario_criacao				int
+		,dt_alteracao					datetime
+		,id_usuario_alteracao			int
+)
+
+ALTER TABLE dbo.tb_caracteristicas ADD CONSTRAINT FK_tb_caracteristicas_x_tb_usuarios_id_usuario_criacao FOREIGN KEY (id_usuario_criacao) REFERENCES dbo.tb_usuarios (id_usuario)
+
+ALTER TABLE dbo.tb_caracteristicas ADD CONSTRAINT FK_tb_caracteristicas_x_tb_usuarios_id_usuario_alteracao FOREIGN KEY (id_usuario_alteracao) REFERENCES dbo.tb_usuarios (id_usuario)
+
+ALTER TABLE dbo.tb_caracteristicas ADD CONSTRAINT FK_tb_caracteristicas_x_tb_status_id_status FOREIGN KEY (id_status) REFERENCES dbo.tb_status (id_status)
 
 create table dbo.tb_fotos(
 		 id_foto						int identity (1,1) primary key 
@@ -238,4 +251,17 @@ ALTER TABLE dbo.tb_tipos_pagamentos ADD CONSTRAINT FK_tb_tipos_pagamentos_x_tb_u
 ALTER TABLE dbo.tb_tipos_pagamentos ADD CONSTRAINT FK_tb_tipos_pagamentos_x_tb_status_id_status FOREIGN KEY (id_status) REFERENCES dbo.tb_status (id_status)
 
 ALTER TABLE dbo.tb_tipos_pagamentos ADD CONSTRAINT FK_tb_tipos_pagamentos_x_tb_bancos_id_banco FOREIGN KEY (id_banco) REFERENCES dbo.tb_bancos (id_banco)
+
+Create table dbo.tb_comentarios (
+		id_comentario					int identity (1,1) primary key,
+		nm_titulo						varchar(200),
+		nm_comentario					varchar(1000),
+		id_produto						int,
+		nr_nota							int,
+		dt_criacao						datetime,
+		id_usuario_criacao				int
+)
+
+ALTER TABLE dbo.tb_comentarios ADD CONSTRAINT FK_tb_comentarios_x_tb_produtos_id_produto FOREIGN KEY (id_produto) REFERENCES dbo.tb_produtos (id_produto)
+
 
