@@ -27,8 +27,21 @@ a {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    height: 100%;
+    min-height: 100%;
+    font-size: 14px;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+footer {
+    margin-top: auto;
+}
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;

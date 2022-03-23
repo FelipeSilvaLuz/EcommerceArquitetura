@@ -27,20 +27,13 @@
     <script src="~/js/layout/header.js"></script>
 </head>
 <body>
-    <header>
-        <div class="content">
-            <hgroup>
-                <h1>LOGO</h1>
-            </hgroup>
+    <header class="d-flex justify-content-center align-items-center">
+        @*Adicionar LOGO*@
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: right">
+            <button href="#" class="btn btn-dark"> <i class="fas fa-shopping-cart"></i> </button>
+            <button href="#" class="btn btn-dark"> <i class="fas fa-user"></i></button>
         </div>
-        <div class="overlay"></div>
     </header>
-    <section class="site" style="text-align: right;">
-        <div>
-            <a href="#" class="hiperlink" style="color: white;"> <i class="fas fa-shopping-cart"></i> </a>
-            <a href="#" class="hiperlink" style="color: white;"> <i class="fas fa-user"></i></a>
-        </div>
-    </section>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
