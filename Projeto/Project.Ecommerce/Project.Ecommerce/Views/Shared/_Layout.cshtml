@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Project.Ecommerce</title>
 
-    <link href="~/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet" />
     <link href="~/css/bootstrap/jquery-ui.css" rel="stylesheet" />
     <link href="~/css/bootstrap/select2.css" rel="stylesheet" />
     <link href="~/css/bootstrap/slick.css" rel="stylesheet" />
@@ -13,9 +16,10 @@
     <link href="~/css/layout/header.css" rel="stylesheet" />
     <link href="~/css/layout/footer.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
 
-    <script src="~/js/bootstrap/jquery-1.12.2.min.js"></script>
-    <script src="~/js/bootstrap/bootstrap.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
     <script src="~/js/bootstrap/datatables.min.js"></script>
     <script src="~/js/bootstrap/jquery.blockUI.js"></script>
     <script src="~/js/bootstrap/jquery.dataTables.min.js"></script>
@@ -27,11 +31,15 @@
     <script src="~/js/layout/header.js"></script>
 </head>
 <body>
-    <header class="d-flex justify-content-center align-items-center">
-        @*Adicionar LOGO*@
+    <header class="d-flex align-items-center">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="border: solid; text-align: center; margin-left: 1%; position: absolute;">
+            <h4>Logo</h4>
+        </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: right">
-            <button href="#" class="btn btn-dark"> <i class="fas fa-shopping-cart"></i> </button>
-            <button href="#" class="btn btn-dark"> <i class="fas fa-user"></i></button>
+            <button href="#" class="btn btn-dark fale-conosco" title="Fale Conosco"> <i class="bi bi-chat-dots"> </i></button>
+            <button href="#" class="btn btn-dark carrinho" title="Acesse o seu carrinho"> <i class="bi bi-cart"> </i> </button>
+            <button href="#" class="btn btn-dark seu-perfil" title="Acesse a sua conta"> <i class="bi bi-person"> </i></button>
         </div>
     </header>
     <div class="container">
