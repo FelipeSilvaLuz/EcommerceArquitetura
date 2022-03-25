@@ -473,7 +473,7 @@ a {
 .w3-modal {
     z-index: 9999;
     display: none;
-    padding-top: 100px;
+    padding-top: 3em;
     position: fixed;
     left: 0;
     top: 0;
