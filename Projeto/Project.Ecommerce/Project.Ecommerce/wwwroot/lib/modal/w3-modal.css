@@ -1417,7 +1417,7 @@ a {
 
 .w3-green, .w3-hover-green:hover {
     color: #fff !important;
-    background-color: #4CAF50 !important
+    background-color: rgb(0,95,107) !important
 }
 
 .w3-light-green, .w3-hover-light-green:hover {
