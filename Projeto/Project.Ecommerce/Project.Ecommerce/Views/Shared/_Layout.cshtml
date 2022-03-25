@@ -18,16 +18,17 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="~/css/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
 
-    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/bootstrap/jquery-1.12.2.min.js"></script>
+    <script src="~/js/bootstrap/jquery-ui.min.js"></script>
+    <script src="~/js/bootstrap/jquery.blockUI.js"></script>
+    <script src="~/js/bootstrap/select2.js"></script>
+    <script src="~/js/bootstrap/jquery.scrollbar.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
     <script src="~/js/bootstrap/datatables.min.js"></script>
-    <script src="~/js/bootstrap/jquery.blockUI.js"></script>
     <script src="~/js/bootstrap/jquery.dataTables.min.js"></script>
     <script src="~/js/bootstrap/jquery.mask.min.js"></script>
-    <script src="~/js/bootstrap/jquery.scrollbar.min.js"></script>
-    <script src="~/js/bootstrap/jquery-ui.min.js"></script>
-    <script src="~/js/bootstrap/select2.js"></script>
     <script src="~/js/bootstrap/slick.min.js"></script>
+    <script src="~/js/slick/slick-1.8.1/slick/slick.js"></script>
     <script src="~/js/layout/header.js"></script>
 </head>
 <body>
@@ -42,6 +43,7 @@
             <button href="#" class="btn btn-dark seu-perfil" title="Acesse a sua conta"> <i class="bi bi-person"> </i></button>
         </div>
     </header>
+    <partial name="../Slick/_imagens.cshtml" />
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
