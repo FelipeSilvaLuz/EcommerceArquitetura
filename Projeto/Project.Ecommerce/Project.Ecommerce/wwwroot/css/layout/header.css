@@ -13,12 +13,22 @@ html {
     text-rendering: optimizelegibility;
 }
 
+label a {
+    cursor: pointer;
+    color: black;
+}
+
+    label a:hover {
+        cursor: pointer;
+        color: black;
+    }
+
 body {
     font-size: 1.3em;
 }
 
 header {
-    height: 6%;
+    height: 2em;
     position: relative;
     overflow: hidden;
     background: rgb(0,95,107);
