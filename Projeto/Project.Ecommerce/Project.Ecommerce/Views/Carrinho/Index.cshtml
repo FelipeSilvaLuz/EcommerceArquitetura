@@ -62,7 +62,33 @@
 
             <hr />
 
+            <div class="card col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="card-body row">
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        <img src="~/images/avatar-user.png" style="width: 8em;" />
+                    </div>
 
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <label>Nome do Produto...</label>
+                    </div>
+
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <button type="button" class="quantity-left-minus btn btn-dark btn-number" data-type="minus" data-field="">
+                                    <span class="glyphicon glyphicon-minus"></span>
+                                </button>
+                            </span>
+                            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="10" min="1" max="100">
+                            <span class="input-group-btn">
+                                <button type="button" class="quantity-right-plus btn btn-dark btn-number" data-type="plus" data-field="">
+                                    <span class="bi bi-plus-lg"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 
