@@ -115,3 +115,8 @@ body {
     font-size: 95%;
     text-decoration: none;
 }
+
+.alinhamento {
+  text-align: start; 
+  margin-top: 1%;
+}
