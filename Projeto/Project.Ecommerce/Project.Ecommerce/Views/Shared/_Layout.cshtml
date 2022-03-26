@@ -35,20 +35,20 @@
 <body>
     <header class="d-flex align-items-center">
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-            <label>Bem-vindo, Faça seu <a data-toggle="modal" data-target="#modalAcessarConta"><b>Login</b></a> ou <a data-toggle="modal" data-target="#modalCriarConta"><b>Cadastre-se</b></a></label>
+            <label style="color:white;">Bem-vindo, Faça seu <a data-toggle="modal" data-target="#modalAcessarConta"><b>Login</b></a> ou <a data-toggle="modal" data-target="#modalCriarConta"><b>Cadastre-se</b></a></label>
         </div>
 
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="text-align: right">
-            <button href="#" class="btn btn-dark fale-conosco" title="Fale Conosco" data-toggle="modal" data-target="#modalFaleConosco"> <i class="bi bi-chat-dots"> </i></button>
-            <a class="btn btn-dark carrinho" asp-action="Index" asp-controller="Carrinho" title="Acesse o seu carrinho"> <i class="bi bi-cart"> </i> </a>
-            <a class="btn btn-dark seu-perfil" asp-action="Index" asp-controller="Perfil" title="Acesse o seu perfil"> <i class="bi bi-person"> </i></a>
+            <button href="#" class="btn btn-transparent fale-conosco" title="Fale Conosco" data-toggle="modal" data-target="#modalFaleConosco"> <i class="bi bi-chat-dots"> </i></button>
+            <a class="btn btn-transparent carrinho" asp-action="Index" asp-controller="Carrinho" title="Acesse o seu carrinho"> <i class="bi bi-cart"> </i> </a>
+            <a class="btn btn-transparent seu-perfil" asp-action="Index" asp-controller="Perfil" title="Acesse o seu perfil"> <i class="bi bi-person"> </i></a>
         </div>
     </header>
     <partial name="../Slick/_imagens.cshtml" />
     <div class="header d-flex align-items-center">
         <nav class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="text-align: left;">
             <div class="btn-group dropdown">
-                <button href="#" class="btn btn-dark dropdown-toggle dropbtn" data-toggle="dropdown" id="masculino">Masculino</button>
+                <button href="#" class="btn btn-transparent dropdown-toggle dropbtn" data-toggle="dropdown" id="masculino">Masculino</button>
                 <div class="dropdown-menu dropdown-content" aria-labelledby="masculino">
                     <a class="dropdown-item" href="#">Acessórios</a>
                     <a class="dropdown-item" href="#">Bermudas</a>
@@ -60,7 +60,7 @@
             </div>
 
             <div class="btn-group dropdown">
-                <button href="#" class="btn btn-dark dropdown-toggle dropbtn" data-toggle="dropdown" id="feminino">Feminino</button>
+                <button href="#" class="btn btn-transparent dropdown-toggle dropbtn" data-toggle="dropdown" id="feminino">Feminino</button>
                 <div class="dropdown-menu dropdown-content" aria-labelledby="feminino">
                     <a class="dropdown-item" href="#">Acessórios</a>
                     <a class="dropdown-item" href="#">Blazers</a>
@@ -70,7 +70,7 @@
             </div>
 
             <div class="btn-group dropdown">
-                <button href="#" class="btn btn-dark dropdown-toggle dropbtn" data-toggle="dropdown" id="acessorios">Acessórios</button>
+                <button href="#" class="btn btn-transparent dropdown-toggle dropbtn" data-toggle="dropdown" id="acessorios">Acessórios</button>
                 <div class="dropdown-menu dropdown-content" aria-labelledby="acessorios">
                     <a class="dropdown-item" href="#">Bonés</a>
                     <a class="dropdown-item" href="#">Carteiras</a>
@@ -78,13 +78,13 @@
                 </div>
             </div>
 
-            <button href="#" class="btn btn-dark">Calçados</button>
-            <button href="#" class="btn btn-dark">Vale-Presente</button>
-            <button href="#" class="btn btn-dark">Ofertas</button>
+            <button href="#" class="btn btn-transparent">Calçados</button>
+            <button href="#" class="btn btn-transparent">Vale-Presente</button>
+            <button href="#" class="btn btn-transparent">Ofertas</button>
         </nav>
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <input type="text" class="btn btn-dark" placeholder="Busca" style="text-align:left" />
-            <button href="#" class="btn btn-dark" style="margin-left: -2%"><i class="bi bi-search"></i></button>
+            <input type="text" class="btn btn-light" placeholder="Busca" style="text-align:left" />
+            <button href="#" class="btn btn-light" style="margin-left: -2%"><i class="bi bi-search"></i></button>
         </div>
     </div>
 

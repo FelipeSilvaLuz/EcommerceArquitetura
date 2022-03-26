@@ -30,7 +30,6 @@ body {
 header {
     height: 3em;
     position: relative;
-    overflow: hidden;
     background: rgb(0,95,107);
     background: linear-gradient(90deg, rgba(0,95,107,1) 0%, rgba(0,107,107,0.7458333675266982) 100%, rgba(0,81,107,1) 100%);
     background-size: cover;
