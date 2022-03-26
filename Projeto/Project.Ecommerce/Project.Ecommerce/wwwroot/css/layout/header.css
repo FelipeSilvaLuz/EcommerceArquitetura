@@ -36,6 +36,14 @@ header {
     background-size: cover;
 }
 
+.header {
+    height: 3em;
+    position: relative;
+    background: rgb(0,95,107);
+    background: linear-gradient(90deg, rgba(0,95,107,1) 0%, rgba(0,107,107,0.7458333675266982) 100%, rgba(0,81,107,1) 100%);
+    background-size: cover;
+}
+
 
 .fale-conosco:hover:after {
     content: "Fale Conosco";
@@ -47,4 +55,28 @@ header {
 
 .seu-perfil:hover:after {
     content: "Seu Perfil";
+}
+
+.dropbtn {
+    color: white;
+    border: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }

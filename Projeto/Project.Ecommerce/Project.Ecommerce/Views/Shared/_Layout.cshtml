@@ -45,20 +45,45 @@
         </div>
     </header>
     <partial name="../Slick/_imagens.cshtml" />
-    <header class="d-flex align-items-center">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center">
-            <button href="#" class="btn btn-dark">Acessórios</button>
-            <button href="#" class="btn btn-dark">Masculino</button>
-            <button href="#" class="btn btn-dark">Feminino</button>
+    <div class="header d-flex align-items-center">
+        <nav class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: center;">
+            <div class="btn-group dropdown">
+                <button href="#" class="btn btn-dark dropdown-toggle dropbtn" data-toggle="dropdown" id="masculino">Masculino</button>
+                <div class="dropdown-menu dropdown-content" aria-labelledby="masculino">
+                    <a class="dropdown-item" href="#">Acessórios</a>
+                    <a class="dropdown-item" href="#">Bermudas</a>
+                    <a class="dropdown-item" href="#">Camisas</a>
+                    <a class="dropdown-item" href="#">Camisetas</a>
+                    <a class="dropdown-item" href="#">Calças</a>
+                    <a class="dropdown-item" href="#">Jaquetas</a>
+                </div>
+            </div>
+
+            <div class="btn-group dropdown">
+                <button href="#" class="btn btn-dark dropdown-toggle dropbtn" data-toggle="dropdown" id="feminino">Feminino</button>
+                <div class="dropdown-menu dropdown-content" aria-labelledby="feminino">
+                    <a class="dropdown-item" href="#">Acessórios</a>
+                    <a class="dropdown-item" href="#">Blazers</a>
+                    <a class="dropdown-item" href="#">Blusas</a>
+                    <a class="dropdown-item" href="#">Saias</a>
+                </div>
+            </div>
+
+            <div class="btn-group dropdown">
+                <button href="#" class="btn btn-dark dropdown-toggle dropbtn" data-toggle="dropdown" id="acessorios">Acessórios</button>
+                <div class="dropdown-menu dropdown-content" aria-labelledby="acessorios">
+                    <a class="dropdown-item" href="#">Bonés</a>
+                    <a class="dropdown-item" href="#">Carteiras</a>
+                    <a class="dropdown-item" href="#">Cintos</a>
+                </div>
+            </div>
+
             <button href="#" class="btn btn-dark">Calçados</button>
-            <button href="#" class="btn btn-dark">Bermudas</button>
-            <button href="#" class="btn btn-dark">Jaquetas</button>
-            <button href="#" class="btn btn-dark">Moletons</button>
-            <button href="#" class="btn btn-dark">Vestidos</button>
-            <button href="#" class="btn btn-dark">Casacos</button>
-            <button href="#" class="btn btn-dark">Polos</button>
-        </div>
-    </header>
+            <button href="#" class="btn btn-dark">Vale-Presente</button>
+            <button href="#" class="btn btn-dark">Ofertas</button>
+        </nav>
+    </div>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
