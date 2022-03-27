@@ -116,13 +116,27 @@ body {
     text-decoration: none;
 }
 
-.alinhamento {
-  text-align: start; 
+.alinhamento:hover { 
   margin-top: 1%;
+  background-color: #e9e1e1;
+  border-color: #e9e1e1;
+  color: #8f8f8f;
+  cursor: pointer;
+  margin: auto 0;
+  transition: color .3s;
 }
 
 .btn-transparent {
     color: #fff;
     background-color: transparent;
     border-color: transparent;
+}
+
+.bordas {
+  color: #8f8f8f;
+  display: flex;
+  border-bottom: 1px solid #e9e1e1;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #e9e1e1;
 }
