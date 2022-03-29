@@ -117,13 +117,12 @@ body {
 }
 
 .alinhamento:hover { 
-  margin-top: 1%;
   background-color: #e9e1e1;
   border-color: #e9e1e1;
   color: #8f8f8f;
   cursor: pointer;
-  margin: auto 0;
-  transition: color .3s;
+  text-decoration: none;
+  height: 2em;
 }
 
 .btn-transparent {
@@ -139,4 +138,6 @@ body {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: #e9e1e1;
+  margin-top: 1em;
+  height: 2em;
 }
