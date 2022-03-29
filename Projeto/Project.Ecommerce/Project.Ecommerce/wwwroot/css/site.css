@@ -140,3 +140,41 @@ body {
   margin-top: 1em;
   height: 2em;
 }
+
+.senha {
+  color: #8f8f8f;
+  border-radius: 2px;
+  display: flex;
+  height: 2em;
+  margin-top: 2em;
+}
+
+.buttonAlterarSenha1 {
+display: inline-block;
+padding: 15px 25px;
+font-size: 14px;
+cursor: pointer;
+text-align: center;	
+text-decoration: none;
+outline: none;
+color: #fff;
+background-color: #8f8f8f;
+border: none;
+border-radius: 15px;
+box-shadow: none;
+}
+
+.buttonAlterarSenha:hover {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;	
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #8f8f8f;
+  border: none;
+  border-radius: 15px;
+  box-shadow: none;
+}
