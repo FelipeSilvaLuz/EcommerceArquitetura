@@ -151,7 +151,7 @@ body {
 
 .buttonAlterarSenha1 {
 display: inline-block;
-padding: 15px 25px;
+padding: 6px 25px;
 font-size: 14px;
 cursor: pointer;
 text-align: center;	
@@ -162,19 +162,35 @@ background-color: #8f8f8f;
 border: none;
 border-radius: 15px;
 box-shadow: none;
+position: absolute;
+top: 16em;
+left: 264px;
 }
 
 .buttonAlterarSenha:hover {
   display: inline-block;
-  padding: 15px 25px;
+  padding: 6px 25px;
   font-size: 14px;
   cursor: pointer;
   text-align: center;	
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: #8f8f8f;
+  background-color: #7a7979;
   border: none;
   border-radius: 15px;
   box-shadow: none;
+  position: absolute;
+  top: 16em;
+  left: 264px;
+}
+
+.caixaTexto {
+  border-radius: 10px;
+  position: absolute;
+  border-color: #8f8f8f;
+  border-width: 1px;
+  border-style: solid;
+  color: #7a7979;
+  
 }
