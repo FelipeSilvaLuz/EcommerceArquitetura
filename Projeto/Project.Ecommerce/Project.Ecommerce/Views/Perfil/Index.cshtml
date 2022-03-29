@@ -48,19 +48,83 @@
             <a class="btn btn-transparent seu-perfil" asp-action="Index" asp-controller="Perfil" title="Acesse o seu perfil"> <i class="bi bi-person"> </i></a>
         </div>
     </header>
+    <div class="row">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <ul class="nav nav-tabs">
+                <li class="active col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <a href="#tabsTop-1" class="alinhamento bordas" data-toggle="tab" title="Minha Conta">
+                        <i class="bi bi-person"> Minha conta</i>
+                    </a>
+                </li>
 
-   <aside> 
-        <div style="margin-top: 3em;" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <li class="disabled col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <a href="#tabsTop-2" class="alinhamento bordas" data-toggle="tab" title="Meus pedidos">
+                        <i class="bi bi-clipboard"> Meus pedidos</i>
+                    </a>
+                </li>
 
-            <a class="nav-link alinhamento bordas" href="#"><i class="bi bi-person"></i> Minha Conta </a>
-            <a class="nav-link alinhamento bordas" href="#"><i class="bi bi-clipboard"></i> Meus pedidos </a>
-            <a class="nav-link alinhamento bordas" href="#"><i class="bi bi-journal"></i> Meus dados </a>
-            <a class="nav-link alinhamento bordas" href="#"><i class="bi bi-geo-alt"></i> Meus endereços </a>
-            <a class="nav-link alinhamento bordas" href="#"><i class="bi bi-arrow-left-right"></i> Trocas/Devoluções </a>
-            <a class="nav-link alinhamento bordas" href="#"><i class="bi bi-key"></i> Alterar senha </a>
-            <a class="nav-link alinhamento bordas" href="#"><i class="bi bi-box-arrow-left"></i> Sair </a>
+                <li class="disabled col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <a href="#tabsTop-3" class="alinhamento bordas" data-toggle="tab" title="Meus dados">
+                        <i class="bi bi-journal"> Meus dados</i>
+                    </a>
+                </li>
+
+                <li class="disabled col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <a href="#tabsTop-4" class="alinhamento bordas" data-toggle="tab" title="Meus endereços">
+                        <i class="bi bi-geo-alt"> Meus endereços</i>
+                    </a>
+                </li>
+
+                <li class="disabled col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <a href="#tabsTop-5" class="alinhamento bordas" data-toggle="tab" title="Trocas/Devoluções">
+                        <i class="bi bi-arrow-left-right"> Trocas/Devoluções</i>
+                    </a>
+                </li>
+
+                <li class="disabled col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <a href="#tabsTop-6" class="alinhamento bordas" data-toggle="tab" title="Alterar senha">
+                        <i class="bi bi-key"> Alterar senha</i>
+                    </a>
+                </li>
+
+                <li class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <a href="#" class="alinhamento bordas" title="Alterar senha">
+                        <i class="bi bi-box-arrow-left"> Sair</i>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </aside>
+        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+            <div class="tab-content">
+
+                <div id="tabsTop-1" class="tab-pane fade in active">
+                    @Html.Partial("_conta")
+                </div>
+
+                <div id="tabsTop-2" class="tab-pane fade">
+                    @Html.Partial("_pedido")
+                </div>
+
+                <div id="tabsTop-3" class="tab-pane fade">
+                    @Html.Partial("_dados")
+                </div>
+
+                <div id="tabsTop-4" class="tab-pane fade">
+                    @Html.Partial("_endereco")
+                </div>
+
+                <div id="tabsTop-5" class="tab-pane fade">
+                    @Html.Partial("_troca")
+                </div>
+
+                <div id="tabsTop-6" class="tab-pane fade">
+                    @Html.Partial("_alterar-senha")
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <footer class="border-top footer;" style="text-align: center;">
 
         <h4>E-COMMERCE PROJETO</h4>
@@ -74,10 +138,20 @@
         <div style="margin-top: 10px;"></div>
     </footer>
 
-    <partial name="../Modal/_header.cshtml"/>
+    <partial name="../Modal/_header.cshtml" />
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#tabsTop").tabs();
+        });
+        $(document).ready(function () {
+            $("#adicionar").addClass("active");
+
+        });
+    </script>
 </body>
 </html>
