@@ -194,3 +194,7 @@ left: 264px;
   color: #7a7979;
   
 }
+
+.card:hover{
+    border-color: black;
+}
