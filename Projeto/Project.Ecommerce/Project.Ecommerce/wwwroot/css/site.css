@@ -193,6 +193,7 @@ left: 264px;
   border-width: 1px;
   border-style: solid;
   color: #7a7979;
+<<<<<<< HEAD
   font-size: 0.600rem;
   width: 20em;
 }
@@ -218,3 +219,11 @@ left: 264px;
   height: 2em;
  
 }
+=======
+  
+}
+
+.card:hover{
+    border-color: black;
+}
+>>>>>>> c59d0bd3ce27300fdaa8420cc56816d388260c21

@@ -1,10 +1,77 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<div style="text-align: center; background-color: darkgray;">
+<div>
+    <br />
     <h2>DESTAQUES</h2>
+    <hr />
 </div>
 <br />
-<div class="card col-xs-3 col-sm-3 col-md-3 col-lg-3">
-    <img src="~/images/avatar-user.png"/>
+<div class="destaque-slick" style="text-align: center;">
+
+    <div class="card col-xs-11 col-sm-11 col-md-11 col-lg-11" id="detalhesProduto" style="text-align: center; cursor: pointer ">
+        <img src="~/images/avatar-user.png" width="200"/>
+
+        <label>CAMISETA DIF STATION 0305560</label>
+        <h2><b>R$: 40,00</b></h2>
+        <label>ou 4x de R$: 10,00 sem tarifa</label>
+    </div>
+    <div class="card col-xs-11 col-sm-11 col-md-11 col-lg-11" style="text-align: center; cursor: pointer ">
+        <img src="~/images/avatar-user.png" width="200" />
+
+        <label>CAMISETA DIF STATION 0305560</label>
+        <h2><b>R$: 40,00</b></h2>
+        <label>ou 4x de R$: 10,00 sem tarifa</label>
+    </div>
+    <div class="card col-xs-11 col-sm-11 col-md-11 col-lg-11" style="text-align: center; cursor: pointer ">
+        <img src="~/images/avatar-user.png" width="200" />
+
+        <label>CAMISETA DIF STATION 0305560</label>
+        <h2><b>R$: 40,00</b></h2>
+        <label>ou 4x de R$: 10,00 sem tarifa</label>
+    </div>
+    <div class="card col-xs-11 col-sm-11 col-md-11 col-lg-11" style="text-align: center; cursor: pointer ">
+        <img src="~/images/avatar-user.png" width="200" />
+
+        <label>CAMISETA DIF STATION 0305560</label>
+        <h2><b>R$: 40,00</b></h2>
+        <label>ou 4x de R$: 10,00 sem tarifa</label>
+    </div>
+    <div class="card col-xs-11 col-sm-11 col-md-11 col-lg-11" style="text-align: center; cursor: pointer ">
+        <img src="~/images/avatar-user.png" width="200" />
+
+        <label>CAMISETA DIF STATION 0305560</label>
+        <h2><b>R$: 40,00</b></h2>
+        <label>ou 4x de R$: 10,00 sem tarifa</label>
+    </div>
+    <div class="card col-xs-11 col-sm-11 col-md-11 col-lg-11" style="text-align: center; cursor: pointer ">
+        <img src="~/images/avatar-user.png" width="200" />
+
+        <label>CAMISETA DIF STATION 0305560</label>
+        <h2><b>R$: 40,00</b></h2>
+        <label>ou 4x de R$: 10,00 sem tarifa</label>
+    </div>
+    <div class="card col-xs-11 col-sm-11 col-md-11 col-lg-11" style="text-align: center; cursor: pointer ">
+        <img src="~/images/avatar-user.png" width="200" />
+
+        <label>CAMISETA DIF STATION 0305560</label>
+        <h2><b>R$: 40,00</b></h2>
+        <label>ou 4x de R$: 10,00 sem tarifa</label>
+    </div>
 </div>
+
+<script>
+    $('.destaque-slick').slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: true,
+        speed: 200,
+        autoplay: false
+    });
+
+    $('#detalhesProduto').click(function (retorno) {
+        window.location.replace('Detalhes');
+    });
+
+</script>
