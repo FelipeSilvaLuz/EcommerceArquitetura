@@ -17,6 +17,12 @@ namespace Project.Ecommerce.Controllers
             return View();
         }
 
+        [Route("/Detalhes")]
+        public IActionResult Detalhes()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
