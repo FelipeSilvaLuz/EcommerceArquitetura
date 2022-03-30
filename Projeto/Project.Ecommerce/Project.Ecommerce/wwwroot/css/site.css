@@ -222,24 +222,3 @@ left: 264px;
 .card:hover{
     border-color: black;
 }
-
-* {
-    box-sizing: border-box;
-}
-
-.img-zoom-container {
-    position: relative;
-}
-
-.img-zoom-lens {
-    position: absolute;
-    border: 1px solid #d4d4d4;
-    width: 150px;
-    height: 150px;
-}
-
-.img-zoom-result {
-    border: 1px solid #d4d4d4;
-    width: 25em;
-    height: 25em;
-}

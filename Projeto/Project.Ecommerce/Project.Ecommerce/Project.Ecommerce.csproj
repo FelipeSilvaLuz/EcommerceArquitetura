@@ -12,6 +12,7 @@
   <ItemGroup>
     <Folder Include="wwwroot\css\bootstrap\" />
     <Folder Include="wwwroot\js\bootstrap\" />
+    <Folder Include="wwwroot\js\detalhes\" />
   </ItemGroup>
 
 </Project>
