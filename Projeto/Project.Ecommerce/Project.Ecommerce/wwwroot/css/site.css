@@ -139,6 +139,7 @@ body {
   border-bottom-color: #e9e1e1;
   margin-top: 1em;
   height: 2em;
+  font-size: 1.0625rem;
 }
 
 .senha {
@@ -160,7 +161,7 @@ outline: none;
 color: #fff;
 background-color: #8f8f8f;
 border: none;
-border-radius: 15px;
+border-radius: 10px;
 box-shadow: none;
 position: absolute;
 top: 16em;
@@ -178,7 +179,7 @@ left: 264px;
   color: #fff;
   background-color: #7a7979;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: none;
   position: absolute;
   top: 16em;
@@ -186,11 +187,34 @@ left: 264px;
 }
 
 .caixaTexto {
-  border-radius: 10px;
+  border-radius: 4px;
   position: absolute;
   border-color: #8f8f8f;
   border-width: 1px;
   border-style: solid;
   color: #7a7979;
-  
+  font-size: 0.600rem;
+  width: 20em;
+}
+
+.titulopaginas {
+  color: #8f8f8f;
+  font-weight: 700;
+  font-size: 1.0625rem;
+  display: flex;
+  border-bottom: 1px solid #e9e1e1;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #e9e1e1;
+  margin-top: 1em;
+  height: 2em;
+}
+
+.formularioPerfil {
+  color: #8f8f8f;
+  font-size: 0.800rem;
+  display: flex;
+  margin-top: 0em;
+  height: 2em;
+ 
 }
