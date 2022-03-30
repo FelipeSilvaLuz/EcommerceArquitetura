@@ -1,14 +1,45 @@
 ﻿@{
     ViewData["Title"] = "Detalhes";
 }
-<div class="col-md-12 row">
-    <div class="mousetrap col-md-6">
-        <img src="~/images/bone.jpg" class="rounded mx-auto d-block img-responsive" style="text-align: center; width: 70%">
+
+<div class="col-md-12 row" style="margin-top: 2em">
+    <div class="img-zoom-container col-md-5">
+        <img id="myimage" src="~/images/bone.jpg" class="rounded mx-auto d-block img-responsive" style="text-align: center; width: 70%">
     </div>
 
-    <div class="col-md-6">
-        <h2>CAMISETA DIF STATION 0305560</h2>
-        <label>Modelo:360161</label>
-        <label>Disponibilidade: Imediata</label>
+    <div class="col-md-7">
+        <div style="text-align: left">
+            <h2>CAMISETA DIF STATION 0305560</h2>
+            <hr />
+            <div id="myresult" class="img-zoom-result" style="position: absolute; margin-left: 50%;"></div>
+            <h4><b>Modelo:</b> 360161</h4>
+            <h4><b>Disponibilidade:</b> Imediata</h4>
+            <br />
+            <h1><b>R$ 50,00</b></h1>
+            <br />
+            <div class="input-group" style="width: 20%">
+                <span class="input-group-btn">
+                    <button type="button" class="quantity-left-minus btn btn-dark btn-number" data-type="minus" data-field="">
+                        <i class="bi bi-arrow-left-short"></i>
+                    </button>
+                </span>
+                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100" style="text-align: center">
+                <span class="input-group-btn">
+                    <button type="button" class="quantity-right-plus btn btn-dark btn-number" data-type="plus" data-field="">
+                        <i class="bi bi-arrow-right-short"></i>
+                    </button>
+                </span>
+            </div>
+            <br />
+            <br />
+            <label>Simular Frete</label>
+            <div class="row" style=" margin-left: 0%;">
+                <input type="text" class="input-group-text" placeholder="Informe seu CEP" style="width: 30%; text-align:left" />
+                <button class="btn btn-dark" style="margin-left: 1em;"> Calcular</button>
+            </div>
+            <div style="margin-top: 2em;">
+                <button class="btn btn-success" style=" width: 44%; height: 4em;"><i class="bi bi-cart4"></i> Comprar</button>
+            </div>
+        </div>
     </div>
 </div>
