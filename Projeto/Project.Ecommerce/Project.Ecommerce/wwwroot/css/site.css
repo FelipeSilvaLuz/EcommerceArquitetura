@@ -211,7 +211,7 @@ left: 264px;
 }
 
 .formularioPerfil {
-  color: #8f8f8f;
+  color: #7c7a7a;
   font-size: 0.800rem;
   display: flex;
   margin-top: 0em;
@@ -222,3 +222,67 @@ left: 264px;
 .card:hover{
     border-color: black;
 }
+
+.notfound {
+  color: #8f8f8f;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 6em;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.textnotfound {
+  color: #8f8f8f;
+  font-style: bolder;
+  text-align: center;
+  font-size: 1em;
+}
+
+.textnotfoundlink {
+  color: #4d973e;
+  font-style: normal;
+  text-align: center;
+  margin-top: -1%;
+}
+
+.boxdadospessoais {
+  display: inline-block;
+}
+
+.editardados {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4d973e;
+  border: none;
+  border-radius: 10px;
+  box-shadow: none;
+  margin-left: 50%;
+}
+
+.editardadosh:hover {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4d973e;
+  border: none;
+  border-radius: 10px;
+  box-shadow: none;
+  position: absolute;
+  margin-left: 50%;
+}
+
+
