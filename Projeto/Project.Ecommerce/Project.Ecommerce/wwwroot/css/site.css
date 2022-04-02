@@ -295,8 +295,17 @@ left: 264px;
   border: none;
   border-radius: 5px;
   box-shadow: none;
-
   margin-left: 50%;
 }
 
+.caixaTextoMeusDados {
+  border-radius: 4px;
+  position: absolute;
+  border-color: #8f8f8f;
+  border-width: 1px;
+  border-style: solid;
+  color: #7a7979;
+  font-size: 0.600rem;
+  width: 20em;
+}
 
