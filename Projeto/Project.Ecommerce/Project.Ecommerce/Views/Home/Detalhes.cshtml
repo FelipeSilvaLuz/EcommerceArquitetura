@@ -2,56 +2,6 @@
     ViewData["Title"] = "Detalhes";
 }
 
-<style>
-    #carousel {
-        overflow: hidden;
-        border-radius: 4px;
-    }
-
-    .p-wrapper {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.4s ease-in-out;
-    }
-
-    #button_a:checked ~ #carousel .p-wrapper {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-
-    #button_b:checked ~ #carousel .p-wrapper {
-        -webkit-transform: translateY(-100%);
-        transform: translateY(-100%);
-    }
-
-    #button_c:checked ~ #carousel .p-wrapper {
-        -webkit-transform: translateY(-200%);
-        transform: translateY(-200%);
-    }
-
-    #button_d:checked ~ #carousel .p-wrapper {
-        -webkit-transform: translateY(-300%);
-        transform: translateY(-300%);
-    }
-
-    [class^="panel_"] {
-        overflow: auto;
-        position: relative;
-        width: inherit;
-        height: inherit;
-    }
-
-    [class^="label_"] {
-        display: block;
-        cursor: pointer;
-        width: 30%;
-        text-align: center;
-        transition: all 0.3s ease;
-    }
-</style>
-
 <div class="col-md-12 row" style="margin-top: 2em">
     <div class="col-md-6">
         <div class="col-md-12 row" style="margin-top: 2em;">
