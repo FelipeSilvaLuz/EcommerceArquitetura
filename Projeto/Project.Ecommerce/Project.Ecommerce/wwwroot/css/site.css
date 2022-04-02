@@ -216,7 +216,6 @@ left: 264px;
   display: flex;
   margin-top: 0em;
   height: 2em;
- 
 }
 
 .orientacoesPerfil {
@@ -257,6 +256,12 @@ left: 264px;
 
 .boxdadospessoais {
   display: inline-block;
+}
+
+.boxdadospessoais2 {
+  display: inline-block;
+  height: 50%;
+  width: 14%;
 }
 
 .boxalterarsenha {
@@ -305,8 +310,24 @@ left: 264px;
   border-width: 1px;
   border-style: solid;
   color: #7a7979;
-  font-size: 0.600rem;
+  font-size: 74%;
   width: 20em;
+  height: 7%;
+}
+
+.formularioDados {
+  color: #7c7a7a;
+  font-size: 0.800rem;
+  display: flex;
+  margin-top: 22%;
+  height: 2.1em;
+}
+
+.checkboxdados {
+  color: #7c7a7a;
+  font-size: 0.800rem;
+  margin-top: 4em;
+  height: 2em;
 }
 
 #carousel {
