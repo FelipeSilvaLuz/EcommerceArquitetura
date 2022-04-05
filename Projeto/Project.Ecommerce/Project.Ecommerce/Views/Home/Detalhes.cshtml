@@ -2,6 +2,24 @@
     ViewData["Title"] = "Detalhes";
 }
 
+<style>
+    .table {
+        border: 1px solid #ededed;
+        -webkit-border-radius: 10px;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    th, td {
+        padding: 1em;
+    }
+
+</style>
+
 <div class="col-md-12 row" style="margin-top: 2em; height:40em">
     <div class="col-md-6">
         <div class="col-md-12 row" style="margin-top: 2em;">
@@ -80,29 +98,29 @@
 <hr />
 <div class="col-md-11" style="margin: auto;">
     <div>
-        <h2>Caracteristicas do Produto</h2>
+        <h2>Características principais</h2>
     </div>
     <br />
     <table class="table table-striped">
         <tbody>
             <tr>
-                <td>Tamanho</td>
+                <td class="col-md-4"><b>Tamanho</b></td>
                 <td>P</td>
             </tr>
             <tr>
-                <td>Cor</td>
+                <td class="col-md-4"><b>Cor</b></td>
                 <td>Preto</td>
             </tr>
             <tr>
-                <td>Modelo</td>
+                <td class="col-md-4"><b>Modelo</b></td>
                 <td>Aba Reta</td>
             </tr>
             <tr>
-                <td>Marca</td>
+                <td class="col-md-4"><b>Marca</b></td>
                 <td>Nike</td>
             </tr>
             <tr>
-                <td>Ano</td>
+                <td class="col-md-4"><b>Ano</b></td>
                 <td>2022</td>
             </tr>
         </tbody>
