@@ -2,6 +2,23 @@
     ViewData["Title"] = "Detalhes";
 }
 
+<style>
+    .table {
+        border: 1px solid #ededed;
+        -webkit-border-radius: 10px;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    th, td {
+        padding: 1em;
+    }
+</style>
+
 <div class="col-md-12 row" style="margin-top: 2em; height:40em">
     <div class="col-md-6">
         <div class="col-md-12 row" style="margin-top: 2em;">
@@ -78,6 +95,77 @@
 </div>
 
 <hr />
-<div>
+<div class="col-md-11" style="margin: auto;">
+    <div>
+        <h2>Características principais</h2>
+    </div>
+    <br />
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <td class="col-md-4"><b>Tamanho</b></td>
+                <td>P</td>
+            </tr>
+            <tr>
+                <td class="col-md-4"><b>Cor</b></td>
+                <td>Preto</td>
+            </tr>
+            <tr>
+                <td class="col-md-4"><b>Modelo</b></td>
+                <td>Aba Reta</td>
+            </tr>
+            <tr>
+                <td class="col-md-4"><b>Marca</b></td>
+                <td>Nike</td>
+            </tr>
+            <tr>
+                <td class="col-md-4"><b>Ano</b></td>
+                <td>2022</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
+<hr />
+
+<div class="col-md-11" style="margin: auto;">
+    <div>
+        <h2>Perguntas e respostas</h2>
+    </div>
+    <br />
+    <div>
+        <label>Pergunte ao vendedor</label>
+        <div class="row">
+            <div class="col-md-10">
+                <textarea type="text" class="form-control" placeholder="Escreva sua pergunta..."></textarea>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-success" style=" width: 100%; height: 50px;">Perguntar</button>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div>
+        <label>Últimas perguntas feitas</label>
+        <br />
+        <br />
+        <div class="col-md-12">
+            <span>Boa noite. Tem cor da lâmpada verde?</span>
+            <br />
+            <span style="color: gray;"><i class="bi bi-arrow-return-right"></i> Boa noite. Tem cor da lâmpada verde? <label style="font-size: 10px;">05/03/2022 17:30</label></span>
+        </div>
+        <br />
+        <div class="col-md-12">
+            <span>Boa noite. Tem cor da lâmpada verde?</span>
+            <br />
+            <span style="color: gray;"><i class="bi bi-arrow-return-right"></i> Boa noite. Tem cor da lâmpada verde? <label style="font-size: 10px;">05/03/2022 17:30</label></span>
+        </div>
+        <br />
+        <div class="col-md-12">
+            <span>Boa noite. Tem cor da lâmpada verde?</span>
+            <br />
+            <span style="color: gray;"><i class="bi bi-arrow-return-right"></i> Boa noite. Tem cor da lâmpada verde? <label style="font-size: 10px;">05/03/2022 17:30</label></span>
+        </div>
+    </div>
 </div>
