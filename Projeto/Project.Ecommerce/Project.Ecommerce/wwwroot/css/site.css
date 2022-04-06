@@ -329,6 +329,27 @@ left: 264px;
   height: 2em;
 }
 
+.checkboxenderecos {
+  color: #7c7a7a;
+  font-size: 0.800rem;
+  margin-top: 2em;
+  height: 2em;
+}
+
+.formularioEnderecos {
+  color: #7c7a7a;
+  font-size: 0.7em;
+  display: flex;
+  margin-top: 2%;
+}
+
+.form-control{
+  color: #8f8f8f;
+  height: 2em;
+  width: 15em;
+  margin-top: 1em;
+}
+
 #carousel {
     overflow: hidden;
     border-radius: 4px;
