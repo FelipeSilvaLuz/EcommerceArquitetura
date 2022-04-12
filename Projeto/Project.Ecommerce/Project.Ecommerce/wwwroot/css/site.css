@@ -412,3 +412,8 @@ left: 264px;
     .left-inner-addon input.form-control {
         padding-left: 30px;
     }
+
+.redes-sociais {
+    font-size: 2em;
+    color: gray;
+}
