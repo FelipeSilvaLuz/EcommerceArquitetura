@@ -397,3 +397,18 @@ left: 264px;
     text-align: center;
     transition: all 0.3s ease;
 }
+
+.left-inner-addon {
+    position: relative;
+}
+
+    .left-inner-addon i {
+        position: absolute;
+        padding: 18px 10px;
+        pointer-events: none;
+        color: #666;
+    }
+
+    .left-inner-addon input.form-control {
+        padding-left: 30px;
+    }
