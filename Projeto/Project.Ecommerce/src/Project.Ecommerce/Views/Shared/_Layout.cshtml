@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Project.Ecommerce</title>
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet" />
+    <link href="~/css/bootstrap/jquery-ui.css" rel="stylesheet" />
+    <link href="~/css/bootstrap/select2.css" rel="stylesheet" />
+    <link href="~/css/bootstrap/slick.css" rel="stylesheet" />
+    <link href="~/css/bootstrap/slick-theme.css" rel="stylesheet" />
+    <link href="~/css/layout/header.css" rel="stylesheet" />
+    <link href="~/css/layout/footer.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="~/lib/modal/w3-modal.css" rel="stylesheet" />
+
+    <script src="~/js/bootstrap/jquery-1.12.2.min.js"></script>
+    <script src="~/js/bootstrap/jquery-ui.min.js"></script>
+    <script src="~/js/bootstrap/jquery.blockUI.js"></script>
+    <script src="~/js/bootstrap/select2.js"></script>
+    <script src="~/js/bootstrap/jquery.scrollbar.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/bootstrap/datatables.min.js"></script>
+    <script src="~/js/bootstrap/jquery.dataTables.min.js"></script>
+    <script src="~/js/bootstrap/jquery.mask.min.js"></script>
+    <script src="~/js/bootstrap/slick.min.js"></script>
+    <script src="~/js/slick/slick-1.8.1/slick/slick.js"></script>
+    <script src="~/js/layout/header.js"></script>
+</head>
+<body>
+    <header class="d-flex align-items-center">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <label style="color:white;">Bem-vindo, Faça seu <a data-toggle="modal" data-target="#modalAcessarConta"><b>Login</b></a> ou <a data-toggle="modal" data-target="#modalCriarConta"><b>Cadastre-se</b></a></label>
+        </div>
+
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="text-align: right">
+            <button href="#" class="btn btn-transparent fale-conosco" title="Fale Conosco" data-toggle="modal" data-target="#modalFaleConosco"> <i class="bi bi-chat-dots"> </i></button>
+            <a class="btn btn-transparent carrinho" asp-action="Index" asp-controller="Carrinho" title="Acesse o seu carrinho"> <i class="bi bi-cart"> </i> </a>
+            <a class="btn btn-transparent seu-perfil" asp-action="Index" asp-controller="Perfil" title="Acesse o seu perfil"> <i class="bi bi-person"> </i></a>
+        </div>
+    </header>
+    <partial name="../Slick/_imagens.cshtml" />
+    <div class="header d-flex align-items-center">
+        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="text-align: left; position: relative;">
+            <div class="btn-group dropdown">
+                <button href="#" class="btn btn-transparent dropdown-toggle dropbtn" data-toggle="dropdown" id="masculino">Masculino</button>
+                <div class="dropdown-menu dropdown-content" aria-labelledby="masculino">
+                    <a class="dropdown-item" href="#">Acessórios</a>
+                    <a class="dropdown-item" href="#">Bermudas</a>
+                    <a class="dropdown-item" href="#">Camisas</a>
+                    <a class="dropdown-item" href="#">Camisetas</a>
+                    <a class="dropdown-item" href="#">Calças</a>
+                    <a class="dropdown-item" href="#">Jaquetas</a>
+                </div>
+            </div>
+
+            <div class="btn-group dropdown">
+                <button href="#" class="btn btn-transparent dropdown-toggle dropbtn" data-toggle="dropdown" id="feminino">Feminino</button>
+                <div class="dropdown-menu dropdown-content" aria-labelledby="feminino">
+                    <a class="dropdown-item" href="#">Acessórios</a>
+                    <a class="dropdown-item" href="#">Blazers</a>
+                    <a class="dropdown-item" href="#">Blusas</a>
+                    <a class="dropdown-item" href="#">Saias</a>
+                </div>
+            </div>
+
+            <div class="btn-group dropdown">
+                <button href="#" class="btn btn-transparent dropdown-toggle dropbtn" data-toggle="dropdown" id="acessorios">Acessórios</button>
+                <div class="dropdown-menu dropdown-content" aria-labelledby="acessorios">
+                    <a class="dropdown-item" href="#">Bonés</a>
+                    <a class="dropdown-item" href="#">Carteiras</a>
+                    <a class="dropdown-item" href="#">Cintos</a>
+                </div>
+            </div>
+
+            <button href="#" class="btn btn-transparent">Calçados</button>
+            <button href="#" class="btn btn-transparent">Vale-Presente</button>
+            <button href="#" class="btn btn-transparent">Ofertas</button>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 form-group left-inner-addon">
+            <i class="bi bi-search"></i>
+            <input type="text" class="form-control" placeholder="Buscar..." style=" width: 100%;">
+        </div>
+    </div>
+
+    <div>
+        <main role="main" class="pb-3">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                @RenderBody()
+            </div>
+        </main>
+    </div>
+
+    <partial name="../Modal/_header.cshtml" />
+    
+    <partial name="../Shared/_Footer.cshtml" />
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
