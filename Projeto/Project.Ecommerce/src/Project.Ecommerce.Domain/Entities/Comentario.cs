@@ -3,8 +3,14 @@
     public class Comentario : BaseEntity
     {
         public int IdProduto { get; set; }
+
         public string Titulo { get; set; }
+
         public string Texto { get; set; }
+
         public int Nota { get; set; }
+
+
+        public Produto Produto { get; set; }
     }
 }
