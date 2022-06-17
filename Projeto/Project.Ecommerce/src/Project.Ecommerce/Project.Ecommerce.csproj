@@ -15,4 +15,8 @@
     <Folder Include="wwwroot\js\detalhes\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Project.Ecommerce.CrossCutting\Project.Ecommerce.CrossCutting.csproj" />
+  </ItemGroup>
+
 </Project>

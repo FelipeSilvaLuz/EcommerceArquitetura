@@ -1,13 +1,22 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Project.Ecommerce.CrossCutting.Settings;
 using Project.Ecommerce.Data.Map;
 
 namespace Project.Ecommerce.Data.Context
 {
     public class EcommerceContext : DbContext
     {
+        private readonly WebSettings _webSettings;
+
+        public EcommerceContext(IOptions<WebSettings> options)
+        {
+            _webSettings = options.Value;
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("connection string");
+            optionsBuilder.UseSqlServer(_webSettings.Database.ConnectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Project.Ecommerce.CrossCutting.Settings;
 
 namespace Project.Ecommerce
 {
@@ -17,6 +18,9 @@ namespace Project.Ecommerce
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<WebSettings>(options => Configuration.Bind(options));
+            WebSettings apiSettings = Configuration.Get<WebSettings>();
+
             services.AddControllersWithViews()
                 .AddRazorRuntimeCompilation()
                 .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
@@ -37,7 +41,6 @@ namespace Project.Ecommerce
             app.UseStaticFiles();
 
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

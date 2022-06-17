@@ -329,6 +329,16 @@
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
         }
+      },
+      "Project.Ecommerce.CrossCutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Project.Ecommerce.CrossCutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Project.Ecommerce.CrossCutting.dll": {}
+        }
       }
     }
   },
@@ -858,12 +868,18 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Project.Ecommerce.CrossCutting/1.0.0": {
+      "type": "project",
+      "path": "../../Project.Ecommerce.CrossCutting/Project.Ecommerce.CrossCutting.csproj",
+      "msbuildProject": "../../Project.Ecommerce.CrossCutting/Project.Ecommerce.CrossCutting.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 3.1.23",
-      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 3.1.23"
+      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 3.1.23",
+      "Project.Ecommerce.CrossCutting >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -903,7 +919,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\fh127\\Documents\\Projetos\\Pessoal\\EcommerceArquitetura\\Projeto\\Project.Ecommerce\\Project.Ecommerce.CrossCutting\\Project.Ecommerce.CrossCutting.csproj": {
+              "projectPath": "C:\\Users\\fh127\\Documents\\Projetos\\Pessoal\\EcommerceArquitetura\\Projeto\\Project.Ecommerce\\Project.Ecommerce.CrossCutting\\Project.Ecommerce.CrossCutting.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
