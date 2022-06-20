@@ -1477,6 +1477,16 @@
         "runtime": {
           "bin/placeholder/Project.Ecommerce.CrossCutting.dll": {}
         }
+      },
+      "Project.Ecommerce.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Project.Ecommerce.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Project.Ecommerce.Domain.dll": {}
+        }
       }
     }
   },
@@ -5613,13 +5623,18 @@
       "type": "project",
       "path": "../Project.Ecommerce.CrossCutting/Project.Ecommerce.CrossCutting.csproj",
       "msbuildProject": "../Project.Ecommerce.CrossCutting/Project.Ecommerce.CrossCutting.csproj"
+    },
+    "Project.Ecommerce.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Project.Ecommerce.Domain/Project.Ecommerce.Domain.csproj",
+      "msbuildProject": "../Project.Ecommerce.Domain/Project.Ecommerce.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "C:\\Users\\fh127\\Documents\\Projetos\\Pessoal\\EcommerceArquitetura\\Projeto\\Project.Ecommerce\\src\\src\\Project.Ecommerce.Domain\\Project.Ecommerce.Domain.csproj",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.26",
-      "Project.Ecommerce.CrossCutting >= 1.0.0"
+      "Project.Ecommerce.CrossCutting >= 1.0.0",
+      "Project.Ecommerce.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5663,8 +5678,8 @@
             "C:\\Users\\fh127\\Documents\\Projetos\\Pessoal\\EcommerceArquitetura\\Projeto\\Project.Ecommerce\\src\\Project.Ecommerce.CrossCutting\\Project.Ecommerce.CrossCutting.csproj": {
               "projectPath": "C:\\Users\\fh127\\Documents\\Projetos\\Pessoal\\EcommerceArquitetura\\Projeto\\Project.Ecommerce\\src\\Project.Ecommerce.CrossCutting\\Project.Ecommerce.CrossCutting.csproj"
             },
-            "C:\\Users\\fh127\\Documents\\Projetos\\Pessoal\\EcommerceArquitetura\\Projeto\\Project.Ecommerce\\src\\src\\Project.Ecommerce.Domain\\Project.Ecommerce.Domain.csproj": {
-              "projectPath": "C:\\Users\\fh127\\Documents\\Projetos\\Pessoal\\EcommerceArquitetura\\Projeto\\Project.Ecommerce\\src\\src\\Project.Ecommerce.Domain\\Project.Ecommerce.Domain.csproj"
+            "C:\\Users\\fh127\\Documents\\Projetos\\Pessoal\\EcommerceArquitetura\\Projeto\\Project.Ecommerce\\src\\Project.Ecommerce.Domain\\Project.Ecommerce.Domain.csproj": {
+              "projectPath": "C:\\Users\\fh127\\Documents\\Projetos\\Pessoal\\EcommerceArquitetura\\Projeto\\Project.Ecommerce\\src\\Project.Ecommerce.Domain\\Project.Ecommerce.Domain.csproj"
             }
           }
         }
@@ -5702,16 +5717,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\fh127\\Documents\\Projetos\\Pessoal\\EcommerceArquitetura\\Projeto\\Project.Ecommerce\\src\\src\\Project.Ecommerce.Domain\\Project.Ecommerce.Domain.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\fh127\\Documents\\Projetos\\Pessoal\\EcommerceArquitetura\\Projeto\\Project.Ecommerce\\src\\src\\Project.Ecommerce.Domain\\Project.Ecommerce.Domain.csproj",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }

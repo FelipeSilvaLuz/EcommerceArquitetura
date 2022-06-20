@@ -17,3 +17,4 @@ C:\Users\fh127\Documents\Projetos\Pessoal\EcommerceArquitetura\Projeto\Project.E
 C:\Users\fh127\Documents\Projetos\Pessoal\EcommerceArquitetura\Projeto\Project.Ecommerce\src\Project.Ecommerce.CrossCutting\obj\Debug\netcoreapp3.1\Project.Ecommerce.CrossCutting.csproj.CoreCompileInputs.cache
 C:\Users\fh127\Documents\Projetos\Pessoal\EcommerceArquitetura\Projeto\Project.Ecommerce\src\Project.Ecommerce.CrossCutting\obj\Debug\netcoreapp3.1\Project.Ecommerce.CrossCutting.dll
 C:\Users\fh127\Documents\Projetos\Pessoal\EcommerceArquitetura\Projeto\Project.Ecommerce\src\Project.Ecommerce.CrossCutting\obj\Debug\netcoreapp3.1\Project.Ecommerce.CrossCutting.pdb
+C:\Users\fh127\Documents\Projetos\Pessoal\EcommerceArquitetura\Projeto\Project.Ecommerce\src\Project.Ecommerce.CrossCutting\obj\Debug\netcoreapp3.1\Project.Ecommerce.CrossCutting.csproj.AssemblyReference.cache

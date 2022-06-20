@@ -1,0 +1,10 @@
+C:\Users\fh127\Documents\Projetos\Pessoal\EcommerceArquitetura\Projeto\Project.Ecommerce\src\Project.Ecommerce.Domain\obj\Debug\netcoreapp3.1\Project.Ecommerce.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fh127\Documents\Projetos\Pessoal\EcommerceArquitetura\Projeto\Project.Ecommerce\src\Project.Ecommerce.Domain\obj\Debug\netcoreapp3.1\Project.Ecommerce.Domain.AssemblyInfoInputs.cache
+C:\Users\fh127\Documents\Projetos\Pessoal\EcommerceArquitetura\Projeto\Project.Ecommerce\src\Project.Ecommerce.Domain\obj\Debug\netcoreapp3.1\Project.Ecommerce.Domain.AssemblyInfo.cs
+C:\Users\fh127\Documents\Projetos\Pessoal\EcommerceArquitetura\Projeto\Project.Ecommerce\src\Project.Ecommerce.Domain\obj\Debug\netcoreapp3.1\Project.Ecommerce.Domain.csproj.CoreCompileInputs.cache
+C:\Users\fh127\Documents\Projetos\Pessoal\EcommerceArquitetura\Projeto\Project.Ecommerce\src\Project.Ecommerce.Domain\obj\Debug\netcoreapp3.1\Project.Ecommerce.Domain.csproj.AssemblyReference.cache
+C:\Users\fh127\Documents\Projetos\Pessoal\EcommerceArquitetura\Projeto\Project.Ecommerce\src\Project.Ecommerce.Domain\bin\Debug\netcoreapp3.1\Project.Ecommerce.Domain.deps.json
+C:\Users\fh127\Documents\Projetos\Pessoal\EcommerceArquitetura\Projeto\Project.Ecommerce\src\Project.Ecommerce.Domain\bin\Debug\netcoreapp3.1\Project.Ecommerce.Domain.dll
+C:\Users\fh127\Documents\Projetos\Pessoal\EcommerceArquitetura\Projeto\Project.Ecommerce\src\Project.Ecommerce.Domain\bin\Debug\netcoreapp3.1\Project.Ecommerce.Domain.pdb
+C:\Users\fh127\Documents\Projetos\Pessoal\EcommerceArquitetura\Projeto\Project.Ecommerce\src\Project.Ecommerce.Domain\obj\Debug\netcoreapp3.1\Project.Ecommerce.Domain.dll
+C:\Users\fh127\Documents\Projetos\Pessoal\EcommerceArquitetura\Projeto\Project.Ecommerce\src\Project.Ecommerce.Domain\obj\Debug\netcoreapp3.1\Project.Ecommerce.Domain.pdb

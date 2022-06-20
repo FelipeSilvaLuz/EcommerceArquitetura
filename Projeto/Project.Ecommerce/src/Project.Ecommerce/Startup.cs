@@ -3,7 +3,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Project.Ecommerce.Application.Interfaces;
+using Project.Ecommerce.Application.Services;
 using Project.Ecommerce.CrossCutting.Settings;
+using Project.Ecommerce.Data.Context;
+using Project.Ecommerce.Data.Repository;
+using Project.Ecommerce.Domain.Interfaces;
 
 namespace Project.Ecommerce
 {
@@ -20,6 +25,12 @@ namespace Project.Ecommerce
         {
             services.Configure<WebSettings>(options => Configuration.Bind(options));
             WebSettings apiSettings = Configuration.Get<WebSettings>();
+
+            services.AddScoped(typeof(ICrudRepository<>), typeof(CrudRepository<>));
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<EcommerceContext>();
+
+            services.AddScoped<IUsuarioAppService, UsuarioAppService>();
 
             services.AddControllersWithViews()
                 .AddRazorRuntimeCompilation()

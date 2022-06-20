@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "Project.Ecommerce.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Project.Ecommerce.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Project.Ecommerce.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Project.Ecommerce.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Project.Ecommerce.Domain/Project.Ecommerce.Domain.csproj",
+      "msbuildProject": "../Project.Ecommerce.Domain/Project.Ecommerce.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "Project.Ecommerce.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\fh127\\.nuget\\packages\\": {},
@@ -44,7 +63,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\fh127\\Documents\\Projetos\\Pessoal\\EcommerceArquitetura\\Projeto\\Project.Ecommerce\\src\\Project.Ecommerce.Domain\\Project.Ecommerce.Domain.csproj": {
+              "projectPath": "C:\\Users\\fh127\\Documents\\Projetos\\Pessoal\\EcommerceArquitetura\\Projeto\\Project.Ecommerce\\src\\Project.Ecommerce.Domain\\Project.Ecommerce.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

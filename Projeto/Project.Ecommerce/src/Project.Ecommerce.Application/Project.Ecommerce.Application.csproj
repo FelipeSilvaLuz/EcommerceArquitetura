@@ -8,8 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\Project.Ecommerce.Domain\Project.Ecommerce.Domain.csproj" />
   </ItemGroup>
 
 </Project>
