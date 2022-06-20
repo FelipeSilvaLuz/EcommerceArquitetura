@@ -871,8 +871,8 @@
     },
     "Project.Ecommerce.CrossCutting/1.0.0": {
       "type": "project",
-      "path": "../../Project.Ecommerce.CrossCutting/Project.Ecommerce.CrossCutting.csproj",
-      "msbuildProject": "../../Project.Ecommerce.CrossCutting/Project.Ecommerce.CrossCutting.csproj"
+      "path": "../Project.Ecommerce.CrossCutting/Project.Ecommerce.CrossCutting.csproj",
+      "msbuildProject": "../Project.Ecommerce.CrossCutting/Project.Ecommerce.CrossCutting.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -920,8 +920,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\fh127\\Documents\\Projetos\\Pessoal\\EcommerceArquitetura\\Projeto\\Project.Ecommerce\\Project.Ecommerce.CrossCutting\\Project.Ecommerce.CrossCutting.csproj": {
-              "projectPath": "C:\\Users\\fh127\\Documents\\Projetos\\Pessoal\\EcommerceArquitetura\\Projeto\\Project.Ecommerce\\Project.Ecommerce.CrossCutting\\Project.Ecommerce.CrossCutting.csproj"
+            "C:\\Users\\fh127\\Documents\\Projetos\\Pessoal\\EcommerceArquitetura\\Projeto\\Project.Ecommerce\\src\\Project.Ecommerce.CrossCutting\\Project.Ecommerce.CrossCutting.csproj": {
+              "projectPath": "C:\\Users\\fh127\\Documents\\Projetos\\Pessoal\\EcommerceArquitetura\\Projeto\\Project.Ecommerce\\src\\Project.Ecommerce.CrossCutting\\Project.Ecommerce.CrossCutting.csproj"
             }
           }
         }

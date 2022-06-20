@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Project.Ecommerce.CrossCutting\Project.Ecommerce.CrossCutting.csproj" />
+    <ProjectReference Include="..\Project.Ecommerce.CrossCutting\Project.Ecommerce.CrossCutting.csproj" />
   </ItemGroup>
 
 </Project>
