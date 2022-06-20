@@ -8,7 +8,7 @@ namespace Project.Ecommerce.Data.Map
     {
         public void Configure(EntityTypeBuilder<Comentario> builder)
         {
-            builder.ToTable("Comentario");
+            builder.ToTable("tb_comentarios");
 
             builder.HasKey(user => user.Id);
             builder.Property(user => user.Id).ValueGeneratedOnAdd();

@@ -4,26 +4,19 @@ using Project.Ecommerce.Domain.Entities;
 
 namespace Project.Ecommerce.Data.Map
 {
-    public class FotoMap : IEntityTypeConfiguration<Foto>
+    public class BancoMap : IEntityTypeConfiguration<Banco>
     {
-        public void Configure(EntityTypeBuilder<Foto> builder)
+        public void Configure(EntityTypeBuilder<Banco> builder)
         {
-            builder.ToTable("tb_fotos");
+            builder.ToTable("tb_bancos");
 
             builder.HasKey(user => user.Id);
             builder.Property(user => user.Id).ValueGeneratedOnAdd();
 
-            builder.HasOne(arquivo => arquivo.Categoria)
-                .WithMany().HasForeignKey(arquivo => arquivo.IdCategoria);
-
-            builder.HasOne(arquivo => arquivo.Produto)
-              .WithMany().HasForeignKey(arquivo => arquivo.IdProduto);
-
             builder.HasOne(arquivo => arquivo.Status)
-             .WithMany().HasForeignKey(arquivo => arquivo.IdStatus);
+                .WithMany().HasForeignKey(arquivo => arquivo.IdStatus);
 
             builder.Property(user => user.Nome).IsRequired();
-            builder.Property(user => user.Base64).IsRequired();
 
             builder.Property(user => user.AlteradoPor);
             builder.Property(user => user.AlteradoEm);

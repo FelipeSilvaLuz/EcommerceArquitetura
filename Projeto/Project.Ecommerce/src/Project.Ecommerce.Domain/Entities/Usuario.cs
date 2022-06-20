@@ -10,6 +10,6 @@
 
         public string Senha { get; set; }
 
-        public bool ReceberOfertas { get; set; }
+        public bool? ReceberOfertas { get; set; }
     }
 }

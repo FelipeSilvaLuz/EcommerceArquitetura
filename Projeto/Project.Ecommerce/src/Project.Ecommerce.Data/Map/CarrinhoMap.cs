@@ -8,7 +8,7 @@ namespace Project.Ecommerce.Data.Map
     {
         public void Configure(EntityTypeBuilder<Carrinho> builder)
         {
-            builder.ToTable("Carrinho");
+            builder.ToTable("tb_carrinhos");
 
             builder.HasKey(user => user.Id);
             builder.Property(user => user.Id).ValueGeneratedOnAdd();

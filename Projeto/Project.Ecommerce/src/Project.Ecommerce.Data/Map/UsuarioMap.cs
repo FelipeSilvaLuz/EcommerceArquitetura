@@ -8,22 +8,35 @@ namespace Project.Ecommerce.Data.Map
     {
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {
-            builder.ToTable("Usuario");
+            builder.ToTable("tb_usuarios");
 
             builder.HasKey(user => user.Id);
-            builder.Property(user => user.Id).ValueGeneratedOnAdd();
+            builder.Property(user => user.Id).HasColumnName("id_usuario").ValueGeneratedOnAdd();
 
-            builder.Property(user => user.Nome).IsRequired();
-            builder.Property(user => user.Email).IsRequired();
-            builder.Property(user => user.Senha).IsRequired();
-            builder.Property(user => user.ReceberOfertas).HasDefaultValue(false);
-            builder.Property(user => user.Perfil).IsRequired();
+            builder.Property(user => user.Nome).HasColumnName("nm_usuario").IsRequired();
+            builder.Property(user => user.Email).HasColumnName("nm_email").IsRequired();
+            builder.Property(user => user.Senha).HasColumnName("nm_senha").IsRequired();
+            builder.Property(user => user.ReceberOfertas).HasColumnName("dv_recebeoferta").HasDefaultValue(false);
+            builder.Property(user => user.Perfil).HasColumnName("tp_perfil").IsRequired();
 
-            builder.Property(user => user.AlteradoPor);
-            builder.Property(user => user.AlteradoEm);
-            builder.Property(user => user.CriadoPor).IsRequired();
-            builder.Property(user => user.CriadoEm).IsRequired();
-            builder.Property(user => user.Ativo).HasDefaultValue(true);
+            //builder.HasOne(arquivo => arquivo.UsuarioCriado)
+            // .WithMany().HasForeignKey(arquivo => arquivo.CriadoPor);
+
+            //builder.HasOne(arquivo => arquivo.UsuarioAlterado)
+            // .WithMany().HasForeignKey(arquivo => arquivo.AlteradoPor);
+
+            //builder.HasOne(arquivo => arquivo.Status)
+            //    .WithMany().HasForeignKey(arquivo => arquivo.Ativo);
+
+            builder.Property(user => user.AlteradoPor).HasColumnName("id_usuario_alteracao");
+            builder.Property(user => user.AlteradoEm).HasColumnName("dt_alteracao");
+            builder.Property(user => user.CriadoPor).HasColumnName("id_usuario_criacao");
+            builder.Property(user => user.CriadoEm).HasColumnName("dt_criacao");
+            builder.Property(user => user.Ativo).HasColumnName("id_status");
+
+            builder.Ignore(x => x.UsuarioCriado);
+            builder.Ignore(x => x.UsuarioAlterado);
+            builder.Ignore(x => x.Status);
         }
     }
 }

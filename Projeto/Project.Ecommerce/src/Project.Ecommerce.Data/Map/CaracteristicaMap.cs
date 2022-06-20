@@ -8,7 +8,7 @@ namespace Project.Ecommerce.Data.Map
     {
         public void Configure(EntityTypeBuilder<Caracteristica> builder)
         {
-            builder.ToTable("Caracteristica");
+            builder.ToTable("tb_caracteristicas");
 
             builder.HasKey(user => user.Id);
             builder.Property(user => user.Id).ValueGeneratedOnAdd();
