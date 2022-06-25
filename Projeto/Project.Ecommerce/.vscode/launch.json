@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/Project.Ecommerce/bin/Debug/netcoreapp3.1/Project.Ecommerce.dll",
+            "program": "C:/Users/fh127/Documents/Projetos/Pessoal/EcommerceArquitetura/Projeto/Project.Ecommerce/src/Project.Ecommerce/bin/Debug/netcoreapp3.1/Project.Ecommerce.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Project.Ecommerce",
+            "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {
