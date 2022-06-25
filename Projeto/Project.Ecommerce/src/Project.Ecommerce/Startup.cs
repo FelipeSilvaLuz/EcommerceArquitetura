@@ -27,10 +27,10 @@ namespace Project.Ecommerce
             WebSettings apiSettings = Configuration.Get<WebSettings>();
 
             services.AddScoped(typeof(ICrudRepository<>), typeof(CrudRepository<>));
-            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-            services.AddScoped<EcommerceContext>();
+            //services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            //services.AddScoped<EcommerceContext>();
 
-            services.AddScoped<IUsuarioAppService, UsuarioAppService>();
+            //services.AddScoped<IUsuarioAppService, UsuarioAppService>();
 
             services.AddControllersWithViews()
                 .AddRazorRuntimeCompilation()
