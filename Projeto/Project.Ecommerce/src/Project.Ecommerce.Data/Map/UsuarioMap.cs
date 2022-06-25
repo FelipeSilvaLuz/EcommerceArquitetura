@@ -19,14 +19,11 @@ namespace Project.Ecommerce.Data.Map
             builder.Property(user => user.ReceberOfertas).HasColumnName("dv_recebeoferta").HasDefaultValue(false);
             builder.Property(user => user.Perfil).HasColumnName("tp_perfil").IsRequired();
 
-            //builder.HasOne(arquivo => arquivo.UsuarioCriado)
-            // .WithMany().HasForeignKey(arquivo => arquivo.CriadoPor);
+            builder.HasOne(arquivo => arquivo.UsuarioCriado)
+                .WithMany().HasForeignKey(arquivo => arquivo.CriadoPor);
 
-            //builder.HasOne(arquivo => arquivo.UsuarioAlterado)
-            // .WithMany().HasForeignKey(arquivo => arquivo.AlteradoPor);
-
-            //builder.HasOne(arquivo => arquivo.Status)
-            //    .WithMany().HasForeignKey(arquivo => arquivo.Ativo);
+            builder.HasOne(arquivo => arquivo.UsuarioAlterado)
+                .WithMany().HasForeignKey(arquivo => arquivo.AlteradoPor);
 
             builder.Property(user => user.AlteradoPor).HasColumnName("id_usuario_alteracao");
             builder.Property(user => user.AlteradoEm).HasColumnName("dt_alteracao");
@@ -34,8 +31,6 @@ namespace Project.Ecommerce.Data.Map
             builder.Property(user => user.CriadoEm).HasColumnName("dt_criacao");
             builder.Property(user => user.Ativo).HasColumnName("id_status");
 
-            builder.Ignore(x => x.UsuarioCriado);
-            builder.Ignore(x => x.UsuarioAlterado);
             builder.Ignore(x => x.Status);
         }
     }
