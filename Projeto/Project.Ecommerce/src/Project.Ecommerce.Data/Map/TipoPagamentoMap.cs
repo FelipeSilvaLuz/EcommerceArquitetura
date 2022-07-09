@@ -4,20 +4,17 @@ using Project.Ecommerce.Domain.Entities;
 
 namespace Project.Ecommerce.Data.Map
 {
-    public class UsuarioMap : IEntityTypeConfiguration<Usuario>
+    public class TipoPagamentoMap : IEntityTypeConfiguration<TipoPagamento>
     {
-        public void Configure(EntityTypeBuilder<Usuario> builder)
+        public void Configure(EntityTypeBuilder<TipoPagamento> builder)
         {
-            builder.ToTable("tb_usuarios");
+            builder.ToTable("tb_tipo_pagamento");
 
             builder.HasKey(user => user.Id);
-            builder.Property(user => user.Id).HasColumnName("id_usuario").ValueGeneratedOnAdd();
+            builder.Property(user => user.Id).HasColumnName("id_tipo_pagamento").ValueGeneratedOnAdd();
+            builder.Property(user => user.IdBanco).HasColumnName("id_banco");
 
-            builder.Property(user => user.Nome).HasColumnName("nm_usuario").IsRequired();
-            builder.Property(user => user.Email).HasColumnName("nm_email").IsRequired();
-            builder.Property(user => user.Senha).HasColumnName("nm_senha").IsRequired();
-            builder.Property(user => user.ReceberOfertas).HasColumnName("dv_recebeoferta").HasDefaultValue(false);
-            builder.Property(user => user.Perfil).HasColumnName("tp_perfil").IsRequired();
+            builder.Property(user => user.Nome).HasColumnName("nm_tipo_pagamento").IsRequired();
 
             builder.HasOne(arquivo => arquivo.UsuarioCriado)
                 .WithMany().HasForeignKey(arquivo => arquivo.CriadoPor);
@@ -27,6 +24,9 @@ namespace Project.Ecommerce.Data.Map
 
             builder.HasOne(arquivo => arquivo.Status)
                 .WithMany().HasForeignKey(arquivo => arquivo.Ativo);
+
+            builder.HasOne(arquivo => arquivo.Banco)
+              .WithMany().HasForeignKey(arquivo => arquivo.IdBanco);
 
             builder.Property(user => user.AlteradoPor).HasColumnName("id_usuario_alteracao");
             builder.Property(user => user.AlteradoEm).HasColumnName("dt_alteracao");

@@ -11,7 +11,8 @@ namespace Project.Ecommerce.Data.Map
             builder.ToTable("tb_carrinhos");
 
             builder.HasKey(user => user.Id);
-            builder.Property(user => user.Id).ValueGeneratedOnAdd();
+            builder.Property(user => user.Id).HasColumnName("id_carrinho").ValueGeneratedOnAdd();
+            builder.Property(user => user.IdProduto).HasColumnName("id_produto");
 
             builder.HasOne(arquivo => arquivo.Produto)
                 .WithMany().HasForeignKey(arquivo => arquivo.IdProduto);
@@ -19,13 +20,16 @@ namespace Project.Ecommerce.Data.Map
             builder.HasOne(arquivo => arquivo.Usuario)
                 .WithMany().HasForeignKey(arquivo => arquivo.IdUsuario);
 
-            builder.Property(user => user.Quantidade).IsRequired();
+            builder.HasOne(arquivo => arquivo.Status)
+               .WithMany().HasForeignKey(arquivo => arquivo.Ativo);
 
-            builder.Property(user => user.AlteradoPor);
-            builder.Property(user => user.AlteradoEm);
-            builder.Property(user => user.CriadoPor).IsRequired();
-            builder.Property(user => user.CriadoEm).IsRequired();
-            builder.Property(user => user.Ativo).HasDefaultValue(true);
+            builder.Property(user => user.Quantidade).HasColumnName("nr_quantidade").IsRequired();
+
+            builder.Property(user => user.AlteradoPor).HasColumnName("id_usuario_alteracao");
+            builder.Property(user => user.AlteradoEm).HasColumnName("dt_alteracao");
+            builder.Property(user => user.CriadoPor).HasColumnName("id_usuario_criacao");
+            builder.Property(user => user.CriadoEm).HasColumnName("dt_criacao");
+            builder.Property(user => user.Ativo).HasColumnName("id_status");
         }
     }
 }

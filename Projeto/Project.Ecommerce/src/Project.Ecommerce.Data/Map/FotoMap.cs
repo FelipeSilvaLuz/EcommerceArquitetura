@@ -11,25 +11,27 @@ namespace Project.Ecommerce.Data.Map
             builder.ToTable("tb_fotos");
 
             builder.HasKey(user => user.Id);
-            builder.Property(user => user.Id).ValueGeneratedOnAdd();
+            builder.Property(user => user.Id).HasColumnName("id_foto").ValueGeneratedOnAdd();
+            builder.Property(user => user.IdProduto).HasColumnName("id_produto");
+            builder.Property(user => user.IdCategoria).HasColumnName("id_categoria");
 
             builder.HasOne(arquivo => arquivo.Categoria)
                 .WithMany().HasForeignKey(arquivo => arquivo.IdCategoria);
 
             builder.HasOne(arquivo => arquivo.Produto)
-              .WithMany().HasForeignKey(arquivo => arquivo.IdProduto);
+                .WithMany().HasForeignKey(arquivo => arquivo.IdProduto);
 
             builder.HasOne(arquivo => arquivo.Status)
-             .WithMany().HasForeignKey(arquivo => arquivo.IdStatus);
+                .WithMany().HasForeignKey(arquivo => arquivo.Ativo);
 
-            builder.Property(user => user.Nome).IsRequired();
-            builder.Property(user => user.Base64).IsRequired();
+            builder.Property(user => user.Nome).HasColumnName("nm_nome").IsRequired();
+            builder.Property(user => user.Base64).HasColumnName("nm_base64").IsRequired();
 
-            builder.Property(user => user.AlteradoPor);
-            builder.Property(user => user.AlteradoEm);
-            builder.Property(user => user.CriadoPor).IsRequired();
-            builder.Property(user => user.CriadoEm).IsRequired();
-            builder.Property(user => user.Ativo).HasDefaultValue(true);
+            builder.Property(user => user.AlteradoPor).HasColumnName("id_usuario_alteracao");
+            builder.Property(user => user.AlteradoEm).HasColumnName("dt_alteracao");
+            builder.Property(user => user.CriadoPor).HasColumnName("id_usuario_criacao");
+            builder.Property(user => user.CriadoEm).HasColumnName("dt_criacao");
+            builder.Property(user => user.Ativo).HasColumnName("id_status");
         }
     }
 }
