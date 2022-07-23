@@ -5,11 +5,11 @@ namespace Project.Ecommerce.Controllers
 {
     public class FotosController : Controller
     {
-        private readonly IFotosAppService _fotosappservice;
+        private readonly IFotoAppService _fotoAppService;
 
-        public FotosController(IFotosAppService fotosappservice)
+        public FotosController(IFotoAppService fotoAppService)
         {
-            _fotosappservice = fotosappservice;
+            _fotoAppService = fotoAppService;
         }
         public IActionResult Index()
         {

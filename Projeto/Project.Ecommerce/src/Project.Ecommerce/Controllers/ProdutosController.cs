@@ -5,11 +5,11 @@ namespace Project.Ecommerce.Controllers
 {
     public class ProdutosController : Controller
     {
-        private readonly IProdutosAppService _produtosappservice;
+        private readonly IProdutoAppService _produtoAppService;
 
-        public ProdutosController(IProdutosAppService produtosappservice)
+        public ProdutosController(IProdutoAppService produtoAppService)
         {
-            _produtosappservice = produtosappservice;
+            _produtoAppService = produtoAppService;
         }
         public IActionResult Index()
         {

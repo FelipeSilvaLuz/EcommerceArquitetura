@@ -5,11 +5,11 @@ namespace Project.Ecommerce.Controllers
 {
     public class VariacoesController : Controller
     {
-        private readonly IVariacoesAppService _variacoesappservice;
+        private readonly IVariacaoAppService _variacaoppservice;
 
-        public VariacoesController(IVariacoesAppService variacoesappservice)
+        public VariacoesController(IVariacaoAppService variacaoAppService)
         {
-            _variacoesappservice = variacoesappservice;
+            _variacaoppservice = variacaoAppService;
         }
         public IActionResult Index()
         {

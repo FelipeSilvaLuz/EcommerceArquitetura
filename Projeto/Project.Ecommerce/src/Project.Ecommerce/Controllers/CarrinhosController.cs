@@ -5,9 +5,9 @@ namespace Project.Ecommerce.Controllers
 {
     public class CarrinhosController : Controller
     {
-        private readonly ICarrinhosAppService _carrinhosAppService;
+        private readonly ICarrinhoAppService _carrinhosAppService;
 
-        public CarrinhosController(ICarrinhosAppService carrinhosAppService)
+        public CarrinhosController(ICarrinhoAppService carrinhosAppService)
         {
             _carrinhosAppService = carrinhosAppService;
         }

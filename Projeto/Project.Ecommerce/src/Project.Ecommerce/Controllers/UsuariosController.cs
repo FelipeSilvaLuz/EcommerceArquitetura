@@ -5,17 +5,17 @@ namespace Project.Ecommerce.Controllers
 {
     public class UsuariosController : Controller
     {
-        private readonly IUsuariosAppService _usuariosAppService;
+        private readonly IUsuarioAppService _usuarioAppService;
 
-        public UsuariosController(IUsuarioAppService usuariosAppService)
+        public UsuariosController(IUsuarioAppService usuarioAppService)
         {
-            _usuariosAppService = usuariosAppService;
+            _usuarioAppService = usuarioAppService;
         }
 
         [Route("/BuscarUsuario")]
         public IActionResult Listar()
         {
-            var usuarios = _usuariosAppService.Listar();
+            var usuarios = _usuarioAppService.Listar();
             return View();
         }
     }

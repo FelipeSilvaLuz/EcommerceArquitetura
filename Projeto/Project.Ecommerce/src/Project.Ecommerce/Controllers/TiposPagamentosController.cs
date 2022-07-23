@@ -3,13 +3,13 @@ using Project.Ecommerce.Application.Interfaces;
 
 namespace Project.Ecommerce.Controllers
 {
-    public class BancosController : Controller
+    public class TiposPagamentosController : Controller
     {
-        private readonly ITiposPagamentosAppService _tipospagamentosappservice;
+        private readonly ITipoPagamentoAppService _tipospagamentosAppService;
 
-        public BancosController(ITiposPagamentosAppService tipospagamentosappservice)
+        public TiposPagamentosController(ITipoPagamentoAppService tipospagamentosAppService)
         {
-            _tipospagamentosappservice = tipospagamentosappservice;
+            _tipospagamentosAppService = tipospagamentosAppService;
         }
         public IActionResult Index()
         {

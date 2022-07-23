@@ -5,11 +5,11 @@ namespace Project.Ecommerce.Controllers
 {
     public class ComentariosController : Controller
     {
-        private readonly IComentariosAppService _comentariosappservice;
+        private readonly IComentarioAppService _comentarioAppService;
 
-        public ComentariosController(IComentariosAppService comentariosappservice)
+        public ComentariosController(IComentarioAppService comentarioAppService)
         {
-            _comentariosappservice = comentariosappservice;
+            _comentarioAppService = comentarioAppService;
         }
         public IActionResult Index()
         {

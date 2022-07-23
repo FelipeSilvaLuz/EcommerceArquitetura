@@ -5,11 +5,11 @@ namespace Project.Ecommerce.Controllers
 {
     public class BancosController : Controller
     {
-        private readonly IBancosAppService _bancosappservice;
+        private readonly IBancoAppService _bancoAppService;
 
-        public BancosController(IBancosAppService bancosappservice)
+        public BancosController(IBancoAppService bancoAppService)
         {
-            _bancosappservice = bancosappservice;
+            _bancoAppService = bancoAppService;
         }
         public IActionResult Index()
         {

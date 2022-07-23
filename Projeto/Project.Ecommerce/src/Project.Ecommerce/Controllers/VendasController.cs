@@ -5,11 +5,11 @@ namespace Project.Ecommerce.Controllers
 {
     public class VendasController : Controller
     {
-        private readonly IVendasAppService _vendasappservice;
+        private readonly IVendaAppService _vendaAppService;
 
-        public VendasController(IVendasAppService vendasappservice)
+        public VendasController(IVendaAppService vendaAppService)
         {
-            _vendasappservice = vendasappservice;
+            _vendaAppService = vendaAppService;
         }
         public IActionResult Index()
         {

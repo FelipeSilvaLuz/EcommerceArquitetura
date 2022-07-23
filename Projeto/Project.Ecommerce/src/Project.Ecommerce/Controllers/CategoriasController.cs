@@ -5,11 +5,11 @@ namespace Project.Ecommerce.Controllers
 {
     public class CategoriasController : Controller
     {
-        private readonly ICategoriasAppService _categoriasappservice;
+        private readonly ICategoriaAppService _categoriasAppService;
 
-        public CategoriasController(ICategoriasAppService categoriasappservice)
+        public CategoriasController(ICategoriaAppService categoriasAppService)
         {
-            _categoriasappservice = categoriasappservice;
+            _categoriasAppService = categoriasAppService;
         }
         public IActionResult Index()
         {

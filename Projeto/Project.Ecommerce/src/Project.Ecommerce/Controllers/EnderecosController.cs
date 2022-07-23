@@ -5,11 +5,11 @@ namespace Project.Ecommerce.Controllers
 {
     public class EnderecosController : Controller
     {
-        private readonly IEnderecosAppService _enderecosappservice;
+        private readonly IEnderecoAppService _enderecoAppService;
 
-        public EnderecosController(IEnderecosAppService enderecosappservice)
+        public EnderecosController(IEnderecoAppService enderecoAppService)
         {
-            _enderecosappservice = enderecosappservice;
+            _enderecoAppService = enderecoAppService;
         }
         public IActionResult Index()
         {

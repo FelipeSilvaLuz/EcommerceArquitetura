@@ -5,11 +5,11 @@ namespace Project.Ecommerce.Controllers
 {
     public class CaracteristicasController : Controller
     {
-        private readonly ICaracteristicasAppService _caracteristicasappservice;
+        private readonly ICaracteristicaAppService _caracteristicaAppService;
 
-        public CaracteristicasController(ICaracteristicasAppService caracteristicasappservice)
+        public CaracteristicasController(ICaracteristicaAppService caracteristicaAppService)
         {
-            _caracteristicasappservice = caracteristicasappservice;
+            _caracteristicaAppService = caracteristicaAppService;
         }
         public IActionResult Index()
         {
