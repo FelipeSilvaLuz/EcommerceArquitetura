@@ -3,13 +3,13 @@ using Project.Ecommerce.Application.Interfaces;
 
 namespace Project.Ecommerce.Controllers
 {
-    public class CarrinhoController : Controller
+    public class PerfisController : Controller
     {
-        private readonly ICarrinhoAppService _carrinhoAppService;
+        private readonly IPerfisAppService _PerfisAppService;
 
-        public CarrinhoController(ICarrinhoAppService carrinhoAppService)
+        public PerfisController(IPerfisAppService PerfisAppService)
         {
-            _carrinhoAppService = carrinhoAppService;
+            _PerfisAppService = PerfisAppService;
         }
 
         public IActionResult Index()
