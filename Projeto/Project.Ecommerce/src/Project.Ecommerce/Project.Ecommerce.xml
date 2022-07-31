@@ -4,5 +4,87 @@
         <name>Project.Ecommerce</name>
     </assembly>
     <members>
+        <member name="M:Project.Ecommerce.Controllers.BancosController.Incluir(Project.Ecommerce.Domain.Entities.Banco)">
+             <summary>
+             Incluir Banco
+             </summary>
+             <remarks>
+             # Alterar Banco
+             
+             Incluir um Banco na base de dados.
+             
+             # Sample request:
+            
+                 POST /Banco
+                 {
+                     "id": 1,
+                     "Nome": "teste nome"        
+                 }
+             </remarks> 
+             <param name="obj">Banco</param>        
+             <response code="200">Banco incluido com sucesso</response>
+             <response code="400">Banco não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.BancosController.Consultar(System.Int32,System.Boolean)">
+            <summary>
+            Consultar Banco
+            </summary>
+            <remarks>
+            # Consultar Banco
+            
+            Consulta um Banco na base de dados.
+            </remarks>
+            <param name="id">Id do Banco</param>     
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna um Banco</response>
+            <response code="400">Banco não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.BancosController.Listar(System.Boolean)">
+            <summary>
+            Listar Bancos
+            </summary>
+            <remarks>
+            # Listar Bancos
+            
+            Lista Bancos da base de dados.
+            </remarks>
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma lista de Bancos</response>
+            <response code="400">Bancos não encontrados</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.BancosController.Alterar(Project.Ecommerce.Domain.Entities.Banco)">
+             <summary>
+             Alterar Banco
+             </summary>
+             <remarks>
+             # Alterar Banco
+             
+             Altera um Banco na base de dados.
+             
+             # Sample request:
+            
+                 PUT /Banco
+                 {
+                     "id": 1,
+                     "Nome": "teste nome"        
+                 }
+             </remarks> 
+             <param name="obj">Banco</param>        
+             <response code="200">Banco alterado com sucesso</response>
+             <response code="400">ID informado não é válido</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.BancosController.Remover(System.Int32)">
+            <summary>
+            Remover Banco
+            </summary>
+            <remarks>
+            # Remover Banco
+            
+            Remove um Banco da base de dados.
+            </remarks>
+            <param name="id">Id do Banco</param>        
+            <response code="200">Banco removido com sucesso</response>
+            <response code="400">Banco não encontrado</response>
+        </member>
     </members>
 </doc>

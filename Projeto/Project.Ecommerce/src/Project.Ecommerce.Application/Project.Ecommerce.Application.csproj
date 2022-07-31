@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Project.Ecommerce.CrossCutting\Project.Ecommerce.CrossCutting.csproj" />
     <ProjectReference Include="..\Project.Ecommerce.Domain\Project.Ecommerce.Domain.csproj" />
   </ItemGroup>
 

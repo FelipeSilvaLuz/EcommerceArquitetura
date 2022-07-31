@@ -1018,6 +1018,7 @@
       },
       "Project.Ecommerce.Application/1.0.0": {
         "dependencies": {
+          "Project.Ecommerce.CrossCutting": "1.0.0",
           "Project.Ecommerce.Domain": "1.0.0"
         },
         "runtime": {
