@@ -4,7 +4,7 @@
         <name>Project.Ecommerce</name>
     </assembly>
     <members>
-        <member name="M:Project.Ecommerce.Controllers.BancosController.Incluir(Project.Ecommerce.Domain.Entities.Banco)">
+        <member name="M:Project.Ecommerce.Controllers.V1.BancosController.Incluir(Project.Ecommerce.Domain.Entities.Banco)">
              <summary>
              Incluir Banco
              </summary>
@@ -25,7 +25,7 @@
              <response code="200">Banco incluido com sucesso</response>
              <response code="400">Banco não encontrado</response>
         </member>
-        <member name="M:Project.Ecommerce.Controllers.BancosController.Consultar(System.Int32,System.Boolean)">
+        <member name="M:Project.Ecommerce.Controllers.V1.BancosController.Consultar(System.Int32,System.Boolean)">
             <summary>
             Consultar Banco
             </summary>
@@ -39,7 +39,7 @@
             <response code="200">Retorna um Banco</response>
             <response code="400">Banco não encontrado</response>
         </member>
-        <member name="M:Project.Ecommerce.Controllers.BancosController.Listar(System.Boolean)">
+        <member name="M:Project.Ecommerce.Controllers.V1.BancosController.Listar(System.Boolean)">
             <summary>
             Listar Bancos
             </summary>
@@ -52,7 +52,7 @@
             <response code="200">Retorna uma lista de Bancos</response>
             <response code="400">Bancos não encontrados</response>
         </member>
-        <member name="M:Project.Ecommerce.Controllers.BancosController.Alterar(Project.Ecommerce.Domain.Entities.Banco)">
+        <member name="M:Project.Ecommerce.Controllers.V1.BancosController.Alterar(Project.Ecommerce.Domain.Entities.Banco)">
              <summary>
              Alterar Banco
              </summary>
@@ -73,7 +73,7 @@
              <response code="200">Banco alterado com sucesso</response>
              <response code="400">ID informado não é válido</response>
         </member>
-        <member name="M:Project.Ecommerce.Controllers.BancosController.Remover(System.Int32)">
+        <member name="M:Project.Ecommerce.Controllers.V1.BancosController.Remover(System.Int32)">
             <summary>
             Remover Banco
             </summary>
@@ -85,6 +85,90 @@
             <param name="id">Id do Banco</param>        
             <response code="200">Banco removido com sucesso</response>
             <response code="400">Banco não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.StatusController.Incluir(Project.Ecommerce.Domain.Entities.Status)">
+             <summary>
+             Incluir Status
+             </summary>
+             <remarks>
+             # Alterar Status
+             
+             Incluir um Status na base de dados.
+             
+             # Sample request:
+            
+                 POST /Status
+                 {
+                     "id": 1,
+                     "Nome": "teste nome",       
+                     "Descricao": "teste descricao"    
+                 }
+             </remarks> 
+             <param name="obj">Status</param>        
+             <response code="200">Status incluido com sucesso</response>
+             <response code="400">Status não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.StatusController.Consultar(System.Int32,System.Boolean)">
+            <summary>
+            Consultar Status
+            </summary>
+            <remarks>
+            # Consultar Status
+            
+            Consulta um Status na base de dados.
+            </remarks>
+            <param name="id">Id do Status</param>     
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna um Status</response>
+            <response code="400">Status não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.StatusController.Listar(System.Boolean)">
+            <summary>
+            Listar Statuss
+            </summary>
+            <remarks>
+            # Listar Statuss
+            
+            Lista Statuss da base de dados.
+            </remarks>
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma lista de Statuss</response>
+            <response code="400">Statuss não encontrados</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.StatusController.Alterar(Project.Ecommerce.Domain.Entities.Status)">
+             <summary>
+             Alterar Status
+             </summary>
+             <remarks>
+             # Alterar Status
+             
+             Altera um Status na base de dados.
+             
+             # Sample request:
+            
+                 PUT /Status
+                 {
+                     "id": 1,
+                     "Nome": "teste nome",  
+                     "Descricao": "teste descricao"   
+                 }
+             </remarks> 
+             <param name="obj">Status</param>        
+             <response code="200">Status alterado com sucesso</response>
+             <response code="400">ID informado não é válido</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.StatusController.Remover(System.Int32)">
+            <summary>
+            Remover Status
+            </summary>
+            <remarks>
+            # Remover Status
+            
+            Remove um Status da base de dados.
+            </remarks>
+            <param name="id">Id do Status</param>        
+            <response code="200">Status removido com sucesso</response>
+            <response code="400">Status não encontrado</response>
         </member>
     </members>
 </doc>

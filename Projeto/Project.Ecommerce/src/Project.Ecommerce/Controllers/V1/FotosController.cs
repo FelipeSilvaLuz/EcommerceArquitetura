@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Project.Ecommerce.Application.Interfaces;
 
-namespace Project.Ecommerce.Controllers
+namespace Project.Ecommerce.Controllers.V1
 {
     [Produces("application/json")]
     [Route("api/v{version:apiVersion}/[controller]")]

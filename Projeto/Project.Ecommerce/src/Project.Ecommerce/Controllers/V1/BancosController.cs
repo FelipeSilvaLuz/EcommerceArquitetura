@@ -4,7 +4,7 @@ using Project.Ecommerce.Application.Interfaces;
 using Project.Ecommerce.CrossCutting.ViewModels;
 using Project.Ecommerce.Domain.Entities;
 
-namespace Project.Ecommerce.Controllers
+namespace Project.Ecommerce.Controllers.V1
 {
     [Produces("application/json")]
     [Route("api/v{version:apiVersion}/[controller]")]
