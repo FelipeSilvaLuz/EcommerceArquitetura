@@ -17,7 +17,6 @@
             
                  POST /Banco
                  {
-                     "id": 1,
                      "Nome": "teste nome"        
                  }
              </remarks> 
@@ -91,7 +90,7 @@
              Incluir Status
              </summary>
              <remarks>
-             # Alterar Status
+             # Incluir Status
              
              Incluir um Status na base de dados.
              
@@ -99,7 +98,6 @@
             
                  POST /Status
                  {
-                     "id": 1,
                      "Nome": "teste nome",       
                      "Descricao": "teste descricao"    
                  }
@@ -169,6 +167,93 @@
             <param name="id">Id do Status</param>        
             <response code="200">Status removido com sucesso</response>
             <response code="400">Status não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.UsuariosController.Incluir(Project.Ecommerce.Domain.Entities.Usuario)">
+             <summary>
+             Incluir Usuario
+             </summary>
+             <remarks>
+             # Alterar Usuario
+             
+             Incluir um Usuario na base de dados.
+             
+             # Sample request:
+            
+                 POST /Usuario
+                 {
+                     "Nome": "teste nome",    
+                     "Perfil": "teste perfil",    
+                     "Email": "teste e-mail",    
+                     "Senha": "teste senha"    
+                 }
+             </remarks> 
+             <param name="obj">Usuario</param>        
+             <response code="200">Usuario incluido com sucesso</response>
+             <response code="400">Usuario não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.UsuariosController.Consultar(System.Int32,System.Boolean)">
+            <summary>
+            Consultar Usuario
+            </summary>
+            <remarks>
+            # Consultar Usuario
+            
+            Consulta um Usuario na base de dados.
+            </remarks>
+            <param name="id">Id do Usuario</param>     
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna um Usuario</response>
+            <response code="400">Usuario não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.UsuariosController.Listar(System.Boolean)">
+            <summary>
+            Listar Usuarios
+            </summary>
+            <remarks>
+            # Listar Usuarios
+            
+            Lista Usuarios da base de dados.
+            </remarks>
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma lista de Usuarios</response>
+            <response code="400">Usuarios não encontrados</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.UsuariosController.Alterar(Project.Ecommerce.Domain.Entities.Usuario)">
+             <summary>
+             Alterar Usuario
+             </summary>
+             <remarks>
+             # Alterar Usuario
+             
+             Altera um Usuario na base de dados.
+             
+             # Sample request:
+            
+                 PUT /Usuario
+                 {
+                     "id": 1,
+                     "Nome": "teste nome",
+                     "Perfil": "teste perfil",  
+                     "Email": "teste e-mail",    
+                     "Senha": "teste senha"  
+                 }
+             </remarks> 
+             <param name="obj">Usuario</param>        
+             <response code="200">Usuario alterado com sucesso</response>
+             <response code="400">ID informado não é válido</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.UsuariosController.Remover(System.Int32)">
+            <summary>
+            Remover Usuario
+            </summary>
+            <remarks>
+            # Remover Usuario
+            
+            Remove um Usuario da base de dados.
+            </remarks>
+            <param name="id">Id do Usuario</param>        
+            <response code="200">Usuario removido com sucesso</response>
+            <response code="400">Usuario não encontrado</response>
         </member>
     </members>
 </doc>

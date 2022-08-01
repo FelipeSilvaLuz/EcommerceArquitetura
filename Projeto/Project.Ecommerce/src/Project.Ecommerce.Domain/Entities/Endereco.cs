@@ -4,8 +4,6 @@
     {
         public int IdUsuario { get; set; }
 
-        public string IdStatus { get; set; }
-
         public string NomeEndereco { get; set; }
 
         public int Numero { get; set; }
@@ -24,7 +22,5 @@
 
 
         public Usuario Usuario { get; set; }
-
-        public Status Status { get; set; }
     }
 }

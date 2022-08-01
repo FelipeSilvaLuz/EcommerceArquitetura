@@ -1,4 +1,6 @@
-﻿namespace Project.Ecommerce.Domain.Entities
+﻿using System.Text.Json.Serialization;
+
+namespace Project.Ecommerce.Domain.Entities
 {
     public class Usuario : BaseEntity
     {

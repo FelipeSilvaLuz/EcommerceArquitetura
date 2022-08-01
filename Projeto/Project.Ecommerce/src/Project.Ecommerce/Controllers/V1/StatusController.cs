@@ -23,7 +23,7 @@ namespace Project.Ecommerce.Controllers.V1
         /// Incluir Status
         /// </summary>
         /// <remarks>
-        /// # Alterar Status
+        /// # Incluir Status
         /// 
         /// Incluir um Status na base de dados.
         /// 
@@ -31,7 +31,6 @@ namespace Project.Ecommerce.Controllers.V1
         ///
         ///     POST /Status
         ///     {
-        ///         "id": 1,
         ///         "Nome": "teste nome",       
         ///         "Descricao": "teste descricao"    
         ///     }
@@ -106,7 +105,7 @@ namespace Project.Ecommerce.Controllers.V1
         /// <param name="obj">Status</param>        
         /// <response code="200">Status alterado com sucesso</response>
         /// <response code="400">ID informado não é válido</response>
-        [HttpPut("{id}")]
+        [HttpPut]
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Alterar([FromBody] Status obj)

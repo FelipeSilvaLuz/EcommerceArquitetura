@@ -35,7 +35,7 @@ namespace Project.Ecommerce.Data.Map
             builder.Property(user => user.AlteradoEm).HasColumnName("dt_alteracao");
             builder.Property(user => user.CriadoPor).HasColumnName("id_usuario_criacao");
             builder.Property(user => user.CriadoEm).HasColumnName("dt_criacao");
-            builder.Property(user => user.Ativo).HasColumnName("id_status");
+            builder.Property(user => user.EhAtivo).HasColumnName("id_status");
         }
     }
 }

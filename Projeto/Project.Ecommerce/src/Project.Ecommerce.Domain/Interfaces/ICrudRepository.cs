@@ -14,5 +14,7 @@ namespace Project.Ecommerce.Domain.Interfaces
         IEnumerable<TEntity> Listar(bool getDependencies = false);
 
         bool Remover(int id);
+
+        void SaveChanges();
     }
 }

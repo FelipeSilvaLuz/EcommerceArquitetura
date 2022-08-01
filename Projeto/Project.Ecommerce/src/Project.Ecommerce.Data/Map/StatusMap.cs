@@ -16,11 +16,11 @@ namespace Project.Ecommerce.Data.Map
             builder.Property(user => user.Nome).HasColumnName("nm_nome").IsRequired();
             builder.Property(user => user.Descricao).HasColumnName("nm_descricao");
 
-            builder.Property(user => user.AlteradoPor).HasColumnName("id_usuario_alteracao");
-            builder.Property(user => user.AlteradoEm).HasColumnName("dt_alteracao");
-            builder.Property(user => user.CriadoPor).HasColumnName("id_usuario_criacao");
-            builder.Property(user => user.CriadoEm).HasColumnName("dt_criacao");
-            builder.Property(user => user.Ativo).HasColumnName("id_status");
+            builder.Ignore(x => x.AlteradoPor);
+            builder.Ignore(x => x.AlteradoEm);
+            builder.Ignore(x => x.CriadoPor);
+            builder.Ignore(x => x.CriadoEm);
+            builder.Ignore(x => x.EhAtivo);
         }
     }
 }

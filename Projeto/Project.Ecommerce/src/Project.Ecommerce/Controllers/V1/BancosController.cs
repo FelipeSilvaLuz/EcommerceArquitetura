@@ -31,7 +31,6 @@ namespace Project.Ecommerce.Controllers.V1
         ///
         ///     POST /Banco
         ///     {
-        ///         "id": 1,
         ///         "Nome": "teste nome"        
         ///     }
         /// </remarks> 
