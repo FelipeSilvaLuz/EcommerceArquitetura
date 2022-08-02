@@ -186,7 +186,7 @@
              Incluir Produto
              </summary>
              <remarks>
-             # Alterar Produto
+             # Incluir Produto
              
              Incluir um Produto na base de dados.
              
@@ -441,6 +441,97 @@
             <param name="id">Id do Usuario</param>        
             <response code="200">Usuario removido com sucesso</response>
             <response code="400">Usuario não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.VariacoesController.Incluir(Project.Ecommerce.Domain.Entities.Variacao)">
+             <summary>
+             Incluir Variacao
+             </summary>
+             <remarks>
+             # Incluir Variacao
+             
+             Incluir uma Variacao na base de dados.
+             
+             # Sample request:
+            
+                 POST /Variacao
+                 {
+                     "IdCategoria": 1,    
+                     "IdVariacao": 1,    
+                     "Nome": "teste",    
+                     "Descricao": "teste Complemento",    
+                     "Quantidade": 2,    
+                     "Valor": 0.0   
+                 }
+             </remarks> 
+             <param name="obj">Variacao</param>        
+             <response code="200">Variacao incluida com sucesso</response>
+             <response code="400">Variacao não encontrada</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.VariacoesController.Consultar(System.Int32,System.Boolean)">
+            <summary>
+            Consultar Variacao
+            </summary>
+            <remarks>
+            # Consultar Variacao
+            
+            Consulta uma Variacao na base de dados.
+            </remarks>
+            <param name="id">Id da Variacao</param>     
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma Variacao</response>
+            <response code="400">Variacao não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.VariacoesController.Listar(System.Boolean)">
+            <summary>
+            Listar Variacoes
+            </summary>
+            <remarks>
+            # Listar Variacoes
+            
+            Lista Variacoes da base de dados.
+            </remarks>
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma lista de Variacoes</response>
+            <response code="400">Variacoes não encontrados</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.VariacoesController.Alterar(Project.Ecommerce.Domain.Entities.Variacao)">
+             <summary>
+             Alterar Variacao
+             </summary>
+             <remarks>
+             # Alterar Variacao
+             
+             Altera uma Variacao na base de dados.
+             
+             # Sample request:
+            
+                 PUT /Variacao
+                 {
+                     "id": 1,
+                     "IdCategoria": 1,    
+                     "IdVariacao": 1,    
+                     "Nome": "teste",    
+                     "Descricao": "teste Complemento",    
+                     "Quantidade": 2,    
+                     "Valor": 0.0   
+                 }
+             </remarks> 
+             <param name="obj">Variacao</param>        
+             <response code="200">Variacao alterado com sucesso</response>
+             <response code="400">ID informado não é válido</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.VariacoesController.Remover(System.Int32)">
+            <summary>
+            Remover Variacao
+            </summary>
+            <remarks>
+            # Remover Variacao
+            
+            Remove uma Variacao da base de dados.
+            </remarks>
+            <param name="id">Id da Variacao</param>        
+            <response code="200">Variacao removido com sucesso</response>
+            <response code="400">Variacao não encontrado</response>
         </member>
     </members>
 </doc>

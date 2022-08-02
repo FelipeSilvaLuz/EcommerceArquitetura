@@ -18,11 +18,12 @@ namespace Project.Ecommerce.Controllers.V1
         {
             _produtoAppService = produtoAppService;
         }
+
         /// <summary>
         /// Incluir Produto
         /// </summary>
         /// <remarks>
-        /// # Alterar Produto
+        /// # Incluir Produto
         /// 
         /// Incluir um Produto na base de dados.
         /// 
