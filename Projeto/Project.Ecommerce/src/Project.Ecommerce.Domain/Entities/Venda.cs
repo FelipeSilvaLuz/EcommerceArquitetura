@@ -8,8 +8,6 @@
 
         public int IdEndereco { get; set; }
 
-        public int IdStatus { get; set; }
-
         public string TipoPagamento { get; set; }
 
         public int Valor { get; set; }
@@ -22,7 +20,5 @@
         public Produto Produto { get; set; }
 
         public Endereco Endereco { get; set; }
-
-        public Status Status { get; set; }
     }
 }

@@ -31,6 +31,7 @@ namespace Project.Ecommerce.Crosscutting.IoC
                  .AddScoped<IProdutoAppService, ProdutoAppService>()
                  .AddScoped<IStatusAppService, StatusAppService>()
                  .AddScoped<IUsuarioAppService, UsuarioAppService>()
+                 .AddScoped<IVendaAppService, VendaAppService>()
                  .AddScoped<IVariacaoAppService, VariacaoAppService>();
         }
 
@@ -48,6 +49,7 @@ namespace Project.Ecommerce.Crosscutting.IoC
                 .AddScoped<IProdutoRepository, ProdutoRepository>()
                 .AddScoped<IStatusRepository, StatusRepository>()
                 .AddScoped<IUsuarioRepository, UsuarioRepository>()
+                .AddScoped<IVendaRepository, VendaRepository>()
                 .AddScoped<IVariacaoRepository, VariacaoRepository>();
         }
 

@@ -533,5 +533,96 @@
             <response code="200">Variacao removido com sucesso</response>
             <response code="400">Variacao não encontrado</response>
         </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.VendasController.Incluir(Project.Ecommerce.Domain.Entities.Venda)">
+             <summary>
+             Incluir Venda
+             </summary>
+             <remarks>
+             # Incluir Venda
+             
+             Incluir uma Venda na base de dados.
+             
+             # Sample request:
+            
+                 POST /Venda
+                 {
+                     "IdUsuario": 1,    
+                     "IdProduto": 1,    
+                     "IdEndereco": 1,    
+                     "TipoPagamento": "teste",    
+                     "Valor": 1,    
+                     "Quantidade": 1
+                 }
+             </remarks> 
+             <param name="obj">Venda</param>        
+             <response code="200">Venda incluida com sucesso</response>
+             <response code="400">Venda não encontrada</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.VendasController.Consultar(System.Int32,System.Boolean)">
+            <summary>
+            Consultar Venda
+            </summary>
+            <remarks>
+            # Consultar Venda
+            
+            Consulta uma Venda na base de dados.
+            </remarks>
+            <param name="id">Id da Venda</param>     
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma Venda</response>
+            <response code="400">Venda não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.VendasController.Listar(System.Boolean)">
+            <summary>
+            Listar Vendas
+            </summary>
+            <remarks>
+            # Listar Vendas
+            
+            Lista Vendas da base de dados.
+            </remarks>
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma lista de Vendas</response>
+            <response code="400">Vendas não encontrados</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.VendasController.Alterar(Project.Ecommerce.Domain.Entities.Venda)">
+             <summary>
+             Alterar Venda
+             </summary>
+             <remarks>
+             # Alterar Venda
+             
+             Altera uma Venda na base de dados.
+             
+             # Sample request:
+            
+                 PUT /Venda
+                 {
+                     "id": 1,
+                     "IdUsuario": 1,    
+                     "IdProduto": 1,    
+                     "IdEndereco": 1,    
+                     "TipoPagamento": "teste",    
+                     "Valor": 1,    
+                     "Quantidade": 1
+                 }
+             </remarks> 
+             <param name="obj">Venda</param>        
+             <response code="200">Venda alterado com sucesso</response>
+             <response code="400">ID informado não é válido</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.VendasController.Remover(System.Int32)">
+            <summary>
+            Remover Venda
+            </summary>
+            <remarks>
+            # Remover Venda
+            
+            Remove uma Venda da base de dados.
+            </remarks>
+            <param name="id">Id da Venda</param>        
+            <response code="200">Venda removido com sucesso</response>
+            <response code="400">Venda não encontrado</response>
+        </member>
     </members>
 </doc>
