@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Project.Ecommerce.Data.Extensions;
 using Project.Ecommerce.Domain.Entities;
 using Project.Ecommerce.Domain.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Project.Ecommerce.Data.Repository
 {
@@ -31,12 +33,25 @@ namespace Project.Ecommerce.Data.Repository
 
         public virtual IEnumerable<TEntity> Listar(bool getDependencies = false)
         {
-            return _dbset.AsNoTracking();
+            var obj = _dbset.AsNoTracking();
+
+            if (getDependencies)
+            {
+                obj = obj.Include(_dbContext.GetIncludePaths(typeof(TEntity)));
+            }
+
+            return obj;
         }
 
         public TEntity Consultar(int id, bool getDependencies = true)
         {
-            return _dbset.Find(id);
+            if (getDependencies)
+                return _dbset.AsNoTracking()
+                    .Include(_dbContext.GetIncludePaths(typeof(TEntity)))
+                    .FirstOrDefault(x => x.Id == id);
+
+            else
+                return _dbset.Find(id);
         }
 
         public void SaveChanges()

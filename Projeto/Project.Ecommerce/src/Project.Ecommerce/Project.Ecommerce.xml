@@ -85,6 +85,102 @@
             <response code="200">Banco removido com sucesso</response>
             <response code="400">Banco não encontrado</response>
         </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.EnderecosController.Incluir(Project.Ecommerce.Domain.Entities.Endereco)">
+             <summary>
+             Incluir Endereco
+             </summary>
+             <remarks>
+             # Alterar Endereco
+             
+             Incluir um Endereco na base de dados.
+             
+             # Sample request:
+            
+                 POST /Endereco
+                 {
+                     "IdUsuario": 1,    
+                     "NomeEndereco": "teste nome",    
+                     "Numero": "123",    
+                     "Complemento": "teste Complemento",    
+                     "Cep": "teste Cep",    
+                     "Cidade": "teste Cidade",    
+                     "Bairro": "teste Bairro",    
+                     "Estado": "teste Estado",    
+                     "Referencia": "teste Referencia"    
+                 }
+             </remarks> 
+             <param name="obj">Endereco</param>        
+             <response code="200">Endereco incluido com sucesso</response>
+             <response code="400">Endereco não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.EnderecosController.Consultar(System.Int32,System.Boolean)">
+            <summary>
+            Consultar Endereco
+            </summary>
+            <remarks>
+            # Consultar Endereco
+            
+            Consulta um Endereco na base de dados.
+            </remarks>
+            <param name="id">Id do Endereco</param>     
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna um Endereco</response>
+            <response code="400">Endereco não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.EnderecosController.Listar(System.Boolean)">
+            <summary>
+            Listar Enderecos
+            </summary>
+            <remarks>
+            # Listar Enderecos
+            
+            Lista Enderecos da base de dados.
+            </remarks>
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma lista de Enderecos</response>
+            <response code="400">Enderecos não encontrados</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.EnderecosController.Alterar(Project.Ecommerce.Domain.Entities.Endereco)">
+             <summary>
+             Alterar Endereco
+             </summary>
+             <remarks>
+             # Alterar Endereco
+             
+             Altera um Endereco na base de dados.
+             
+             # Sample request:
+            
+                 PUT /Endereco
+                 {
+                     "id": 1,
+                     "NomeEndereco": "teste nome",    
+                     "Numero": "123",    
+                     "Complemento": "teste Complemento",    
+                     "Cep": "teste Cep",    
+                     "Cidade": "teste Cidade",    
+                     "Bairro": "teste Bairro",    
+                     "Estado": "teste Estado",    
+                     "Referencia": "teste Referencia"    
+                 }
+             </remarks> 
+             <param name="obj">Endereco</param>        
+             <response code="200">Endereco alterado com sucesso</response>
+             <response code="400">ID informado não é válido</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.EnderecosController.Remover(System.Int32)">
+            <summary>
+            Remover Endereco
+            </summary>
+            <remarks>
+            # Remover Endereco
+            
+            Remove um Endereco da base de dados.
+            </remarks>
+            <param name="id">Id do Endereco</param>        
+            <response code="200">Endereco removido com sucesso</response>
+            <response code="400">Endereco não encontrado</response>
+        </member>
         <member name="M:Project.Ecommerce.Controllers.V1.StatusController.Incluir(Project.Ecommerce.Domain.Entities.Status)">
              <summary>
              Incluir Status

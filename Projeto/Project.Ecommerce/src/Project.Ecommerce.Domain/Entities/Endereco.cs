@@ -6,7 +6,7 @@
 
         public string NomeEndereco { get; set; }
 
-        public int Numero { get; set; }
+        public string Numero { get; set; }
 
         public string Complemento { get; set; }
 
