@@ -10,7 +10,7 @@ namespace Project.Ecommerce.Application.Interfaces
 
         Endereco Consultar(int id, bool getDependencies);
 
-        List<Domain.Entities.Endereco> Listar(bool getDependencies);
+        List<Endereco> Listar(bool getDependencies);
 
         RetornoGenerico Alterar(Endereco dados);
 

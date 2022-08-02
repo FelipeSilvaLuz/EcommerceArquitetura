@@ -181,6 +181,97 @@
             <response code="200">Endereco removido com sucesso</response>
             <response code="400">Endereco não encontrado</response>
         </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.ProdutosController.Incluir(Project.Ecommerce.Domain.Entities.Produto)">
+             <summary>
+             Incluir Produto
+             </summary>
+             <remarks>
+             # Alterar Produto
+             
+             Incluir um Produto na base de dados.
+             
+             # Sample request:
+            
+                 POST /Produto
+                 {
+                     "IdCategoria": 1,    
+                     "IdVariacao": 1,    
+                     "Nome": "teste",    
+                     "Descricao": "teste Complemento",    
+                     "Quantidade": 2,    
+                     "Valor": 0.0   
+                 }
+             </remarks> 
+             <param name="obj">Produto</param>        
+             <response code="200">Produto incluido com sucesso</response>
+             <response code="400">Produto não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.ProdutosController.Consultar(System.Int32,System.Boolean)">
+            <summary>
+            Consultar Produto
+            </summary>
+            <remarks>
+            # Consultar Produto
+            
+            Consulta um Produto na base de dados.
+            </remarks>
+            <param name="id">Id do Produto</param>     
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna um Produto</response>
+            <response code="400">Produto não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.ProdutosController.Listar(System.Boolean)">
+            <summary>
+            Listar Produtos
+            </summary>
+            <remarks>
+            # Listar Produtos
+            
+            Lista Produtos da base de dados.
+            </remarks>
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma lista de Produtos</response>
+            <response code="400">Produtos não encontrados</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.ProdutosController.Alterar(Project.Ecommerce.Domain.Entities.Produto)">
+             <summary>
+             Alterar Produto
+             </summary>
+             <remarks>
+             # Alterar Produto
+             
+             Altera um Produto na base de dados.
+             
+             # Sample request:
+            
+                 PUT /Produto
+                 {
+                     "id": 1,
+                     "IdCategoria": 1,    
+                     "IdVariacao": 1,    
+                     "Nome": "teste",    
+                     "Descricao": "teste Complemento",    
+                     "Quantidade": 2,    
+                     "Valor": 0.0   
+                 }
+             </remarks> 
+             <param name="obj">Produto</param>        
+             <response code="200">Produto alterado com sucesso</response>
+             <response code="400">ID informado não é válido</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.ProdutosController.Remover(System.Int32)">
+            <summary>
+            Remover Produto
+            </summary>
+            <remarks>
+            # Remover Produto
+            
+            Remove um Produto da base de dados.
+            </remarks>
+            <param name="id">Id do Produto</param>        
+            <response code="200">Produto removido com sucesso</response>
+            <response code="400">Produto não encontrado</response>
+        </member>
         <member name="M:Project.Ecommerce.Controllers.V1.StatusController.Incluir(Project.Ecommerce.Domain.Entities.Status)">
              <summary>
              Incluir Status
