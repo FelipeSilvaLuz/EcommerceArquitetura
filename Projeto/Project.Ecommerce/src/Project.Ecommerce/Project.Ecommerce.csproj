@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Project.Ecommerce.Application\Project.Ecommerce.Application.csproj" />
+    <ProjectReference Include="..\Project.Ecommerce.Crosscutting.IoC\Project.Ecommerce.Crosscutting.IoC.csproj" />
     <ProjectReference Include="..\Project.Ecommerce.CrossCutting\Project.Ecommerce.CrossCutting.csproj" />
     <ProjectReference Include="..\Project.Ecommerce.Data\Project.Ecommerce.Data.csproj" />
     <ProjectReference Include="..\Project.Ecommerce.Domain\Project.Ecommerce.Domain.csproj" />

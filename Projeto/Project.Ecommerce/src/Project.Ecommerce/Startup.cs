@@ -2,14 +2,9 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Project.Ecommerce.Application.Interfaces;
-using Project.Ecommerce.Application.Services;
 using Project.Ecommerce.Configuration;
 using Project.Ecommerce.Crosscutting.IoC;
 using Project.Ecommerce.CrossCutting.Settings;
-using Project.Ecommerce.Data.Context;
-using Project.Ecommerce.Data.Repository;
-using Project.Ecommerce.Domain.Interfaces;
 
 namespace Project.Ecommerce
 {
