@@ -23,6 +23,7 @@ namespace Project.Ecommerce.Application.Services
                 return new RetornoGenerico(false, new List<string> { "Preencha o campo para continuar." });
 
             _bancoRepository.Incluir(dados);
+            _bancoRepository.SaveChanges();
             return new RetornoGenerico(true, new List<string> { "Registro incluido com sucesso." });
         }
 
@@ -35,6 +36,7 @@ namespace Project.Ecommerce.Application.Services
             retorno.Nome = dados.Nome;
 
             _bancoRepository.Alterar(retorno);
+            _bancoRepository.SaveChanges();
             return new RetornoGenerico(true, new List<string> { "Registro alterado com sucesso." });
         }
 
@@ -51,7 +53,10 @@ namespace Project.Ecommerce.Application.Services
         public RetornoGenerico Remover(int id)
         {
             if (_bancoRepository.Remover(id))
+            {
+                _bancoRepository.SaveChanges();
                 return new RetornoGenerico(true, new List<string> { "Removido com sucesso" });
+            }
             else
                 return new RetornoGenerico(false, new List<string> { "Erro ao remover" });
         }

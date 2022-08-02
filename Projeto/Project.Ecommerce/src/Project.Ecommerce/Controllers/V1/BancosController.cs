@@ -103,7 +103,7 @@ namespace Project.Ecommerce.Controllers.V1
         /// <param name="obj">Banco</param>        
         /// <response code="200">Banco alterado com sucesso</response>
         /// <response code="400">ID informado não é válido</response>
-        [HttpPut("{id}")]
+        [HttpPut]
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Alterar([FromBody] Banco obj)
