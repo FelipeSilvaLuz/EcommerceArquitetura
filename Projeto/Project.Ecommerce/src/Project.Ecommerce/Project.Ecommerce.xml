@@ -182,7 +182,7 @@
                  POST /Usuario
                  {
                      "Nome": "teste nome",    
-                     "Perfil": "teste perfil",    
+                     "Perfil": "AD",    
                      "Email": "teste e-mail",    
                      "Senha": "teste senha"    
                  }
@@ -233,7 +233,7 @@
                  {
                      "id": 1,
                      "Nome": "teste nome",
-                     "Perfil": "teste perfil",  
+                     "Perfil": "AD",  
                      "Email": "teste e-mail",    
                      "Senha": "teste senha"  
                  }

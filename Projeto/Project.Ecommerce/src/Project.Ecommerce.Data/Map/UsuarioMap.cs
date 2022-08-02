@@ -16,10 +16,10 @@ namespace Project.Ecommerce.Data.Map
             builder.Property(user => user.Nome).HasColumnName("nm_usuario").IsRequired();
             builder.Property(user => user.Email).HasColumnName("nm_email").IsRequired();
             builder.Property(user => user.Senha).HasColumnName("nm_senha").IsRequired();
-            builder.Property(user => user.ReceberOfertas).HasColumnName("dv_recebeoferta").HasDefaultValue(false);
+            builder.Property(user => user.ReceberOfertas).HasColumnName("dv_recebeoferta");
             builder.Property(user => user.Perfil).HasColumnName("tp_perfil").IsRequired();
 
-            builder.Property(user => user.EhAtivo).HasColumnName("id_status");
+            builder.Property(user => user.EhAtivo).HasColumnName("eh_ativo");
 
             builder.Ignore(x => x.AlteradoPor);
             builder.Ignore(x => x.AlteradoEm);

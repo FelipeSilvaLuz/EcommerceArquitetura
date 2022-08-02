@@ -14,6 +14,6 @@ namespace Project.Ecommerce.Domain.Entities
 
         public DateTime? AlteradoEm { get; set; }
 
-        public bool EhAtivo { get; set; }
+        public bool? EhAtivo { get; set; }
     }
 }

@@ -24,6 +24,7 @@ namespace Project.Ecommerce.Application.Services
                 return validar;
 
             _usuarioRepository.Incluir(dados);
+            _usuarioRepository.SaveChanges();
             return new RetornoGenerico(true, new List<string> { "Registro incluido com sucesso." });
         }
 
@@ -35,8 +36,13 @@ namespace Project.Ecommerce.Application.Services
 
             var retorno = _usuarioRepository.Consultar(dados.Id);
             retorno.Nome = dados.Nome;
+            retorno.Perfil = dados.Perfil;
+            retorno.Email = dados.Email;
+            retorno.Senha = dados.Senha;
+            retorno.ReceberOfertas = dados.ReceberOfertas;
 
             _usuarioRepository.Alterar(retorno);
+            _usuarioRepository.SaveChanges();
             return new RetornoGenerico(true, new List<string> { "Registro alterado com sucesso." });
         }
 
@@ -53,7 +59,10 @@ namespace Project.Ecommerce.Application.Services
         public RetornoGenerico Remover(int id)
         {
             if (_usuarioRepository.Remover(id))
+            {
+                _usuarioRepository.SaveChanges();
                 return new RetornoGenerico(true, new List<string> { "Removido com sucesso" });
+            }
             else
                 return new RetornoGenerico(false, new List<string> { "Erro ao remover" });
         }

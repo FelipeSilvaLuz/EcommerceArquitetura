@@ -32,7 +32,7 @@ namespace Project.Ecommerce.Controllers.V1
         ///     POST /Usuario
         ///     {
         ///         "Nome": "teste nome",    
-        ///         "Perfil": "teste perfil",    
+        ///         "Perfil": "AD",    
         ///         "Email": "teste e-mail",    
         ///         "Senha": "teste senha"    
         ///     }
@@ -101,7 +101,7 @@ namespace Project.Ecommerce.Controllers.V1
         ///     {
         ///         "id": 1,
         ///         "Nome": "teste nome",
-        ///         "Perfil": "teste perfil",  
+        ///         "Perfil": "AD",  
         ///         "Email": "teste e-mail",    
         ///         "Senha": "teste senha"  
         ///     }
@@ -109,7 +109,7 @@ namespace Project.Ecommerce.Controllers.V1
         /// <param name="obj">Usuario</param>        
         /// <response code="200">Usuario alterado com sucesso</response>
         /// <response code="400">ID informado não é válido</response>
-        [HttpPut("{id}")]
+        [HttpPut]
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Alterar([FromBody] Usuario obj)
