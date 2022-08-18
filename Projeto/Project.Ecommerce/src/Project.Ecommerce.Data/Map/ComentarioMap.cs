@@ -12,6 +12,7 @@ namespace Project.Ecommerce.Data.Map
 
             builder.HasKey(user => user.Id);
             builder.Property(user => user.Id).HasColumnName("id_comentario").ValueGeneratedOnAdd();
+            builder.Property(user => user.IdProduto).HasColumnName("id_produto");
 
             builder.HasOne(arquivo => arquivo.Produto)
                 .WithMany().HasForeignKey(arquivo => arquivo.IdProduto);
@@ -20,11 +21,12 @@ namespace Project.Ecommerce.Data.Map
             builder.Property(user => user.Texto).HasColumnName("nm_comentario").IsRequired();
             builder.Property(user => user.Nota).HasColumnName("nr_nota").HasDefaultValue(5);
 
-            builder.Property(user => user.AlteradoPor).HasColumnName("id_usuario_alteracao");
+            builder.Property(user => user.AlteradoPor).HasColumnName("alterado_por");
             builder.Property(user => user.AlteradoEm).HasColumnName("dt_alteracao");
-            builder.Property(user => user.CriadoPor).HasColumnName("id_usuario_criacao");
+            builder.Property(user => user.CriadoPor).HasColumnName("criado_por");
             builder.Property(user => user.CriadoEm).HasColumnName("dt_criacao");
-            builder.Property(user => user.EhAtivo).HasColumnName("id_status");
+
+            builder.Ignore(x => x.EhAtivo);
         }
     }
 }

@@ -85,6 +85,93 @@
             <response code="200">Banco removido com sucesso</response>
             <response code="400">Banco não encontrado</response>
         </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.ComentariosController.Incluir(Project.Ecommerce.Domain.Entities.Comentario)">
+             <summary>
+             Incluir Comentario
+             </summary>
+             <remarks>
+             # Alterar Comentario
+             
+             Incluir um Comentario na base de dados.
+             
+             # Sample request:
+            
+                 POST /Comentario
+                 {
+                     "IdProduto" : 1,
+                     "Titulo" : "teste titulo",
+                     "Texto" : "teste texto",
+                     "Nota": 1
+                 }
+             </remarks> 
+             <param name="obj">Comentario</param>        
+             <response code="200">Comentario incluido com sucesso</response>
+             <response code="400">Comentario não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.ComentariosController.Consultar(System.Int32,System.Boolean)">
+            <summary>
+            Consultar Comentario
+            </summary>
+            <remarks>
+            # Consultar Comentario
+            
+            Consulta um Comentario na base de dados.
+            </remarks>
+            <param name="id">Id do Comentario</param>     
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna um Comentario</response>
+            <response code="400">Comentario não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.ComentariosController.Listar(System.Boolean)">
+            <summary>
+            Listar Comentarios
+            </summary>
+            <remarks>
+            # Listar Comentarios
+            
+            Lista Comentarios da base de dados.
+            </remarks>
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma lista de Comentarios</response>
+            <response code="400">Comentarios não encontradas</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.ComentariosController.Alterar(Project.Ecommerce.Domain.Entities.Comentario)">
+             <summary>
+             Alterar Comentario
+             </summary>
+             <remarks>
+             # Alterar Comentario
+             
+             Altera um Comentario na base de dados.
+             
+             # Sample request:
+            
+                 PUT /Comentario
+                 {
+                     "id": 1,
+                     "IdProduto" : 1,
+                     "Titulo" : "teste titulo",
+                     "Texto" : "teste texto",
+                     "Nota": 1  
+                 }
+             </remarks> 
+             <param name="obj">Comentario</param>        
+             <response code="200">Comentario alterado com sucesso</response>
+             <response code="400">ID informado não é válido</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.ComentariosController.Remover(System.Int32)">
+            <summary>
+            Remover Comentario
+            </summary>
+            <remarks>
+            # Remover Comentario
+            
+            Remove um Comentario da base de dados.
+            </remarks>
+            <param name="id">Id do Comentario</param>        
+            <response code="200">Comentario removido com sucesso</response>
+            <response code="400">Comentario não encontrada</response>
+        </member>
         <member name="M:Project.Ecommerce.Controllers.V1.EnderecosController.Incluir(Project.Ecommerce.Domain.Entities.Endereco)">
              <summary>
              Incluir Endereco
@@ -180,6 +267,93 @@
             <param name="id">Id do Endereco</param>        
             <response code="200">Endereco removido com sucesso</response>
             <response code="400">Endereco não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.FotosController.Incluir(Project.Ecommerce.Domain.Entities.Foto)">
+             <summary>
+             Incluir Foto
+             </summary>
+             <remarks>
+             # Alterar Foto
+             
+             Incluir uma Foto na base de dados.
+             
+             # Sample request:
+            
+                 POST /Foto
+                 {
+                     "IdCategoria" : 1,
+                     "IdProduto" : 1,
+                     "Nome": "teste nome",
+                     "Base64": ""
+                 }
+             </remarks> 
+             <param name="obj">Foto</param>        
+             <response code="200">Foto incluida com sucesso</response>
+             <response code="400">Foto não encontrada</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.FotosController.Consultar(System.Int32,System.Boolean)">
+            <summary>
+            Consultar Foto
+            </summary>
+            <remarks>
+            # Consultar Foto
+            
+            Consulta uma Foto na base de dados.
+            </remarks>
+            <param name="id">Id da Foto</param>     
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma Foto</response>
+            <response code="400">Foto não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.FotosController.Listar(System.Boolean)">
+            <summary>
+            Listar Fotos
+            </summary>
+            <remarks>
+            # Listar Fotos
+            
+            Lista Fotos da base de dados.
+            </remarks>
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma lista de Fotos</response>
+            <response code="400">Fotos não encontradas</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.FotosController.Alterar(Project.Ecommerce.Domain.Entities.Foto)">
+             <summary>
+             Alterar Foto
+             </summary>
+             <remarks>
+             # Alterar Foto
+             
+             Altera uma Foto na base de dados.
+             
+             # Sample request:
+            
+                 PUT /Foto
+                 {
+                     "id": 1,
+                     "IdCategoria" : 1,
+                     "IdProduto" : 1,
+                     "Nome": "teste nome",
+                     "Base64": ""     
+                 }
+             </remarks> 
+             <param name="obj">Foto</param>        
+             <response code="200">Foto alterada com sucesso</response>
+             <response code="400">ID informado não é válido</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.FotosController.Remover(System.Int32)">
+            <summary>
+            Remover Foto
+            </summary>
+            <remarks>
+            # Remover Foto
+            
+            Remove uma Foto da base de dados.
+            </remarks>
+            <param name="id">Id da Foto</param>        
+            <response code="200">Foto removido com sucesso</response>
+            <response code="400">Foto não encontrada</response>
         </member>
         <member name="M:Project.Ecommerce.Controllers.V1.ProdutosController.Incluir(Project.Ecommerce.Domain.Entities.Produto)">
              <summary>

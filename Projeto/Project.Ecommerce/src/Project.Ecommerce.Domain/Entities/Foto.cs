@@ -6,9 +6,9 @@
 
         public int IdCategoria { get; set; }
 
-        public int Nome { get; set; }
+        public string Nome { get; set; }
 
-        public int Base64 { get; set; }
+        public string Base64 { get; set; }
 
 
         public Produto Produto { get; set; }
