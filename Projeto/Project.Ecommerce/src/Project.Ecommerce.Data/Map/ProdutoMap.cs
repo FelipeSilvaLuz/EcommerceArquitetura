@@ -13,7 +13,6 @@ namespace Project.Ecommerce.Data.Map
             builder.HasKey(user => user.Id);
             builder.Property(user => user.Id).HasColumnName("id_produto").ValueGeneratedOnAdd();
             builder.Property(user => user.IdCategoria).HasColumnName("id_categoria");
-            builder.Property(user => user.IdCategoria).HasColumnName("id_caracteristica");
             builder.Property(user => user.IdVariacao).HasColumnName("id_variacao");
 
             builder.HasOne(arquivo => arquivo.Categoria)
