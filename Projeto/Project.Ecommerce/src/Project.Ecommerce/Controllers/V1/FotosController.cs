@@ -10,7 +10,7 @@ namespace Project.Ecommerce.Controllers.V1
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [ApiVersion("1")]
-    public class FotosController : Controller
+    public class FotosController : BaseController
     {
         private readonly IFotoAppService _fotoAppService;
 
@@ -45,6 +45,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Incluir([FromBody] Foto obj)
         {
+            obj.CriadoPor = NomeUsuarioLogado;
             return Ok(_fotoAppService.Incluir(obj));
         }
 
@@ -114,6 +115,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Alterar([FromBody] Foto obj)
         {
+            obj.AlteradoPor = NomeUsuarioLogado;
             return Ok(_fotoAppService.Alterar(obj));
         }
 

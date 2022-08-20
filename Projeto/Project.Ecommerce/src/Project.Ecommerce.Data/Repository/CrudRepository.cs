@@ -2,6 +2,7 @@
 using Project.Ecommerce.Data.Extensions;
 using Project.Ecommerce.Domain.Entities;
 using Project.Ecommerce.Domain.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -20,6 +21,8 @@ namespace Project.Ecommerce.Data.Repository
 
         public bool Incluir(TEntity entity)
         {
+            entity.CriadoEm = DateTime.Now;
+
             _dbset.Add(entity);
             return true;
         }
@@ -61,6 +64,8 @@ namespace Project.Ecommerce.Data.Repository
 
         public bool Alterar(TEntity entity)
         {
+            entity.AlteradoEm = DateTime.Now;
+
             _dbset.Update(entity);
             return true;
         }

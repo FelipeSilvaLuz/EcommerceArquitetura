@@ -10,7 +10,7 @@ namespace Project.Ecommerce.Controllers.V1
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [ApiVersion("1")]
-    public class UsuariosController : Controller
+    public class UsuariosController : BaseController
     {
         private readonly IUsuarioAppService _usuarioAppService;
 
@@ -45,6 +45,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Incluir([FromBody] Usuario obj)
         {
+            obj.CriadoPor = NomeUsuarioLogado;
             return Ok(_usuarioAppService.Incluir(obj));
         }
 
@@ -114,6 +115,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Alterar([FromBody] Usuario obj)
         {
+            obj.AlteradoPor = NomeUsuarioLogado;
             return Ok(_usuarioAppService.Alterar(obj));
         }
 

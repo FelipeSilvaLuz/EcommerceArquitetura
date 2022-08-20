@@ -10,7 +10,7 @@ namespace Project.Ecommerce.Controllers.V1
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [ApiVersion("1")]
-    public class EnderecosController : Controller
+    public class EnderecosController : BaseController
     {
         private readonly IEnderecoAppService _enderecoAppService;
 
@@ -50,6 +50,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Incluir([FromBody] Endereco obj)
         {
+            obj.CriadoPor = NomeUsuarioLogado;
             return Ok(_enderecoAppService.Incluir(obj));
         }
 
@@ -123,6 +124,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Alterar([FromBody] Endereco obj)
         {
+            obj.AlteradoPor = NomeUsuarioLogado;
             return Ok(_enderecoAppService.Alterar(obj));
         }
 

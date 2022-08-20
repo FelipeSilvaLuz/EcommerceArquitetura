@@ -10,7 +10,7 @@ namespace Project.Ecommerce.Controllers.V1
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [ApiVersion("1")]
-    public class BancosController : Controller
+    public class BancosController : BaseController
     {
         private readonly IBancoAppService _bancoAppService;
 
@@ -42,6 +42,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Incluir([FromBody] Banco obj)
         {
+            obj.CriadoPor = NomeUsuarioLogado;
             return Ok(_bancoAppService.Incluir(obj));
         }
 
@@ -108,6 +109,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Alterar([FromBody] Banco obj)
         {
+            obj.AlteradoPor = NomeUsuarioLogado;
             return Ok(_bancoAppService.Alterar(obj));
         }
 

@@ -10,7 +10,7 @@ namespace Project.Ecommerce.Controllers.V1
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [ApiVersion("1")]
-    public class CarrinhosController : Controller
+    public class CarrinhosController : BaseController
     {
         private readonly ICarrinhoAppService _carrinhosAppService;
 
@@ -44,6 +44,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Incluir([FromBody] Carrinho obj)
         {
+            obj.CriadoPor = NomeUsuarioLogado;
             return Ok(_carrinhosAppService.Incluir(obj));
         }
 
@@ -112,6 +113,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Alterar([FromBody] Carrinho obj)
         {
+            obj.AlteradoPor = NomeUsuarioLogado;
             return Ok(_carrinhosAppService.Alterar(obj));
         }
 

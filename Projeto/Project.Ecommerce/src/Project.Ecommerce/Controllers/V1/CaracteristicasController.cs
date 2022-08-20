@@ -10,7 +10,7 @@ namespace Project.Ecommerce.Controllers.V1
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [ApiVersion("1")]
-    public class CaracteristicasController : Controller
+    public class CaracteristicasController : BaseController
     {
         private readonly ICaracteristicaAppService _caracteristicaAppService;
 
@@ -45,6 +45,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Incluir([FromBody] Caracteristica obj)
         {
+            obj.CriadoPor = NomeUsuarioLogado;
             return Ok(_caracteristicaAppService.Incluir(obj));
         }
 
@@ -114,6 +115,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Alterar([FromBody] Caracteristica obj)
         {
+            obj.AlteradoPor = NomeUsuarioLogado;
             return Ok(_caracteristicaAppService.Alterar(obj));
         }
 

@@ -10,7 +10,7 @@ namespace Project.Ecommerce.Controllers.V1
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [ApiVersion("1")]
-    public class CategoriasController : Controller
+    public class CategoriasController : BaseController
     {
         private readonly ICategoriaAppService _categoriasAppService;
 
@@ -42,6 +42,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Incluir([FromBody] Categoria obj)
         {
+            obj.CriadoPor = NomeUsuarioLogado;
             return Ok(_categoriasAppService.Incluir(obj));
         }
 
@@ -108,6 +109,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Alterar([FromBody] Categoria obj)
         {
+            obj.AlteradoPor = NomeUsuarioLogado;
             return Ok(_categoriasAppService.Alterar(obj));
         }
 

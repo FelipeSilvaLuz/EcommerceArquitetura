@@ -10,7 +10,7 @@ namespace Project.Ecommerce.Controllers.V1
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [ApiVersion("1")]
-    public class StatusController : Controller
+    public class StatusController : BaseController
     {
         private readonly IStatusAppService _statusAppService;
 
@@ -43,6 +43,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Incluir([FromBody] Status obj)
         {
+            obj.CriadoPor = NomeUsuarioLogado;
             return Ok(_statusAppService.Incluir(obj));
         }
 
@@ -110,6 +111,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Alterar([FromBody] Status obj)
         {
+            obj.AlteradoPor = NomeUsuarioLogado;
             return Ok(_statusAppService.Alterar(obj));
         }
 

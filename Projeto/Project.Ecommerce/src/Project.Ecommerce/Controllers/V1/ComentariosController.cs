@@ -10,7 +10,7 @@ namespace Project.Ecommerce.Controllers.V1
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [ApiVersion("1")]
-    public class ComentariosController : Controller
+    public class ComentariosController : BaseController
     {
         private readonly IComentarioAppService _comentarioAppService;
 
@@ -44,6 +44,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Incluir([FromBody] Comentario obj)
         {
+            obj.CriadoPor = NomeUsuarioLogado;
             return Ok(_comentarioAppService.Incluir(obj));
         }
 
@@ -113,6 +114,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Alterar([FromBody] Comentario obj)
         {
+            obj.AlteradoPor = NomeUsuarioLogado;
             return Ok(_comentarioAppService.Alterar(obj));
         }
 

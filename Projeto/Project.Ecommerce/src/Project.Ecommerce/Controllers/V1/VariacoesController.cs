@@ -10,7 +10,7 @@ namespace Project.Ecommerce.Controllers.V1
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [ApiVersion("1")]
-    public class VariacoesController : Controller
+    public class VariacoesController : BaseController
     {
         private readonly IVariacaoAppService _variacaoppservice;
 
@@ -47,6 +47,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Incluir([FromBody] Variacao obj)
         {
+            obj.CriadoPor = NomeUsuarioLogado;
             return Ok(_variacaoppservice.Incluir(obj));
         }
 
@@ -118,6 +119,7 @@ namespace Project.Ecommerce.Controllers.V1
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
         public IActionResult Alterar([FromBody] Variacao obj)
         {
+            obj.AlteradoPor = NomeUsuarioLogado;
             return Ok(_variacaoppservice.Alterar(obj));
         }
 
