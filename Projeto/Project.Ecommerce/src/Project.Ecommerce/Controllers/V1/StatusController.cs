@@ -68,16 +68,16 @@ namespace Project.Ecommerce.Controllers.V1
         }
 
         /// <summary>
-        /// Listar Statuss
+        /// Listar Status
         /// </summary>
         /// <remarks>
-        /// # Listar Statuss
+        /// # Listar Status
         /// 
-        /// Lista Statuss da base de dados.
+        /// Lista Status da base de dados.
         /// </remarks>
         /// <param name="getDependencies">Listar dependências do objeto</param> 
-        /// <response code="200">Retorna uma lista de Statuss</response>
-        /// <response code="400">Statuss não encontrados</response>
+        /// <response code="200">Retorna uma lista de Status</response>
+        /// <response code="400">Status não encontrados</response>
         [HttpGet]
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
