@@ -85,6 +85,259 @@
             <response code="200">Banco removido com sucesso</response>
             <response code="400">Banco não encontrado</response>
         </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.CaracteristicasController.Incluir(Project.Ecommerce.Domain.Entities.Caracteristica)">
+             <summary>
+             Incluir Caracteristica
+             </summary>
+             <remarks>
+             # Incluir Caracteristica
+             
+             Incluir uma Caracteristica na base de dados.
+             
+             # Sample request:
+            
+                 POST /Caracteristica
+                 {
+                     "IdProduto": 1,    
+                     "Nome": "Teste nome",    
+                     "Descricao": "Teste descrição",    
+                     "Ordem": 1
+                 }
+             </remarks> 
+             <param name="obj">Caracteristica</param>        
+             <response code="200">Caracteristica incluida com sucesso</response>
+             <response code="400">Caracteristica não encontrada</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.CaracteristicasController.Consultar(System.Int32,System.Boolean)">
+            <summary>
+            Consultar Caracteristica
+            </summary>
+            <remarks>
+            # Consultar Caracteristica
+            
+            Consulta uma Caracteristica na base de dados.
+            </remarks>
+            <param name="id">Id da Caracteristica</param>     
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma Caracteristica</response>
+            <response code="400">Caracteristica não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.CaracteristicasController.Listar(System.Boolean)">
+            <summary>
+            Listar Caracteristicas
+            </summary>
+            <remarks>
+            # Listar Caracteristicas
+            
+            Lista Caracteristicas da base de dados.
+            </remarks>
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma lista de Caracteristicas</response>
+            <response code="400">Caracteristicas não encontrados</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.CaracteristicasController.Alterar(Project.Ecommerce.Domain.Entities.Caracteristica)">
+             <summary>
+             Alterar Caracteristica
+             </summary>
+             <remarks>
+             # Alterar Caracteristica
+             
+             Altera uma Caracteristica na base de dados.
+             
+             # Sample request:
+            
+                 PUT /Caracteristica
+                 {
+                     "id": 1,
+                     "IdProduto": 1,    
+                     "Nome": "Teste nome",    
+                     "Descricao": "Teste descrição",    
+                     "Ordem": 1
+                 }
+             </remarks> 
+             <param name="obj">Caracteristica</param>        
+             <response code="200">Caracteristica alterado com sucesso</response>
+             <response code="400">ID informado não é válido</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.CaracteristicasController.Remover(System.Int32)">
+            <summary>
+            Remover Caracteristica
+            </summary>
+            <remarks>
+            # Remover Caracteristica
+            
+            Remove uma Caracteristica da base de dados.
+            </remarks>
+            <param name="id">Id da Caracteristica</param>        
+            <response code="200">Caracteristica removido com sucesso</response>
+            <response code="400">Caracteristica não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.CarrinhosController.Incluir(Project.Ecommerce.Domain.Entities.Carrinho)">
+             <summary>
+             Incluir Carrinho
+             </summary>
+             <remarks>
+             # Alterar Carrinho
+             
+             Incluir um Carrinho na base de dados.
+             
+             # Sample request:
+            
+                 POST /Carrinho
+                 {
+                     "IdUsuario": 1,       
+                     "IdProduto": 1,      
+                     "Quantidade": 2        
+                 }
+             </remarks> 
+             <param name="obj">Carrinho</param>        
+             <response code="200">Carrinho incluido com sucesso</response>
+             <response code="400">Carrinho não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.CarrinhosController.Consultar(System.Int32,System.Boolean)">
+            <summary>
+            Consultar Carrinho
+            </summary>
+            <remarks>
+            # Consultar Carrinho
+            
+            Consulta um Carrinho na base de dados.
+            </remarks>
+            <param name="id">Id do Carrinho</param>     
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna um Carrinho</response>
+            <response code="400">Carrinho não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.CarrinhosController.Listar(System.Boolean)">
+            <summary>
+            Listar Carrinhos
+            </summary>
+            <remarks>
+            # Listar Carrinhos
+            
+            Lista Carrinhos da base de dados.
+            </remarks>
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma lista de Carrinhos</response>
+            <response code="400">Carrinhos não encontrados</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.CarrinhosController.Alterar(Project.Ecommerce.Domain.Entities.Carrinho)">
+             <summary>
+             Alterar Carrinho
+             </summary>
+             <remarks>
+             # Alterar Carrinho
+             
+             Altera um Carrinho na base de dados.
+             
+             # Sample request:
+            
+                 PUT /Carrinho
+                 {
+                     "id": 1,
+                     "IdUsuario": 1,       
+                     "IdProduto": 1,      
+                     "Quantidade": 2      
+                 }
+             </remarks> 
+             <param name="obj">Carrinho</param>        
+             <response code="200">Carrinho alterado com sucesso</response>
+             <response code="400">ID informado não é válido</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.CarrinhosController.Remover(System.Int32)">
+            <summary>
+            Remover Carrinho
+            </summary>
+            <remarks>
+            # Remover Carrinho
+            
+            Remove um Carrinho da base de dados.
+            </remarks>
+            <param name="id">Id do Carrinho</param>        
+            <response code="200">Carrinho removido com sucesso</response>
+            <response code="400">Carrinho não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.CategoriasController.Incluir(Project.Ecommerce.Domain.Entities.Categoria)">
+             <summary>
+             Incluir Categoria
+             </summary>
+             <remarks>
+             # Incluir Categoria
+             
+             Incluir uma Categoria na base de dados.
+             
+             # Sample request:
+            
+                 POST /Categoria
+                 {
+                     "Nome": "Teste nome"
+                 }
+             </remarks> 
+             <param name="obj">Categoria</param>        
+             <response code="200">Categoria incluida com sucesso</response>
+             <response code="400">Categoria não encontrada</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.CategoriasController.Consultar(System.Int32,System.Boolean)">
+            <summary>
+            Consultar Categoria
+            </summary>
+            <remarks>
+            # Consultar Categoria
+            
+            Consulta uma Categoria na base de dados.
+            </remarks>
+            <param name="id">Id da Categoria</param>     
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma Categoria</response>
+            <response code="400">Categoria não encontrado</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.CategoriasController.Listar(System.Boolean)">
+            <summary>
+            Listar Categorias
+            </summary>
+            <remarks>
+            # Listar Categorias
+            
+            Lista Categorias da base de dados.
+            </remarks>
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma lista de Categorias</response>
+            <response code="400">Categorias não encontrados</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.CategoriasController.Alterar(Project.Ecommerce.Domain.Entities.Categoria)">
+             <summary>
+             Alterar Categoria
+             </summary>
+             <remarks>
+             # Alterar Categoria
+             
+             Altera uma Categoria na base de dados.
+             
+             # Sample request:
+            
+                 PUT /Categoria
+                 {
+                     "id": 1,
+                     "Nome": "Teste nome"
+                 }
+             </remarks> 
+             <param name="obj">Categoria</param>        
+             <response code="200">Categoria alterado com sucesso</response>
+             <response code="400">ID informado não é válido</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.CategoriasController.Remover(System.Int32)">
+            <summary>
+            Remover Categoria
+            </summary>
+            <remarks>
+            # Remover Categoria
+            
+            Remove uma Categoria da base de dados.
+            </remarks>
+            <param name="id">Id da Categoria</param>        
+            <response code="200">Categoria removido com sucesso</response>
+            <response code="400">Categoria não encontrado</response>
+        </member>
         <member name="M:Project.Ecommerce.Controllers.V1.ComentariosController.Incluir(Project.Ecommerce.Domain.Entities.Comentario)">
              <summary>
              Incluir Comentario

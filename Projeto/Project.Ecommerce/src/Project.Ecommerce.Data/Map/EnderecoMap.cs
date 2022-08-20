@@ -28,8 +28,8 @@ namespace Project.Ecommerce.Data.Map
 
             builder.Property(user => user.AlteradoPor).HasColumnName("alterado_por");
             builder.Property(user => user.AlteradoEm).HasColumnName("dt_alteracao");
-            builder.Property(user => user.CriadoPor).HasColumnName("criado_por");
-            builder.Property(user => user.CriadoEm).HasColumnName("dt_criacao");
+            builder.Property(user => user.CriadoPor).HasColumnName("criado_por").IsRequired();
+            builder.Property(user => user.CriadoEm).HasColumnName("dt_criacao").IsRequired();
             builder.Property(user => user.EhAtivo).HasColumnName("eh_ativo");
         }
     }

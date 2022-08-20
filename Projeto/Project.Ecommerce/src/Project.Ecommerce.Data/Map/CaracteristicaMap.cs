@@ -11,21 +11,22 @@ namespace Project.Ecommerce.Data.Map
             builder.ToTable("tb_caracteristicas");
 
             builder.HasKey(user => user.Id);
-            builder.Property(user => user.Id).HasColumnName("id_carasteristica").ValueGeneratedOnAdd();
-            builder.Property(user => user.IdCategoria).HasColumnName("id_categoria");
+            builder.Property(user => user.Id).HasColumnName("id_caracteristica").ValueGeneratedOnAdd();
+            builder.Property(user => user.IdProduto).HasColumnName("id_produto");
 
-            builder.HasOne(arquivo => arquivo.Categoria)
-                .WithMany().HasForeignKey(arquivo => arquivo.IdCategoria);
+            builder.HasOne(arquivo => arquivo.Produto)
+                .WithMany().HasForeignKey(arquivo => arquivo.IdProduto);
 
             builder.Property(user => user.Nome).HasColumnName("nm_caracteristica").IsRequired();
             builder.Property(user => user.Ordem).HasColumnName("nr_ordem").HasDefaultValue(false);
             builder.Property(user => user.Descricao).HasColumnName("nm_descricao").IsRequired();
 
-            builder.Property(user => user.AlteradoPor).HasColumnName("id_usuario_alteracao");
+            builder.Property(user => user.AlteradoPor).HasColumnName("alterado_por");
             builder.Property(user => user.AlteradoEm).HasColumnName("dt_alteracao");
-            builder.Property(user => user.CriadoPor).HasColumnName("id_usuario_criacao");
-            builder.Property(user => user.CriadoEm).HasColumnName("dt_criacao");
-            builder.Property(user => user.EhAtivo).HasColumnName("id_status");
+            builder.Property(user => user.CriadoPor).HasColumnName("criado_por").IsRequired();
+            builder.Property(user => user.CriadoEm).HasColumnName("dt_criacao").IsRequired();
+
+            builder.Ignore(x => x.EhAtivo);
         }
     }
 }
