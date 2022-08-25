@@ -12,6 +12,8 @@ namespace Project.Ecommerce.Application.Interfaces
 
         List<Caracteristica> Listar(bool getDependencies);
 
+        List<Caracteristica> ListarPorIdProduto(int idProduto, bool getDependencies);
+
         RetornoGenerico Alterar(Caracteristica dados);
 
         RetornoGenerico Remover(int id);

@@ -88,6 +88,26 @@ namespace Project.Ecommerce.Controllers.V1
         }
 
         /// <summary>
+        /// Listar Comentarios por IdProduto
+        /// </summary>
+        /// <remarks>
+        /// # Listar Comentarios por IdProduto
+        /// 
+        /// Lista Comentarios por IdProduto na base de dados.
+        /// </remarks>
+        /// <param name="idProduto">Listar por IdProduto</param> 
+        /// <param name="getDependencies">Listar dependências do objeto</param> 
+        /// <response code="200">Retorna uma lista de Comentarios</response>
+        /// <response code="400">Comentarios não encontradas</response>
+        [HttpGet("{idProduto}", Name = "GetComentarioPorIdProduto")]
+        [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
+        public IActionResult ListarPorIdProduto(int idProduto, bool getDependencies = false)
+        {
+            return Ok(_comentarioAppService.ListarPorIdProduto(idProduto, getDependencies));
+        }
+
+        /// <summary>
         /// Alterar Comentario
         /// </summary>
         /// <remarks>

@@ -135,6 +135,20 @@
             <response code="200">Retorna uma lista de Caracteristicas</response>
             <response code="400">Caracteristicas não encontrados</response>
         </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.CaracteristicasController.ListarPorIdProduto(System.Int32,System.Boolean)">
+            <summary>
+            Listar Caracteristicas por IdProduto
+            </summary>
+            <remarks>
+            # Listar Caracteristicas por IdProduto
+            
+            Lista Caracteristicas por IdProduto na base de dados.
+            </remarks>
+            <param name="idProduto">Listar por Id Produto</param> 
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma lista de Caracteristicas</response>
+            <response code="400">Caracteristicas não encontrados</response>
+        </member>
         <member name="M:Project.Ecommerce.Controllers.V1.CaracteristicasController.Alterar(Project.Ecommerce.Domain.Entities.Caracteristica)">
              <summary>
              Alterar Caracteristica
@@ -384,6 +398,20 @@
             
             Lista Comentarios da base de dados.
             </remarks>
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma lista de Comentarios</response>
+            <response code="400">Comentarios não encontradas</response>
+        </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.ComentariosController.ListarPorIdProduto(System.Int32,System.Boolean)">
+            <summary>
+            Listar Comentarios por IdProduto
+            </summary>
+            <remarks>
+            # Listar Comentarios por IdProduto
+            
+            Lista Comentarios por IdProduto na base de dados.
+            </remarks>
+            <param name="idProduto">Listar por IdProduto</param> 
             <param name="getDependencies">Listar dependências do objeto</param> 
             <response code="200">Retorna uma lista de Comentarios</response>
             <response code="400">Comentarios não encontradas</response>
@@ -660,6 +688,21 @@
             <response code="200">Retorna uma lista de Produtos</response>
             <response code="400">Produtos não encontrados</response>
         </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.ProdutosController.ListarPorIdCategoria(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            Listar Produtos por IdCategoria
+            </summary>
+            <remarks>
+            # Listar Produtos por IdCategoria
+            
+            Lista Produtos por IdCategoria na base de dados.
+            </remarks>
+            <param name="idCategoria">Listar por IdProduto</param> 
+            <param name="idVariacao">Listar por IdVariação</param> 
+            <param name="getDependencies">Listar dependências do objeto</param> 
+            <response code="200">Retorna uma lista de Comentarios</response>
+            <response code="400">Comentarios não encontradas</response>
+        </member>
         <member name="M:Project.Ecommerce.Controllers.V1.ProdutosController.Alterar(Project.Ecommerce.Domain.Entities.Produto)">
              <summary>
              Alterar Produto
@@ -736,16 +779,16 @@
         </member>
         <member name="M:Project.Ecommerce.Controllers.V1.StatusController.Listar(System.Boolean)">
             <summary>
-            Listar Statuss
+            Listar Status
             </summary>
             <remarks>
-            # Listar Statuss
+            # Listar Status
             
-            Lista Statuss da base de dados.
+            Lista Status da base de dados.
             </remarks>
             <param name="getDependencies">Listar dependências do objeto</param> 
-            <response code="200">Retorna uma lista de Statuss</response>
-            <response code="400">Statuss não encontrados</response>
+            <response code="200">Retorna uma lista de Status</response>
+            <response code="400">Status não encontrados</response>
         </member>
         <member name="M:Project.Ecommerce.Controllers.V1.StatusController.Alterar(Project.Ecommerce.Domain.Entities.Status)">
              <summary>

@@ -12,6 +12,8 @@ namespace Project.Ecommerce.Application.Interfaces
 
         List<Produto> Listar(bool getDependencies);
 
+        List<Produto> ListarPorCategoriaEVariacao(int? idCategoria, int? idVariacao, bool getDependencies);
+
         RetornoGenerico Alterar(Produto dados);
 
         RetornoGenerico Remover(int id);

@@ -89,6 +89,26 @@ namespace Project.Ecommerce.Controllers.V1
         }
 
         /// <summary>
+        /// Listar Caracteristicas por IdProduto
+        /// </summary>
+        /// <remarks>
+        /// # Listar Caracteristicas por IdProduto
+        /// 
+        /// Lista Caracteristicas por IdProduto na base de dados.
+        /// </remarks>
+        /// <param name="idProduto">Listar por Id Produto</param> 
+        /// <param name="getDependencies">Listar dependências do objeto</param> 
+        /// <response code="200">Retorna uma lista de Caracteristicas</response>
+        /// <response code="400">Caracteristicas não encontrados</response>
+        [HttpGet("{idProduto}", Name = "GetCaracteristicaPorIdProduto")]
+        [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
+        public IActionResult ListarPorIdProduto(int idProduto, bool getDependencies = false)
+        {
+            return Ok(_caracteristicaAppService.ListarPorIdProduto(idProduto, getDependencies));
+        }
+
+        /// <summary>
         /// Alterar Caracteristica
         /// </summary>
         /// <remarks>

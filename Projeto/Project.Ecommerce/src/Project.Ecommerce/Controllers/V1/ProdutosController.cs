@@ -91,6 +91,27 @@ namespace Project.Ecommerce.Controllers.V1
         }
 
         /// <summary>
+        /// Listar Produtos por IdCategoria e IdVariacao
+        /// </summary>
+        /// <remarks>
+        /// # Listar Produtos por IdCategoria e IdVariacao
+        /// 
+        /// Lista Produtos por IdCategoria e IdVariacao na base de dados.
+        /// </remarks>
+        /// <param name="idCategoria">Listar por IdCategoria</param> 
+        /// <param name="idVariacao">Listar por IdVariação</param> 
+        /// <param name="getDependencies">Listar dependências do objeto</param> 
+        /// <response code="200">Retorna uma lista de Comentarios</response>
+        /// <response code="400">Comentarios não encontradas</response>
+        [HttpGet("{idCategoria}/{idVariacao}", Name = "GetProdutoPorCategoriaEVariacao")]
+        [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
+        public IActionResult ListarPorCategoriaEVariacao(int? idCategoria, int? idVariacao, bool getDependencies = false)
+        {
+            return Ok(_produtoAppService.ListarPorCategoriaEVariacao(idCategoria, idVariacao, getDependencies));
+        }
+
+        /// <summary>
         /// Alterar Produto
         /// </summary>
         /// <remarks>

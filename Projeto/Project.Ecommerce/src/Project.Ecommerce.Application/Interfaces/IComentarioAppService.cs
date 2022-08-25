@@ -12,6 +12,8 @@ namespace Project.Ecommerce.Application.Interfaces
 
         List<Comentario> Listar(bool getDependencies);
 
+        List<Comentario> ListarPorIdProduto(int idProduto, bool getDependencies);
+
         RetornoGenerico Alterar(Comentario dados);
 
         RetornoGenerico Remover(int id);

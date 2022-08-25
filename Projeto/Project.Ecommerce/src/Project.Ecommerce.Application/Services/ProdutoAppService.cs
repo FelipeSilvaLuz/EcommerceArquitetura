@@ -55,6 +55,19 @@ namespace Project.Ecommerce.Application.Services
             return _produtoRepository.Listar(getDependencies).ToList();
         }
 
+        public List<Produto> ListarPorCategoriaEVariacao(int? idCategoria, int? idVariacao, bool getDependencies)
+        {
+            var produtos = _produtoRepository.Listar(getDependencies);
+
+            if (!idCategoria.Equals(null))
+                produtos = produtos.Where(x => x.IdCategoria.Equals(idCategoria));
+
+            if (!idVariacao.Equals(null))
+                produtos = produtos.Where(x => x.IdVariacao.Equals(idVariacao));
+
+            return produtos.ToList();
+        }
+
         public RetornoGenerico Remover(int id)
         {
             if (_produtoRepository.Remover(id))

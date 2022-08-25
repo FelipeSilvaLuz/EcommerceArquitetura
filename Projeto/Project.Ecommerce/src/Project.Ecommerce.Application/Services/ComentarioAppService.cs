@@ -55,6 +55,12 @@ namespace Project.Ecommerce.Application.Services
             return _comentarioRepository.Listar(getDependencies).ToList();
         }
 
+        public List<Comentario> ListarPorIdProduto(int idProduto, bool getDependencies)
+        {
+            return _comentarioRepository.Listar(getDependencies)
+                .Where(x => x.IdProduto.Equals(idProduto)).ToList();
+        }
+
         public RetornoGenerico Remover(int id)
         {
             if (_comentarioRepository.Remover(id))

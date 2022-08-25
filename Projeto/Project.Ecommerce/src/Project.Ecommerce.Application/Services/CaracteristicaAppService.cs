@@ -54,6 +54,12 @@ namespace Project.Ecommerce.Application.Services
             return _caracteristicaRepository.Listar(getDependencies).ToList();
         }
 
+        public List<Caracteristica> ListarPorIdProduto(int idProduto, bool getDependencies)
+        {
+            return _caracteristicaRepository.Listar(getDependencies)
+                .Where(x => x.IdProduto.Equals(idProduto)).ToList();
+        }
+
         public RetornoGenerico Remover(int id)
         {
             if (_caracteristicaRepository.Remover(id))
