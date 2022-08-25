@@ -12,6 +12,8 @@ namespace Project.Ecommerce.Application.Interfaces
 
         List<Endereco> Listar(bool getDependencies);
 
+        InformacoesCEP BuscarCEP(string cep);
+
         RetornoGenerico Alterar(Endereco dados);
 
         RetornoGenerico Remover(int id);

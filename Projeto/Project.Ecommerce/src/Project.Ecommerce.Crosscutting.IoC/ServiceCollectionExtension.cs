@@ -32,6 +32,7 @@ namespace Project.Ecommerce.Crosscutting.IoC
                  .AddScoped<IStatusAppService, StatusAppService>()
                  .AddScoped<IUsuarioAppService, UsuarioAppService>()
                  .AddScoped<IVendaAppService, VendaAppService>()
+                 .AddScoped<IPesquisasExternasAppService, PesquisasExternasAppService>()
                  .AddScoped<IVariacaoAppService, VariacaoAppService>();
         }
 

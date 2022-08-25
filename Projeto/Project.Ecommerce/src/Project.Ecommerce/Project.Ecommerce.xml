@@ -495,6 +495,19 @@
             <response code="200">Retorna um Endereco</response>
             <response code="400">Endereco não encontrado</response>
         </member>
+        <member name="M:Project.Ecommerce.Controllers.V1.EnderecosController.Consultar(System.String)">
+            <summary>
+            Consultar Endereco por CEP
+            </summary>
+            <remarks>
+            # Consultar Endereco por CEP
+            
+            Consulta um Endereco por CEP.
+            </remarks>
+            <param name="cep">Informar o CEP</param> 
+            <response code="200">Retorna um Endereco</response>
+            <response code="400">Endereco não encontrado</response>
+        </member>
         <member name="M:Project.Ecommerce.Controllers.V1.EnderecosController.Listar(System.Boolean)">
             <summary>
             Listar Enderecos
@@ -688,16 +701,16 @@
             <response code="200">Retorna uma lista de Produtos</response>
             <response code="400">Produtos não encontrados</response>
         </member>
-        <member name="M:Project.Ecommerce.Controllers.V1.ProdutosController.ListarPorIdCategoria(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean)">
+        <member name="M:Project.Ecommerce.Controllers.V1.ProdutosController.ListarPorCategoriaEVariacao(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean)">
             <summary>
-            Listar Produtos por IdCategoria
+            Listar Produtos por IdCategoria e IdVariacao
             </summary>
             <remarks>
-            # Listar Produtos por IdCategoria
+            # Listar Produtos por IdCategoria e IdVariacao
             
-            Lista Produtos por IdCategoria na base de dados.
+            Lista Produtos por IdCategoria e IdVariacao na base de dados.
             </remarks>
-            <param name="idCategoria">Listar por IdProduto</param> 
+            <param name="idCategoria">Listar por IdCategoria</param> 
             <param name="idVariacao">Listar por IdVariação</param> 
             <param name="getDependencies">Listar dependências do objeto</param> 
             <response code="200">Retorna uma lista de Comentarios</response>

@@ -11,9 +11,13 @@ namespace Project.Ecommerce.Application.Services
     public class EnderecoAppService : IEnderecoAppService
     {
         private readonly IEnderecoRepository _enderecoRepository;
-        public EnderecoAppService(IEnderecoRepository enderecoRepository)
+        private readonly IPesquisasExternasAppService _pesquisasExternasAppService;
+        public EnderecoAppService(
+            IEnderecoRepository enderecoRepository,
+            IPesquisasExternasAppService pesquisasExternasAppService)
         {
             _enderecoRepository = enderecoRepository;
+            _pesquisasExternasAppService = pesquisasExternasAppService;
         }
 
         public RetornoGenerico Incluir(Endereco dados)
@@ -52,6 +56,11 @@ namespace Project.Ecommerce.Application.Services
         public Endereco Consultar(int id, bool getDependencies)
         {
             return _enderecoRepository.Consultar(id, getDependencies);
+        }
+
+        public InformacoesCEP BuscarCEP(string cep)
+        {
+            return _pesquisasExternasAppService.BuscarInformacoesCEP(cep);
         }
 
         public List<Endereco> Listar(bool getDependencies)

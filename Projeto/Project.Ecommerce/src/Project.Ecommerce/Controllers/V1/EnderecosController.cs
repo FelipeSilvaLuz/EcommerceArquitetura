@@ -75,6 +75,25 @@ namespace Project.Ecommerce.Controllers.V1
         }
 
         /// <summary>
+        /// Consultar Endereco por CEP
+        /// </summary>
+        /// <remarks>
+        /// # Consultar Endereco por CEP
+        /// 
+        /// Consulta um Endereco por CEP.
+        /// </remarks>
+        /// <param name="cep">Informar o CEP</param> 
+        /// <response code="200">Retorna um Endereco</response>
+        /// <response code="400">Endereco não encontrado</response>
+        [HttpGet("{cep}", Name = "GetCEP")]
+        [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(RetornoGenerico), StatusCodes.Status400BadRequest)]
+        public IActionResult Consultar(string cep)
+        {
+            return Ok(_enderecoAppService.BuscarCEP(cep));
+        }
+
+        /// <summary>
         /// Listar Enderecos
         /// </summary>
         /// <remarks>
