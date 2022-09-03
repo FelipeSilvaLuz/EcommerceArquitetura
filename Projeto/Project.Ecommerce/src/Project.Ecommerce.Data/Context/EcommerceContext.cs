@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Project.Ecommerce.CrossCutting.Settings;
 using Project.Ecommerce.Data.Map;
+using System;
 
 namespace Project.Ecommerce.Data.Context
 {
@@ -16,7 +18,8 @@ namespace Project.Ecommerce.Data.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(_webSettings.Database.ConnectionString);
+            optionsBuilder.UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString());
+            //optionsBuilder.UseSqlServer(_webSettings.Database.ConnectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

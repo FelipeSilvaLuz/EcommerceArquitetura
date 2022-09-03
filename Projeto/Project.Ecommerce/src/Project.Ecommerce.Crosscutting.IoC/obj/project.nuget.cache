@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Xc0vj1/RZailHvQ0Czc8NKbhzPCTDArQEMFAdlbuWUOVIXDcnY2M/HjMVA7JUHjEDa+dT++HVOoiQrvDZ5cNSQ==",
+  "dgSpecHash": "SWhPzYeVN81hLpPDG0eZbnho8akqr10BiMcuHfCkFCkeNATHKPI7P3sTLEynsssdXvyWxCQDv1zR9E8VaMJeDw==",
   "success": true,
   "projectFilePath": "C:\\Users\\fh127\\Documents\\Projetos\\Pessoal\\EcommerceArquitetura\\Projeto\\Project.Ecommerce\\src\\Project.Ecommerce.Crosscutting.IoC\\Project.Ecommerce.Crosscutting.IoC.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\fh127\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.26\\microsoft.entityframeworkcore.3.1.26.nupkg.sha512",
     "C:\\Users\\fh127\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.26\\microsoft.entityframeworkcore.abstractions.3.1.26.nupkg.sha512",
     "C:\\Users\\fh127\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.26\\microsoft.entityframeworkcore.analyzers.3.1.26.nupkg.sha512",
+    "C:\\Users\\fh127\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\3.1.25\\microsoft.entityframeworkcore.inmemory.3.1.25.nupkg.sha512",
     "C:\\Users\\fh127\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.26\\microsoft.entityframeworkcore.relational.3.1.26.nupkg.sha512",
     "C:\\Users\\fh127\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.26\\microsoft.entityframeworkcore.sqlserver.3.1.26.nupkg.sha512",
     "C:\\Users\\fh127\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.26\\microsoft.extensions.caching.abstractions.3.1.26.nupkg.sha512",
