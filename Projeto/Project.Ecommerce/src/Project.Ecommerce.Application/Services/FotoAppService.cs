@@ -1,4 +1,6 @@
-﻿using Project.Ecommerce.Application.Interfaces;
+﻿using Microsoft.Extensions.Options;
+using Project.Ecommerce.Application.Interfaces;
+using Project.Ecommerce.CrossCutting.Settings;
 using Project.Ecommerce.CrossCutting.ViewModels;
 using Project.Ecommerce.Domain.Entities;
 using Project.Ecommerce.Domain.Interfaces;
@@ -11,10 +13,14 @@ namespace Project.Ecommerce.Application.Services
     public class FotoAppService : IFotoAppService
     {
         private readonly IFotoRepository _fotoRepository;
+        private readonly TextoSettings _textoSettings;
 
-        public FotoAppService(IFotoRepository fotoRepository)
+        public FotoAppService(
+            IFotoRepository fotoRepository,
+            IOptions<TextoSettings> options)
         {
             _fotoRepository = fotoRepository;
+            _textoSettings = options.Value;
         }
 
         public RetornoGenerico Incluir(Foto dados)
@@ -25,7 +31,7 @@ namespace Project.Ecommerce.Application.Services
 
             _fotoRepository.Incluir(dados);
             _fotoRepository.SaveChanges();
-            return new RetornoGenerico(true, new List<string> { "Registro incluido com sucesso." });
+            return new RetornoGenerico(true, new List<string> { _textoSettings.RegistroIncluido });
         }
 
         public RetornoGenerico Alterar(Foto dados)
@@ -40,7 +46,7 @@ namespace Project.Ecommerce.Application.Services
 
             _fotoRepository.Alterar(retorno);
             _fotoRepository.SaveChanges();
-            return new RetornoGenerico(true, new List<string> { "Registro alterado com sucesso." });
+            return new RetornoGenerico(true, new List<string> { _textoSettings.RegistroAlterado });
         } 
 
         public Foto Consultar(int id, bool getDependencies)
@@ -58,10 +64,10 @@ namespace Project.Ecommerce.Application.Services
             if (_fotoRepository.Remover(id))
             {
                 _fotoRepository.SaveChanges();
-                return new RetornoGenerico(true, new List<string> { "Removido com sucesso" });
+                return new RetornoGenerico(true, new List<string> { _textoSettings.Removido });
             }
             else
-                return new RetornoGenerico(false, new List<string> { "Erro ao remover" });
+                return new RetornoGenerico(false, new List<string> { _textoSettings.ErroRemover });
         }
 
         public RetornoGenerico ValidarCampos(Foto dados)
@@ -69,16 +75,16 @@ namespace Project.Ecommerce.Application.Services
             List<string> mensagens = new List<string>();
 
             if (dados.IdCategoria is 0)
-                mensagens.Add("Informe um e-mail para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Categoria));
 
             if (dados.IdProduto is 0)
-                mensagens.Add("Informe um nome para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Produto));
 
             if (String.IsNullOrEmpty(dados.Base64))
-                mensagens.Add("Informe um arquivo para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Foto));
 
             if (String.IsNullOrEmpty(dados.Nome))
-                mensagens.Add("Informe um nome para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Nome));
 
             return new RetornoGenerico(!mensagens.Any(), mensagens);
         }

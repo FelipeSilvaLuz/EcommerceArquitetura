@@ -1,4 +1,6 @@
-﻿using Project.Ecommerce.Application.Interfaces;
+﻿using Microsoft.Extensions.Options;
+using Project.Ecommerce.Application.Interfaces;
+using Project.Ecommerce.CrossCutting.Settings;
 using Project.Ecommerce.CrossCutting.ViewModels;
 using Project.Ecommerce.Domain.Entities;
 using Project.Ecommerce.Domain.Interfaces;
@@ -11,9 +13,14 @@ namespace Project.Ecommerce.Application.Services
     public class CaracteristicaAppService : ICaracteristicaAppService
     {
         private readonly ICaracteristicaRepository _caracteristicaRepository;
-        public CaracteristicaAppService(ICaracteristicaRepository caracteristicaRepository)
+        private readonly TextoSettings _textoSettings;
+
+        public CaracteristicaAppService(
+            ICaracteristicaRepository caracteristicaRepository,
+            IOptions<TextoSettings> options)
         {
             _caracteristicaRepository = caracteristicaRepository;
+            _textoSettings = options.Value;
         }
 
         public RetornoGenerico Incluir(Caracteristica dados)
@@ -24,7 +31,7 @@ namespace Project.Ecommerce.Application.Services
 
             _caracteristicaRepository.Incluir(dados);
             _caracteristicaRepository.SaveChanges();
-            return new RetornoGenerico(true, new List<string> { "Registro incluido com sucesso." });
+            return new RetornoGenerico(true, new List<string> { _textoSettings.RegistroIncluido });
         }
 
         public RetornoGenerico Alterar(Caracteristica dados)
@@ -41,7 +48,7 @@ namespace Project.Ecommerce.Application.Services
 
             _caracteristicaRepository.Alterar(retorno);
             _caracteristicaRepository.SaveChanges();
-            return new RetornoGenerico(true, new List<string> { "Registro alterado com sucesso." });
+            return new RetornoGenerico(true, new List<string> { _textoSettings.RegistroAlterado });
         }
 
         public Caracteristica Consultar(int id, bool getDependencies)
@@ -65,10 +72,10 @@ namespace Project.Ecommerce.Application.Services
             if (_caracteristicaRepository.Remover(id))
             {
                 _caracteristicaRepository.SaveChanges();
-                return new RetornoGenerico(true, new List<string> { "Removido com sucesso" });
+                return new RetornoGenerico(true, new List<string> { _textoSettings.Removido });
             }
             else
-                return new RetornoGenerico(false, new List<string> { "Erro ao remover" });
+                return new RetornoGenerico(false, new List<string> { _textoSettings.ErroRemover });
         }
 
         public RetornoGenerico ValidarCampos(Caracteristica dados)
@@ -76,16 +83,16 @@ namespace Project.Ecommerce.Application.Services
             List<string> mensagens = new List<string>();
 
             if (dados.IdProduto == 0)
-                mensagens.Add("Informe um Produto para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Produto));
 
             if (String.IsNullOrEmpty(dados.Nome))
-                mensagens.Add("Informe um Nome para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Nome));
 
             if (String.IsNullOrEmpty(dados.Descricao))
-                mensagens.Add("Informe uma Descrição para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Descricao));
 
             if (dados.Ordem == 0)
-                mensagens.Add("Informe uma Ordem para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Ordem));
 
             return new RetornoGenerico(!mensagens.Any(), mensagens);
         }

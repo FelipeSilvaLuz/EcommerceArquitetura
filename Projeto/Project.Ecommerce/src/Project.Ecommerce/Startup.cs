@@ -10,17 +10,31 @@ namespace Project.Ecommerce
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(
+            IConfiguration configuration,
+            IConfiguration configurationResource,
+            IWebHostEnvironment env)
         {
             Configuration = configuration;
+            ConfigurationResource = configurationResource;
+
+            var builder = new ConfigurationBuilder()
+              .SetBasePath(env.ContentRootPath)
+              .AddJsonFile("wwwroot/Resource/Texto.json", optional: true, reloadOnChange: true);
+
+            ConfigurationResource = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
+        public IConfiguration ConfigurationResource { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<WebSettings>(options => Configuration.Bind(options));
             WebSettings apiSettings = Configuration.Get<WebSettings>();
+
+            services.Configure<TextoSettings>(options => ConfigurationResource.Bind(options));
+            TextoSettings resourceSettings = ConfigurationResource.Get<TextoSettings>();
 
             services.AddSwaggerConfig();
             services.AddVersionConfig();

@@ -1,4 +1,6 @@
-﻿using Project.Ecommerce.Application.Interfaces;
+﻿using Microsoft.Extensions.Options;
+using Project.Ecommerce.Application.Interfaces;
+using Project.Ecommerce.CrossCutting.Settings;
 using Project.Ecommerce.CrossCutting.ViewModels;
 using Project.Ecommerce.Domain.Entities;
 using Project.Ecommerce.Domain.Interfaces;
@@ -11,10 +13,14 @@ namespace Project.Ecommerce.Application.Services
     public class VariacaoAppService : IVariacaoAppService
     {
         private readonly IVariacaoRepository _variacaoRepository;
+        private readonly TextoSettings _textoSettings;
 
-        public VariacaoAppService(IVariacaoRepository variacaoRepository)
+        public VariacaoAppService(
+            IVariacaoRepository variacaoRepository,
+            IOptions<TextoSettings> options)
         {
             _variacaoRepository = variacaoRepository;
+            _textoSettings = options.Value;
         }
 
         public RetornoGenerico Incluir(Variacao dados)
@@ -25,7 +31,7 @@ namespace Project.Ecommerce.Application.Services
 
             _variacaoRepository.Incluir(dados);
             _variacaoRepository.SaveChanges();
-            return new RetornoGenerico(true, new List<string> { "Registro incluido com sucesso." });
+            return new RetornoGenerico(true, new List<string> { _textoSettings.RegistroIncluido });
         }
 
         public RetornoGenerico Alterar(Variacao dados)
@@ -41,7 +47,7 @@ namespace Project.Ecommerce.Application.Services
 
             _variacaoRepository.Alterar(retorno);
             _variacaoRepository.SaveChanges();
-            return new RetornoGenerico(true, new List<string> { "Registro alterado com sucesso." });
+            return new RetornoGenerico(true, new List<string> { _textoSettings.RegistroAlterado });
         }
 
         public Variacao Consultar(int id, bool getDependencies)
@@ -59,10 +65,10 @@ namespace Project.Ecommerce.Application.Services
             if (_variacaoRepository.Remover(id))
             {
                 _variacaoRepository.SaveChanges();
-                return new RetornoGenerico(true, new List<string> { "Removido com sucesso" });
+                return new RetornoGenerico(true, new List<string> { _textoSettings.Removido });
             }
             else
-                return new RetornoGenerico(false, new List<string> { "Erro ao remover" });
+                return new RetornoGenerico(false, new List<string> { _textoSettings.ErroRemover });
         }
 
         public RetornoGenerico ValidarCampos(Variacao dados)
@@ -70,10 +76,10 @@ namespace Project.Ecommerce.Application.Services
             List<string> mensagens = new List<string>();
 
             if (String.IsNullOrEmpty(dados.Nome))
-                mensagens.Add("Informe um Nome para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Nome));
 
             if (String.IsNullOrEmpty(dados.Descricao))
-                mensagens.Add("Informe uma Descricao para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Descricao));
 
             return new RetornoGenerico(!mensagens.Any(), mensagens);
         }

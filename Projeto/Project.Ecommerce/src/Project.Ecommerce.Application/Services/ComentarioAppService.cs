@@ -1,4 +1,6 @@
-﻿using Project.Ecommerce.Application.Interfaces;
+﻿using Microsoft.Extensions.Options;
+using Project.Ecommerce.Application.Interfaces;
+using Project.Ecommerce.CrossCutting.Settings;
 using Project.Ecommerce.CrossCutting.ViewModels;
 using Project.Ecommerce.Domain.Entities;
 using Project.Ecommerce.Domain.Interfaces;
@@ -11,10 +13,14 @@ namespace Project.Ecommerce.Application.Services
     public class ComentarioAppService : IComentarioAppService
     {
         private readonly IComentarioRepository _comentarioRepository;
+        private readonly TextoSettings _textoSettings;
 
-        public ComentarioAppService(IComentarioRepository comentarioRepository)
+        public ComentarioAppService(
+            IComentarioRepository comentarioRepository,
+            IOptions<TextoSettings> options)
         {
             _comentarioRepository = comentarioRepository;
+            _textoSettings = options.Value;
         }
 
         public RetornoGenerico Incluir(Comentario dados)
@@ -25,7 +31,7 @@ namespace Project.Ecommerce.Application.Services
 
             _comentarioRepository.Incluir(dados);
             _comentarioRepository.SaveChanges();
-            return new RetornoGenerico(true, new List<string> { "Registro incluido com sucesso." });
+            return new RetornoGenerico(true, new List<string> { _textoSettings.RegistroIncluido });
         }
 
         public RetornoGenerico Alterar(Comentario dados)
@@ -42,7 +48,7 @@ namespace Project.Ecommerce.Application.Services
 
             _comentarioRepository.Alterar(retorno);
             _comentarioRepository.SaveChanges();
-            return new RetornoGenerico(true, new List<string> { "Registro alterado com sucesso." });
+            return new RetornoGenerico(true, new List<string> { _textoSettings.RegistroAlterado });
         }
 
         public Comentario Consultar(int id, bool getDependencies)
@@ -66,10 +72,10 @@ namespace Project.Ecommerce.Application.Services
             if (_comentarioRepository.Remover(id))
             {
                 _comentarioRepository.SaveChanges();
-                return new RetornoGenerico(true, new List<string> { "Removido com sucesso" });
+                return new RetornoGenerico(true, new List<string> { _textoSettings.Removido });
             }
             else
-                return new RetornoGenerico(false, new List<string> { "Erro ao remover" });
+                return new RetornoGenerico(false, new List<string> { _textoSettings.ErroRemover });
         }
 
         public RetornoGenerico ValidarCampos(Comentario dados)
@@ -77,16 +83,16 @@ namespace Project.Ecommerce.Application.Services
             List<string> mensagens = new List<string>();
 
             if (dados.IdProduto is 0)
-                mensagens.Add("Informe um Produto para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Produto));
 
             if (String.IsNullOrEmpty(dados.Texto))
-                mensagens.Add("Informe um Nome para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Texto));
 
             if (String.IsNullOrEmpty(dados.Titulo))
-                mensagens.Add("Informe um Titulo para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Titulo));
 
             if (dados.Nota is 0)
-                mensagens.Add("Informe uma Nota para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Nota));
 
             return new RetornoGenerico(!mensagens.Any(), mensagens);
         }

@@ -1,4 +1,6 @@
-﻿using Project.Ecommerce.Application.Interfaces;
+﻿using Microsoft.Extensions.Options;
+using Project.Ecommerce.Application.Interfaces;
+using Project.Ecommerce.CrossCutting.Settings;
 using Project.Ecommerce.CrossCutting.ViewModels;
 using Project.Ecommerce.Domain.Entities;
 using Project.Ecommerce.Domain.Interfaces;
@@ -11,9 +13,14 @@ namespace Project.Ecommerce.Application.Services
     public class ProdutoAppService : IProdutoAppService
     {
         private readonly IProdutoRepository _produtoRepository;
-        public ProdutoAppService(IProdutoRepository produtoRepository)
+        private readonly TextoSettings _textoSettings;
+
+        public ProdutoAppService(
+            IProdutoRepository produtoRepository,
+            IOptions<TextoSettings> options)
         {
             _produtoRepository = produtoRepository;
+            _textoSettings = options.Value;
         }
 
         public RetornoGenerico Incluir(Produto dados)
@@ -24,7 +31,7 @@ namespace Project.Ecommerce.Application.Services
 
             _produtoRepository.Incluir(dados);
             _produtoRepository.SaveChanges();
-            return new RetornoGenerico(true, new List<string> { "Registro incluido com sucesso." });
+            return new RetornoGenerico(true, new List<string> { _textoSettings.RegistroIncluido });
         }
 
         public RetornoGenerico Alterar(Produto dados)
@@ -42,7 +49,7 @@ namespace Project.Ecommerce.Application.Services
 
             _produtoRepository.Alterar(retorno);
             _produtoRepository.SaveChanges();
-            return new RetornoGenerico(true, new List<string> { "Registro alterado com sucesso." });
+            return new RetornoGenerico(true, new List<string> { _textoSettings.RegistroAlterado });
         }
 
         public Produto Consultar(int id, bool getDependencies)
@@ -73,10 +80,10 @@ namespace Project.Ecommerce.Application.Services
             if (_produtoRepository.Remover(id))
             {
                 _produtoRepository.SaveChanges();
-                return new RetornoGenerico(true, new List<string> { "Removido com sucesso" });
+                return new RetornoGenerico(true, new List<string> { _textoSettings.Removido });
             }
             else
-                return new RetornoGenerico(false, new List<string> { "Erro ao remover" });
+                return new RetornoGenerico(false, new List<string> { _textoSettings.ErroRemover });
         }
 
         public RetornoGenerico ValidarCampos(Produto dados)
@@ -84,22 +91,22 @@ namespace Project.Ecommerce.Application.Services
             List<string> mensagens = new List<string>();
 
             if (dados.IdCategoria == 0)
-                mensagens.Add("Informe uma Cidade para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Cidade));
 
             if (dados.IdVariacao == 0)
-                mensagens.Add("Informe um Bairro para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Bairro));
 
             if (String.IsNullOrEmpty(dados.Nome))
-                mensagens.Add("Informe um Nome para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Nome));
 
             if (String.IsNullOrEmpty(dados.Descricao))
-                mensagens.Add("Informe uma Descricao para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Descricao));
 
             if (dados.Quantidade == 0)
-                mensagens.Add("Informe uma Quantidade para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Quantidade));
 
             if (dados.Valor == 0)
-                mensagens.Add("Informe um Valor para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Valor));
 
             return new RetornoGenerico(!mensagens.Any(), mensagens);
         }

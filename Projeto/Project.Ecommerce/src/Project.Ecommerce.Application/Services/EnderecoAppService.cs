@@ -1,4 +1,6 @@
-﻿using Project.Ecommerce.Application.Interfaces;
+﻿using Microsoft.Extensions.Options;
+using Project.Ecommerce.Application.Interfaces;
+using Project.Ecommerce.CrossCutting.Settings;
 using Project.Ecommerce.CrossCutting.ViewModels;
 using Project.Ecommerce.Domain.Entities;
 using Project.Ecommerce.Domain.Interfaces;
@@ -12,12 +14,16 @@ namespace Project.Ecommerce.Application.Services
     {
         private readonly IEnderecoRepository _enderecoRepository;
         private readonly IPesquisasExternasAppService _pesquisasExternasAppService;
+        private readonly TextoSettings _textoSettings;
+
         public EnderecoAppService(
             IEnderecoRepository enderecoRepository,
-            IPesquisasExternasAppService pesquisasExternasAppService)
+            IPesquisasExternasAppService pesquisasExternasAppService,
+            IOptions<TextoSettings> options)
         {
             _enderecoRepository = enderecoRepository;
             _pesquisasExternasAppService = pesquisasExternasAppService;
+            _textoSettings = options.Value;
         }
 
         public RetornoGenerico Incluir(Endereco dados)
@@ -28,7 +34,7 @@ namespace Project.Ecommerce.Application.Services
 
             _enderecoRepository.Incluir(dados);
             _enderecoRepository.SaveChanges();
-            return new RetornoGenerico(true, new List<string> { "Registro incluido com sucesso." });
+            return new RetornoGenerico(true, new List<string> { _textoSettings.RegistroIncluido });
         }
 
         public RetornoGenerico Alterar(Endereco dados)
@@ -50,7 +56,7 @@ namespace Project.Ecommerce.Application.Services
 
             _enderecoRepository.Alterar(retorno);
             _enderecoRepository.SaveChanges();
-            return new RetornoGenerico(true, new List<string> { "Registro alterado com sucesso." });
+            return new RetornoGenerico(true, new List<string> { _textoSettings.RegistroAlterado });
         }
 
         public Endereco Consultar(int id, bool getDependencies)
@@ -73,10 +79,10 @@ namespace Project.Ecommerce.Application.Services
             if (_enderecoRepository.Remover(id))
             {
                 _enderecoRepository.SaveChanges();
-                return new RetornoGenerico(true, new List<string> { "Removido com sucesso" });
+                return new RetornoGenerico(true, new List<string> { _textoSettings.Removido });
             }
             else
-                return new RetornoGenerico(false, new List<string> { "Erro ao remover" });
+                return new RetornoGenerico(false, new List<string> { _textoSettings.ErroRemover });
         }
 
         public RetornoGenerico ValidarCampos(Endereco dados)
@@ -84,28 +90,28 @@ namespace Project.Ecommerce.Application.Services
             List<string> mensagens = new List<string>();
 
             if (String.IsNullOrEmpty(dados.NomeEndereco))
-                mensagens.Add("Informe um Endereco para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Endereco));
 
             if (String.IsNullOrEmpty(dados.Numero))
-                mensagens.Add("Informe um Numero para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Numero));
 
             if (String.IsNullOrEmpty(dados.Complemento))
-                mensagens.Add("Informe um Complemento para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Complemento));
 
             if (String.IsNullOrEmpty(dados.Cep))
-                mensagens.Add("Informe um Cep para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", "CEP"));
 
             if (String.IsNullOrEmpty(dados.Cidade))
-                mensagens.Add("Informe uma Cidade para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Cidade));
 
             if (String.IsNullOrEmpty(dados.Bairro))
-                mensagens.Add("Informe um Bairro para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Bairro));
 
             if (String.IsNullOrEmpty(dados.Estado))
-                mensagens.Add("Informe um Estado para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Estado));
 
             if (String.IsNullOrEmpty(dados.Referencia))
-                mensagens.Add("Informe uma Referencia para continuar.");
+                mensagens.Add(_textoSettings.PreenchaCampo.Replace("{nome}", _textoSettings.Referencia));
 
             return new RetornoGenerico(!mensagens.Any(), mensagens);
         }
